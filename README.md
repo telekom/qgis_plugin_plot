@@ -4,7 +4,7 @@ SPDX-FileCopyrightText: 2023 Deutsche Telekom AG
 SPDX-License-Identifier: CC0-1.0    
 -->
 
-# my-sample-project
+# QGIS Plot Plugin
 
 [![REUSE Compliance Check](https://github.com/telekom/reuse-template/actions/workflows/reuse-compliance.yml/badge.svg)](https://github.com/telekom/reuse-template/actions/workflows/reuse-compliance.yml)
 [![GNU GPLv3](https://img.shields.io/badge/license-%20%20GNU%20GPLv3%20-green?style=plastic)](https://img.shields.io/badge/license-%20%20GNU%20GPLv3%20-green?style=plastic)
