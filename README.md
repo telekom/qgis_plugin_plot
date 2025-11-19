@@ -6,7 +6,7 @@ SPDX-License-Identifier: CC0-1.0
 
 # QGIS Plot Plugin
 
-[![REUSE Compliance Check](https://github.com/telekom/reuse-template/actions/workflows/reuse-compliance.yml/badge.svg)](https://github.com/telekom/reuse-template/actions/workflows/reuse-compliance.yml)
+[![REUSE Compliance Check](https://github.com/telekom/qgis_plugin_plot/actions/workflows/reuse-compliance.yml/badge.svg)](https://github.com/telekom/qgis_plugin_plot/actions/workflows/reuse-compliance.yml)
 [![OpenSSF Scorecard Score](https://api.scorecard.dev/projects/github.com/telekom/qgis_plugin_plot/badge)](https://scorecard.dev/viewer/?uri=github.com/telekom/qgis_plugin_plot/badge)
 [![GNU GPLv3](https://img.shields.io/badge/license-%20%20GNU%20GPLv3%20-green?style=plastic)](https://img.shields.io/badge/license-%20%20GNU%20GPLv3%20-green?style=plastic)
 
@@ -28,6 +28,7 @@ This project has adopted the [Contributor Covenant](https://www.contributor-cove
 By participating in this project, you agree to abide by its [Code of Conduct](./CODE_OF_CONDUCT.md) at all times.
 
 ## Licensing
+
 Copyright (c) XXXX Deutsche Telekom AG
 
 All content in this repository is licensed under at least one of the licenses found in [./LICENSES](./LICENSES); you may not use this file, or any other file in this repository, except in compliance with the Licenses. 
