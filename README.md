@@ -7,6 +7,7 @@ SPDX-License-Identifier: CC0-1.0
 # QGIS Plot Plugin
 
 [![REUSE Compliance Check](https://github.com/telekom/reuse-template/actions/workflows/reuse-compliance.yml/badge.svg)](https://github.com/telekom/reuse-template/actions/workflows/reuse-compliance.yml)
+[![OpenSSF Scorecard Score](https://api.scorecard.dev/projects/github.com/telekom/qgis_plugin_plot/badge)](https://scorecard.dev/viewer/?uri=github.com/telekom/qgis_plugin_plot/badge)
 [![GNU GPLv3](https://img.shields.io/badge/license-%20%20GNU%20GPLv3%20-green?style=plastic)](https://img.shields.io/badge/license-%20%20GNU%20GPLv3%20-green?style=plastic)
 
 ## About
