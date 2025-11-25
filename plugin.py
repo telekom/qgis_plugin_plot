@@ -36,7 +36,7 @@ TEMPLATE_VERSION = "1.2"
 LOG_LIFETIME = 7.0  # older log_files will be removed (in Days)
 
 
-class PluginTemplate(Plugin):
+class PluginPlot(Plugin):
     """ Main class for this plugin.
 
         Attachments when contacting support are stored in:
@@ -307,10 +307,6 @@ class PluginTemplate(Plugin):
                                      "Kann möglicherweise nur einmalig ausgeführt werden (QGIS CRASH DANACH MÖGLICH).\n\n"
                                      "Alle pytest-Plugins sind deaktiviert.")
 
-            # TestDockWidget, you can comment this out, when you don't need to test these classes
-            from .modules.examples import dockwidget
-            dockwidget.init(self)
-
         # init gui from ui control
         from .utilities.ui_control import init_plugin_gui
         init_plugin_gui(self)
@@ -318,6 +314,18 @@ class PluginTemplate(Plugin):
         # Do not add you actions in initGui, keep it clean and use load_tool_bar instead
         from .utilities.ui_control import load_tool_bar
         load_tool_bar(self)
+
+    def __test(self):
+        from .modules.examples.test_focus import TestFocus
+
+        module = self.add_module("TestFocus", TestFocus)
+
+        module._accessibility_config.read(module._accessibility_config_path)
+
+        if module._accessibility_config.getboolean('accessibility', 'enable', fallback=False):
+            module.setup_accessibility()
+
+        module.show()
 
     def __switch_logging_debug_mode(self):
         """ Disables the DEBUG logging from the plugin and restarts the plugin.

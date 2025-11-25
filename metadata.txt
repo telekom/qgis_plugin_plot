@@ -2,27 +2,27 @@
 # UTF-8 and CR LF important!
 
 # name: name in QGIS repository window
-name=QGIS Plugin Template
+name=QGIS Plot Plugin
 
 # plugin icon in QGIS repository window
 icon=templates/icons/icon.svg
 
 # name_menu_bar: name in QGIS' top menu bar
-name_menu_bar=QGIS Plugin Template
+name_menu_bar=QGIS Plot Plugin
 
 # qgisMinimumVersion: minimum compatible QGIS version number
 qgisMinimumVersion=3.34.6
 qgisMaximumVersion=3.40.99
 
 # some default plugin information
-description=Plugin Template to easily create new QGIS plugins
-version=1.0.0
+description=Standardized plot plugin to plot PDF pages with default templates from qpt.files.
+version=1.1.48
 author=Deutsche Telekom Technik GmbH
 email=
 
-about=Plugin Template to easily create new QGIS plugins
+about=Standardized plot plugin to plot PDF pages with default templates from qpt.files.
 
-tags=Template, Template
+tags=plot, druck, pdf, telekom
 
 homepage=
 category=Plugins

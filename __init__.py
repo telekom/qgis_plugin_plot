@@ -9,17 +9,17 @@ from qgis.gui import QgisInterface
 from typing import Type
 
 # Edit this import and references in this file to new name
-from .plugin import PluginTemplate
+from .plugin import PluginPlot
 
 
-def get_class() -> Type[PluginTemplate]:
+def get_class() -> Type[PluginPlot]:
     """ returns plugin class """
 
-    return PluginTemplate
+    return PluginPlot
 
 
 # noinspection PyPep8Naming
-def classFactory(iface: QgisInterface, **kwargs: dict) -> PluginTemplate:  # pylint: disable=invalid-name
+def classFactory(iface: QgisInterface, **kwargs: dict) -> PluginPlot:  # pylint: disable=invalid-name
     """Loads this plugin an loads it. Automatically called by QGIS
 
     :param iface: A QGIS interface instance.
