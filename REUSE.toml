@@ -7,7 +7,7 @@ version = 1
 
 # No special copyrights, e.g. screenshots or config files:
 [[annotations]]
-path = ["**/.gitignore", "pytest.ini", "metadata.txt", "modules/examples/qgis_default_icons.txt", ".gitmodules"]
+path = ["**/.gitignore", "pytest.ini", "metadata.txt", "modules/examples/qgis_default_icons.txt", ".gitmodules, "docs/images/*.png"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "NONE"
 SPDX-License-Identifier = "GPL-3.0-only"
@@ -19,9 +19,30 @@ precedence = "aggregate"
 SPDX-FileCopyrightText = "2025 Deutsche Telekom Technik GmbH <f.vonstudsinske@telekom.de>"
 SPDX-License-Identifier = "GPL-3.0-only"
 
-# template icons
+# All ui files from the modules/plot:
 [[annotations]]
-path = ["templates/icons/icon.svg"]
+path = ["modules/plot/*.ui"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Deutsche Telekom Technik GmbH <f.vonstudsinske@telekom.de>"
+SPDX-License-Identifier = "GPL-3.0-only"
+
+# All translation related files:
+[[annotations]]
+path = ["i18n/*.qm", "i18n/*.ts"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Deutsche Telekom Technik GmbH <f.vonstudsinske@telekom.de>"
+SPDX-License-Identifier = "GPL-3.0-only"
+
+# templates/icons
+[[annotations]]
+path = ["templates/icons/icon.svg", "templates/icons/add_page_landscape.svg", "templates/icons/add_page_portrait.svg"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Deutsche Telekom Technik GmbH <f.vonstudsinske@telekom.de>"
+SPDX-License-Identifier = "GPL-3.0-only"
+
+# templates/plot
+[[annotations]]
+path = ["templates/plots/plot_layer_stil.qml", "templates/plots/public/*.qpt", "templates/plots/public/icon.svg", "templates/plots/public/plots.xml"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2025 Deutsche Telekom Technik GmbH <f.vonstudsinske@telekom.de>"
 SPDX-License-Identifier = "GPL-3.0-only"
