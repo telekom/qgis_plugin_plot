@@ -1,6 +1,6 @@
 name: 'Bug report'
 description: |
-  Submit a bug report about QGIS Template Plugin. Include a reproducible example and 
+  Submit a bug report about QGIS Plot Plugin. Include a reproducible example and 
   detailed environment information. For security vulnerabilities, use the security advisory form instead.
 title: '[BUG] <brief description>'
 labels: ['bug', 'triage-needed']
@@ -10,8 +10,8 @@ body:
     attributes:
       value: |
         Thank you for reporting a bug! Before submitting, please:
-        - Check the [documentation](https://github.com/telekom/qgis_plugin_template/tree/main/docs)
-        - Search [existing issues](https://github.com/telekom/qgis_plugin_template/issues) for similar reports
+        - Check the [documentation](https://github.com/telekom/qgis_plugin_plot/tree/main/docs)
+        - Search [existing issues](https://github.com/telekom/qgis_plugin_plot/issues) for similar reports
         - For security issues, email security@telekom.de instead of using this form
   
   - type: dropdown
@@ -20,6 +20,7 @@ body:
       label: Component
       description: Which component is affected?
       options:
+        - Source Code
         - Documentation
         - Other
     validations:
@@ -74,8 +75,9 @@ body:
       description: |
         Your setup details
       value: |
-        - **Python Version**: [e.g., 1.24]
+        - **Python Version**: [e.g., 3.9]
         - **OS/Platform**: [e.g., Ubuntu 22.04, macOS 14]
+        - **QGIS Version and Code revision**: [Copy from the QGIS desktop app (menu bar -> Help -> About -> Copy to Clipboard)]
       render: markdown
     validations:
       required: true
@@ -83,7 +85,7 @@ body:
   - type: dropdown
     id: qgis-plugin-base
     attributes:
-      label: QGIS Template Plugin Version
+      label: QGIS Plot Plugin Version
       description: What version are you running?
       options: 
         - main (development)
