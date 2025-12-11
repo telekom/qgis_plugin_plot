@@ -21,7 +21,7 @@ icons here :)
     keep file empty, to set up no logo
     telekom and compass are reserved names
     name is the id from layout
-    <icon name="item_company_icon" file="telekom"/>
+    <icon name="item_company_icon" file="company.svg"/>
     <icon name="item_map_rotation_icon" file="plot_compass.png"/>
 </icons>
 
