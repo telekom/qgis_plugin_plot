@@ -33,7 +33,7 @@
     </data_defined_properties>
    </layer>
   </symbol>
-  <LayoutItem visibility="1" templateUuid="{bd56cb10-9177-4b84-8bc4-90fe64a244a8}" background="true" zValue="0" excludeFromExports="0" referencePoint="0" position="0,0,mm" size="297,210,mm" opacity="1" id="" positionOnPage="0,0,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{bd56cb10-9177-4b84-8bc4-90fe64a244a8}" frame="false" type="65638" positionLock="false">
+  <LayoutItem visibility="1" templateUuid="{c8cac0ba-f595-4e83-a9f7-1c0b619bc936}" background="true" zValue="0" excludeFromExports="0" referencePoint="0" position="0,0,mm" size="297,210,mm" opacity="1" id="" positionOnPage="0,0,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{c8cac0ba-f595-4e83-a9f7-1c0b619bc936}" frame="false" type="65638" positionLock="false">
    <FrameColor green="0" red="0" blue="0" alpha="255"/>
    <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
    <LayoutObject>
@@ -82,7 +82,7 @@
   </LayoutItem>
   <GuideCollection visible="1"/>
  </PageCollection>
- <LayoutItem visibility="1" templateUuid="{2493adfd-6c4a-4b96-86af-8243f48fa0d2}" background="false" htmlState="0" zValue="179" excludeFromExports="0" referencePoint="0" position="178.52,184.474,mm" size="51.7416,5.5144,mm" opacity="1" halign="8" id="item_page_text_strasse" marginX="0" positionOnPage="178.52,184.474,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="#Gekürzte Straßenbezeichnung, bspw. &quot;Str.&quot;" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{2493adfd-6c4a-4b96-86af-8243f48fa0d2}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{d7dab3d4-2385-4e42-b209-89c52b3ad28c}" background="false" htmlState="0" zValue="179" excludeFromExports="0" referencePoint="0" position="178.52,184.474,mm" size="51.7416,5.5144,mm" opacity="1" halign="8" id="item_page_text_strasse" marginX="0" positionOnPage="178.52,184.474,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="#Gekürzte Straßenbezeichnung, bspw. &quot;Str.&quot;" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{d7dab3d4-2385-4e42-b209-89c52b3ad28c}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -97,7 +97,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -144,7 +144,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{4cfbbccc-1191-4046-9b35-cd6c236f7455}" background="false" htmlState="0" zValue="145" excludeFromExports="0" referencePoint="0" position="154.051,184.474,mm" size="24.1696,5.5144,mm" opacity="1" halign="8" id="item_static_text_strasse" marginX="0" positionOnPage="154.051,184.474,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="3#Straße:" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{4cfbbccc-1191-4046-9b35-cd6c236f7455}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{aee532ec-c90f-407c-b55e-dc0e5f7be579}" background="false" htmlState="0" zValue="145" excludeFromExports="0" referencePoint="0" position="154.051,184.474,mm" size="24.1696,5.5144,mm" opacity="1" halign="8" id="item_static_text_strasse" marginX="0" positionOnPage="154.051,184.474,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="3#Straße:" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{aee532ec-c90f-407c-b55e-dc0e5f7be579}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -159,7 +159,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -206,7 +206,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{f91bab77-7c4d-4a48-957f-10f1e803db9a}" background="false" htmlState="0" zValue="141" excludeFromExports="0" referencePoint="0" position="5.27974,189.015,mm" size="83.0936,16.8952,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="5.27974,189.015,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Kurzer Titel (ein Wort)" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{f91bab77-7c4d-4a48-957f-10f1e803db9a}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{529f23a5-a431-4a80-afa5-5a52a41025ee}" background="false" htmlState="0" zValue="141" excludeFromExports="0" referencePoint="0" position="5.27974,189.015,mm" size="83.0936,16.8952,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="5.27974,189.015,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Kurzer Titel (ein Wort)" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{529f23a5-a431-4a80-afa5-5a52a41025ee}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -221,7 +221,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -268,7 +268,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{c6093275-3a98-4b62-a656-c0a7c6330d9f}" background="false" htmlState="0" zValue="140" excludeFromExports="0" referencePoint="0" position="178.52,178.659,mm" size="51.7416,5.5144,mm" opacity="1" halign="8" id="item_page_text_nvt" marginX="0" positionOnPage="178.52,178.659,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="*[0-9]{1,3}[A-Z]{1,3}[0-9]{1,6}" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{c6093275-3a98-4b62-a656-c0a7c6330d9f}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{72045954-b844-479f-81a6-c6e0df62a775}" background="false" htmlState="0" zValue="140" excludeFromExports="0" referencePoint="0" position="178.52,178.659,mm" size="51.7416,5.5144,mm" opacity="1" halign="8" id="item_page_text_nvt" marginX="0" positionOnPage="178.52,178.659,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="*[0-9]{1,3}[A-Z]{1,3}[0-9]{1,6}" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{72045954-b844-479f-81a6-c6e0df62a775}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -283,7 +283,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -330,7 +330,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{2a6464f7-ecfc-4fb8-ad05-e05639b93c62}" background="false" htmlState="0" zValue="113" excludeFromExports="0" referencePoint="0" position="91.1638,189.015,mm" size="45.2299,17.2472,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="91.1638,189.015,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Kurzer Titel für aktuelle Seite (Nur Übersichtsseite)&#xa;Item: item_title" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{2a6464f7-ecfc-4fb8-ad05-e05639b93c62}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{87dbf5e3-5b5b-4330-ad48-4dd46197a9a3}" background="false" htmlState="0" zValue="113" excludeFromExports="0" referencePoint="0" position="91.1638,189.015,mm" size="45.2299,17.2472,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="91.1638,189.015,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Kurzer Titel für aktuelle Seite (Nur Übersichtsseite)&#xa;Item: item_title" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{87dbf5e3-5b5b-4330-ad48-4dd46197a9a3}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -345,7 +345,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -392,7 +392,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{0c538cfe-646f-490d-8686-49d0ef0682ee}" background="false" htmlState="0" zValue="106" excludeFromExports="0" referencePoint="0" position="154.051,178.659,mm" size="24.1696,5.5144,mm" opacity="1" halign="8" id="item_static_text_nvt" marginX="0" positionOnPage="154.051,178.659,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="2#NVT:" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{0c538cfe-646f-490d-8686-49d0ef0682ee}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{c4ec9d14-1fba-4df0-8615-27b43dcb0d3e}" background="false" htmlState="0" zValue="106" excludeFromExports="0" referencePoint="0" position="154.051,178.659,mm" size="24.1696,5.5144,mm" opacity="1" halign="8" id="item_static_text_nvt" marginX="0" positionOnPage="154.051,178.659,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="2#NVT:" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{c4ec9d14-1fba-4df0-8615-27b43dcb0d3e}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -407,7 +407,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -454,7 +454,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{9c47d314-bfba-4f11-82df-ab2e624774fa}" background="false" htmlState="0" zValue="103" excludeFromExports="0" referencePoint="0" position="178.52,172.845,mm" size="51.7416,5.5144,mm" opacity="1" halign="8" id="item_page_text_onb" marginX="0" positionOnPage="178.52,172.845,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="*[0-9]{1,6}" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{9c47d314-bfba-4f11-82df-ab2e624774fa}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{9405bfb0-7051-4eba-804d-f72fd6a15f13}" background="false" htmlState="0" zValue="103" excludeFromExports="0" referencePoint="0" position="178.52,172.845,mm" size="51.7416,5.5144,mm" opacity="1" halign="8" id="item_page_text_onb" marginX="0" positionOnPage="178.52,172.845,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="*[0-9]{1,6}" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{9405bfb0-7051-4eba-804d-f72fd6a15f13}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -469,7 +469,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -516,7 +516,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{8bf3c166-d161-4a3a-9d27-de096e988217}" background="false" htmlState="0" zValue="91" excludeFromExports="0" referencePoint="0" position="238.951,72.2025,mm" size="51.3,11.3774,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="238.951,72.2025,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Übersichtsseite wird nicht gezählt." valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{8bf3c166-d161-4a3a-9d27-de096e988217}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{f5637e8b-4811-4176-8054-d520ce8c1b73}" background="false" htmlState="0" zValue="91" excludeFromExports="0" referencePoint="0" position="238.951,72.2025,mm" size="51.3,11.3774,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="238.951,72.2025,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Übersichtsseite wird nicht gezählt." valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{f5637e8b-4811-4176-8054-d520ce8c1b73}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -531,7 +531,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -578,7 +578,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{dbe76d0e-8d0c-4405-a807-3eab7f39d7c7}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="88" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="179.687,147.521,mm" size="19.271,1.58394,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="179.687,147.521,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{dbe76d0e-8d0c-4405-a807-3eab7f39d7c7}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{e67b1b19-eef0-4d6c-a3e1-6a3ba9f03c42}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="88" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="179.687,147.521,mm" size="19.271,1.58394,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="179.687,147.521,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{e67b1b19-eef0-4d6c-a3e1-6a3ba9f03c42}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -645,7 +645,7 @@
    <node y="1.58394" x="19.271"/>
   </nodes>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{d1ead329-95f0-4ad7-ba49-07fb9dbc1628}" background="false" htmlState="0" zValue="86" excludeFromExports="0" referencePoint="0" position="152.584,142.267,mm" size="39.0702,23.0549,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="152.584,142.267,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Legende für aktuelle Karte&#xa;Item: item_legend" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{d1ead329-95f0-4ad7-ba49-07fb9dbc1628}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{98522d76-a037-4caf-9310-703bab86e8ae}" background="false" htmlState="0" zValue="86" excludeFromExports="0" referencePoint="0" position="152.584,142.267,mm" size="39.0702,23.0549,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="152.584,142.267,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Legende für aktuelle Karte&#xa;Item: item_legend" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{98522d76-a037-4caf-9310-703bab86e8ae}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -660,7 +660,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -707,7 +707,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{149119bc-3da4-4c5a-9f68-73d976ac9367}" background="false" htmlState="0" zValue="75" excludeFromExports="0" referencePoint="0" position="152.584,195.496,mm" size="78.251,12.9988,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="152.584,195.496,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Suffix hinter &quot;item_static_text_&quot; und &quot;item_page_text_&quot; bilden dann die Gruppe." valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{149119bc-3da4-4c5a-9f68-73d976ac9367}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{fe52bb87-e274-44bb-8b61-5ecd286103ef}" background="false" htmlState="0" zValue="75" excludeFromExports="0" referencePoint="0" position="152.584,195.496,mm" size="78.251,12.9988,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="152.584,195.496,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Suffix hinter &quot;item_static_text_&quot; und &quot;item_page_text_&quot; bilden dann die Gruppe." valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{fe52bb87-e274-44bb-8b61-5ecd286103ef}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -722,7 +722,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -769,7 +769,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{29b6035b-7803-4d38-b385-b85e4e2a6186}" background="false" htmlState="0" zValue="69" excludeFromExports="0" referencePoint="0" position="154.051,172.845,mm" size="24.1696,5.5144,mm" opacity="1" halign="8" id="item_static_text_onb" marginX="0" positionOnPage="154.051,172.845,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="1#ONB:" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{29b6035b-7803-4d38-b385-b85e4e2a6186}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{98c9df40-0137-42b6-b2a6-0ef60b943bf0}" background="false" htmlState="0" zValue="69" excludeFromExports="0" referencePoint="0" position="154.051,172.845,mm" size="24.1696,5.5144,mm" opacity="1" halign="8" id="item_static_text_onb" marginX="0" positionOnPage="154.051,172.845,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="1#ONB:" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{98c9df40-0137-42b6-b2a6-0ef60b943bf0}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -784,7 +784,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -831,7 +831,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{cb1d8374-2c65-46d8-bc5a-139b18564790}" background="false" htmlState="0" zValue="68" excludeFromExports="0" referencePoint="0" position="178.52,167.031,mm" size="51.7416,5.5144,mm" opacity="1" halign="8" id="" marginX="0" positionOnPage="178.52,167.031,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Wert.&#xa;Mit * erzeugt Regex, sonst ist Freitext" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{cb1d8374-2c65-46d8-bc5a-139b18564790}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{1af15a96-cbe2-4635-a3e4-cbce1d57ae63}" background="false" htmlState="0" zValue="68" excludeFromExports="0" referencePoint="0" position="178.52,167.031,mm" size="51.7416,5.5144,mm" opacity="1" halign="8" id="" marginX="0" positionOnPage="178.52,167.031,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Wert.&#xa;Mit * erzeugt Regex, sonst ist Freitext" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{1af15a96-cbe2-4635-a3e4-cbce1d57ae63}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -846,7 +846,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -893,7 +893,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{9b4926ee-ea57-4ff7-86ea-f6ff0aaf5050}" background="false" htmlState="0" zValue="65" excludeFromExports="0" referencePoint="0" position="198.343,43.5939,mm" size="39.0702,10.2075,mm" opacity="1" halign="8" id="item_date" marginX="0" positionOnPage="198.343,43.5939,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="22.09.2021" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{9b4926ee-ea57-4ff7-86ea-f6ff0aaf5050}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{716483d9-adb6-4426-894a-4cc64a54240f}" background="false" htmlState="0" zValue="65" excludeFromExports="0" referencePoint="0" position="198.343,43.5939,mm" size="39.0702,10.2075,mm" opacity="1" halign="8" id="item_date" marginX="0" positionOnPage="198.343,43.5939,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="22.09.2021" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{716483d9-adb6-4426-894a-4cc64a54240f}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -908,7 +908,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -955,7 +955,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{c62ba113-a102-4acf-b2d0-a9d8541324ba}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="64" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="179.687,124.166,mm" size="19.271,1.58394,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="179.687,124.166,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{c62ba113-a102-4acf-b2d0-a9d8541324ba}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{e1fbf471-ec6e-481f-9d19-ecc831171faf}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="64" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="179.687,124.166,mm" size="19.271,1.58394,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="179.687,124.166,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{e1fbf471-ec6e-481f-9d19-ecc831171faf}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1022,7 +1022,7 @@
    <node y="1.58394" x="19.271"/>
   </nodes>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{0080b7c3-4b91-4328-a723-050fa078990c}" background="false" htmlState="0" zValue="62" excludeFromExports="0" referencePoint="0" position="152.584,118.912,mm" size="39.0702,23.0549,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="152.584,118.912,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Maßstabslinie für Karte.&#xa;Item: item_map_scale_bar" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{0080b7c3-4b91-4328-a723-050fa078990c}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{ff44bd68-6a31-4263-b069-215e1f362215}" background="false" htmlState="0" zValue="62" excludeFromExports="0" referencePoint="0" position="152.584,118.912,mm" size="39.0702,23.0549,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="152.584,118.912,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Maßstabslinie für Karte.&#xa;Item: item_map_scale_bar" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{ff44bd68-6a31-4263-b069-215e1f362215}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1037,7 +1037,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -1084,7 +1084,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{26d1df4e-37b5-4602-b817-ed2adcacbdce}" background="false" zValue="58" excludeFromExports="0" multiFrame="{79f5f4bf-106e-4eb5-a370-1ba5ad8a89d4}" sectionWidth="39.0702" multiFrameTemplateUuid="{79f5f4bf-106e-4eb5-a370-1ba5ad8a89d4}" hideBackgroundIfEmpty="0" referencePoint="0" sectionY="0" position="250.436,30.7465,mm" size="39.0702,23.0549,mm" opacity="1" id="" positionOnPage="250.436,30.7465,mm" itemRotation="0" outlineWidthM="0.3,mm" hidePageIfEmpty="0" frameJoinStyle="miter" blendMode="0" sectionX="0" groupUuid="" uuid="{26d1df4e-37b5-4602-b817-ed2adcacbdce}" sectionHeight="23.0549" frame="true" type="65647" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{874c1999-60ab-44ec-85cf-7aff65b54373}" background="false" zValue="58" excludeFromExports="0" multiFrame="{79f5f4bf-106e-4eb5-a370-1ba5ad8a89d4}" sectionWidth="39.0702" multiFrameTemplateUuid="{79f5f4bf-106e-4eb5-a370-1ba5ad8a89d4}" hideBackgroundIfEmpty="0" referencePoint="0" sectionY="0" position="250.436,30.7465,mm" size="39.0702,23.0549,mm" opacity="1" id="" positionOnPage="250.436,30.7465,mm" itemRotation="0" outlineWidthM="0.3,mm" hidePageIfEmpty="0" frameJoinStyle="miter" blendMode="0" sectionX="0" groupUuid="" uuid="{874c1999-60ab-44ec-85cf-7aff65b54373}" sectionHeight="23.0549" frame="true" type="65647" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1100,7 +1100,7 @@
    </customproperties>
   </LayoutObject>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{704fd812-dcb1-494b-b5b2-595a34b899a6}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="55" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="77.0399,196.494,mm" size="24.5508,0.817954,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="77.0399,196.494,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{704fd812-dcb1-494b-b5b2-595a34b899a6}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{5f9810de-751f-4c51-abec-8841a6dea3c6}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="55" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="77.0399,196.494,mm" size="24.5508,0.817954,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="77.0399,196.494,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{5f9810de-751f-4c51-abec-8841a6dea3c6}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1167,7 +1167,7 @@
    <node y="0.817954" x="0"/>
   </nodes>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{a482de3e-3dbe-4519-91e0-5727f92c7af1}" background="false" htmlState="0" zValue="50" excludeFromExports="0" referencePoint="0" position="198.343,95.5574,mm" size="39.0702,9.2926,mm" opacity="1" halign="8" id="item_map_scale_text" marginX="0" positionOnPage="198.343,95.5574,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="1:500" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{a482de3e-3dbe-4519-91e0-5727f92c7af1}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{ac804777-db31-4dfe-a6a5-a8ea377b581c}" background="false" htmlState="0" zValue="50" excludeFromExports="0" referencePoint="0" position="198.343,95.5574,mm" size="39.0702,9.2926,mm" opacity="1" halign="8" id="item_map_scale_text" marginX="0" positionOnPage="198.343,95.5574,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="1:500" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{ac804777-db31-4dfe-a6a5-a8ea377b581c}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1182,7 +1182,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -1229,7 +1229,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{1ce4254b-4c61-4033-866b-42908727e0e7}" background="false" htmlState="0" zValue="46" excludeFromExports="0" referencePoint="0" position="230.985,165.695,mm" size="61.21,37.2569,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="230.985,165.695,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Zahl + # + Text&#xa;Zahl ist Sortierung in Plotmenü.&#xa;Es wird nur der Text hinter # im Druck angezeigt werden.&#xa;&#xa;Trennzeichen: |&#xa;* gibt RegEx vor (python)&#xa;# gibt ToolTip und Placeholder Text für Lineedit vor" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{1ce4254b-4c61-4033-866b-42908727e0e7}" frame="false" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{fe2dc157-6b44-46fa-9397-188937000d0d}" background="false" htmlState="0" zValue="46" excludeFromExports="0" referencePoint="0" position="230.985,165.695,mm" size="61.21,37.2569,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="230.985,165.695,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Zahl + # + Text&#xa;Zahl ist Sortierung in Plotmenü.&#xa;Es wird nur der Text hinter # im Druck angezeigt werden.&#xa;&#xa;Trennzeichen: |&#xa;* gibt RegEx vor (python)&#xa;# gibt ToolTip und Placeholder Text für Lineedit vor" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{fe2dc157-6b44-46fa-9397-188937000d0d}" frame="false" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1244,7 +1244,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -1291,136 +1291,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{3b0256e2-b531-4bdd-9117-f5bb6ae98331}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="45" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="179.687,100.811,mm" size="27.8066,1.58394,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="179.687,100.811,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{3b0256e2-b531-4bdd-9117-f5bb6ae98331}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
-  <FrameColor green="0" red="0" blue="0" alpha="255"/>
-  <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
-  <LayoutObject>
-   <dataDefinedProperties>
-    <Option type="Map">
-     <Option name="name" type="QString" value=""/>
-     <Option name="properties"/>
-     <Option name="type" type="QString" value="collection"/>
-    </Option>
-   </dataDefinedProperties>
-   <customproperties>
-    <Option/>
-   </customproperties>
-  </LayoutObject>
-  <symbol name="" clip_to_extent="1" type="line" force_rhr="0" frame_rate="10" is_animated="0" alpha="1">
-   <data_defined_properties>
-    <Option type="Map">
-     <Option name="name" type="QString" value=""/>
-     <Option name="properties"/>
-     <Option name="type" type="QString" value="collection"/>
-    </Option>
-   </data_defined_properties>
-   <layer id="{aab8618e-6148-4f06-9d2f-c30da13053a8}" class="SimpleLine" pass="0" enabled="1" locked="0">
-    <Option type="Map">
-     <Option name="align_dash_pattern" type="QString" value="0"/>
-     <Option name="capstyle" type="QString" value="square"/>
-     <Option name="customdash" type="QString" value="5;2"/>
-     <Option name="customdash_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-     <Option name="customdash_unit" type="QString" value="MM"/>
-     <Option name="dash_pattern_offset" type="QString" value="0"/>
-     <Option name="dash_pattern_offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-     <Option name="dash_pattern_offset_unit" type="QString" value="MM"/>
-     <Option name="draw_inside_polygon" type="QString" value="0"/>
-     <Option name="joinstyle" type="QString" value="bevel"/>
-     <Option name="line_color" type="QString" value="0,0,0,255,rgb:0,0,0,1"/>
-     <Option name="line_style" type="QString" value="solid"/>
-     <Option name="line_width" type="QString" value="0.3"/>
-     <Option name="line_width_unit" type="QString" value="MM"/>
-     <Option name="offset" type="QString" value="0"/>
-     <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-     <Option name="offset_unit" type="QString" value="MM"/>
-     <Option name="ring_filter" type="QString" value="0"/>
-     <Option name="trim_distance_end" type="QString" value="0"/>
-     <Option name="trim_distance_end_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-     <Option name="trim_distance_end_unit" type="QString" value="MM"/>
-     <Option name="trim_distance_start" type="QString" value="0"/>
-     <Option name="trim_distance_start_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-     <Option name="trim_distance_start_unit" type="QString" value="MM"/>
-     <Option name="tweak_dash_pattern_on_corners" type="QString" value="0"/>
-     <Option name="use_custom_dash" type="QString" value="0"/>
-     <Option name="width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-    </Option>
-    <data_defined_properties>
-     <Option type="Map">
-      <Option name="name" type="QString" value=""/>
-      <Option name="properties"/>
-      <Option name="type" type="QString" value="collection"/>
-     </Option>
-    </data_defined_properties>
-   </layer>
-  </symbol>
-  <nodes>
-   <node y="0" x="0"/>
-   <node y="1.58394" x="27.8066"/>
-  </nodes>
- </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{3fc10a36-5da3-456f-a829-e73d3ffa453b}" background="false" htmlState="0" zValue="45" excludeFromExports="0" referencePoint="0" position="245.86,107.235,mm" size="50.9897,17.5731,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="245.86,107.235,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Kompass / Nordpfeil&#xa;&#xa;Item: item_map_rotation_icon" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{3fc10a36-5da3-456f-a829-e73d3ffa453b}" frame="true" type="65641" marginY="0" positionLock="false">
-  <FrameColor green="0" red="0" blue="0" alpha="255"/>
-  <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
-  <LayoutObject>
-   <dataDefinedProperties>
-    <Option type="Map">
-     <Option name="name" type="QString" value=""/>
-     <Option name="properties"/>
-     <Option name="type" type="QString" value="collection"/>
-    </Option>
-   </dataDefinedProperties>
-   <customproperties>
-    <Option/>
-   </customproperties>
-  </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
-   <families/>
-   <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
-   <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
-   <background shapeOffsetUnit="MM" shapeBorderWidth="0" shapeOpacity="1" shapeSizeUnit="MM" shapeSizeX="0" shapeSizeType="0" shapeFillColor="255,255,255,255,rgb:1,1,1,1" shapeBlendMode="0" shapeOffsetX="0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeRadiiX="0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidthUnit="MM" shapeJoinStyle="64" shapeDraw="0" shapeSVGFile="" shapeBorderColor="128,128,128,255,rgb:0.50196078431372548,0.50196078431372548,0.50196078431372548,1" shapeType="0" shapeSizeY="0" shapeRotation="0" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetY="0" shapeRadiiY="0" shapeRotationType="0" shapeRadiiUnit="MM" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0">
-    <symbol name="fillSymbol" clip_to_extent="1" type="fill" force_rhr="0" frame_rate="10" is_animated="0" alpha="1">
-     <data_defined_properties>
-      <Option type="Map">
-       <Option name="name" type="QString" value=""/>
-       <Option name="properties"/>
-       <Option name="type" type="QString" value="collection"/>
-      </Option>
-     </data_defined_properties>
-     <layer id="" class="SimpleFill" pass="0" enabled="1" locked="0">
-      <Option type="Map">
-       <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-       <Option name="color" type="QString" value="255,255,255,255,rgb:1,1,1,1"/>
-       <Option name="joinstyle" type="QString" value="bevel"/>
-       <Option name="offset" type="QString" value="0,0"/>
-       <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-       <Option name="offset_unit" type="QString" value="MM"/>
-       <Option name="outline_color" type="QString" value="128,128,128,255,rgb:0.50196078431372548,0.50196078431372548,0.50196078431372548,1"/>
-       <Option name="outline_style" type="QString" value="no"/>
-       <Option name="outline_width" type="QString" value="0"/>
-       <Option name="outline_width_unit" type="QString" value="MM"/>
-       <Option name="style" type="QString" value="solid"/>
-      </Option>
-      <data_defined_properties>
-       <Option type="Map">
-        <Option name="name" type="QString" value=""/>
-        <Option name="properties"/>
-        <Option name="type" type="QString" value="collection"/>
-       </Option>
-      </data_defined_properties>
-     </layer>
-    </symbol>
-   </background>
-   <shadow shadowOffsetDist="1" shadowUnder="0" shadowOffsetUnit="MM" shadowScale="100" shadowBlendMode="6" shadowOffsetGlobal="1" shadowRadiusUnit="MM" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowColor="0,0,0,255,rgb:0,0,0,1" shadowOpacity="0.69999999999999996" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowOffsetAngle="135" shadowRadius="1.5" shadowDraw="0" shadowRadiusAlphaOnly="0"/>
-   <dd_properties>
-    <Option type="Map">
-     <Option name="name" type="QString" value=""/>
-     <Option name="properties"/>
-     <Option name="type" type="QString" value="collection"/>
-    </Option>
-   </dd_properties>
-  </text-style>
- </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{d186ca84-d6a3-45b1-8866-06825b190487}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="45" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="250.812,123.486,mm" size="11.6941,7.60099,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="250.812,123.486,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{d186ca84-d6a3-45b1-8866-06825b190487}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{3f7cfcb8-cb7b-4351-8eda-acc6d613dfcf}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="45" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="250.812,123.486,mm" size="11.6941,7.60099,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="250.812,123.486,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{3f7cfcb8-cb7b-4351-8eda-acc6d613dfcf}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1487,7 +1358,7 @@
    <node y="7.60099" x="11.6941"/>
   </nodes>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{3f7cea55-c807-4489-91c9-93de852ca877}" background="false" file="arrows/NorthArrow_02.svg" zValue="44" excludeFromExports="0" anchorPoint="0" referencePoint="0" northMode="0" position="257.981,126.05,mm" size="29.1296,27.5945,mm" opacity="1" pictureHeight="27.5945" svgBorderColor="0,0,0,255,rgb:0,0,0,1" id="item_map_rotation_icon" positionOnPage="257.981,126.05,mm" itemRotation="0" outlineWidthM="0.3,mm" svgBorderWidth="0.2" northOffset="0" svgFillColor="255,255,255,255,rgb:1,1,1,1" mode="0" frameJoinStyle="miter" blendMode="0" groupUuid="" resizeMode="0" uuid="{3f7cea55-c807-4489-91c9-93de852ca877}" pictureWidth="17.3532" pictureRotation="0" frame="true" type="65640" mapUuid="" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{62be9a33-7d28-4bfb-a6b3-34441f86e63e}" background="false" htmlState="0" zValue="45" excludeFromExports="0" referencePoint="0" position="245.86,107.235,mm" size="50.9897,17.5731,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="245.86,107.235,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Kompass / Nordpfeil&#xa;&#xa;Item: item_map_rotation_icon" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{62be9a33-7d28-4bfb-a6b3-34441f86e63e}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1502,23 +1373,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
- </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{27349f52-3caa-4fd1-80fe-84daabb805fb}" background="false" htmlState="0" zValue="43" excludeFromExports="0" referencePoint="0" position="152.584,95.5574,mm" size="39.0702,23.0549,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="152.584,95.5574,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Maßstab der Karte.&#xa;Item: item_map_scale_text" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{27349f52-3caa-4fd1-80fe-84daabb805fb}" frame="true" type="65641" marginY="0" positionLock="false">
-  <FrameColor green="0" red="0" blue="0" alpha="255"/>
-  <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
-  <LayoutObject>
-   <dataDefinedProperties>
-    <Option type="Map">
-     <Option name="name" type="QString" value=""/>
-     <Option name="properties"/>
-     <Option name="type" type="QString" value="collection"/>
-    </Option>
-   </dataDefinedProperties>
-   <customproperties>
-    <Option/>
-   </customproperties>
-  </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -1565,7 +1420,152 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{6599b382-8762-4711-a8ce-ea6ae838b200}" background="true" labelMargin="0,mm" zValue="42" excludeFromExports="0" mapFlags="0" enableZRange="0" referencePoint="0" drawCanvasItems="true" keepLayerSet="false" position="5.12974,165.622,mm" size="82.6639,18.4521,mm" opacity="1" followPresetName="" isTemporal="0" id="item_minimap" positionOnPage="5.12974,165.622,mm" itemRotation="0" outlineWidthM="0.3,mm" mapRotation="0" followPreset="false" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{6599b382-8762-4711-a8ce-ea6ae838b200}" frame="true" type="65639" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{7669493e-311b-43d3-8fc6-cb8ade8a00ce}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="45" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="179.687,100.811,mm" size="27.8066,1.58394,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="179.687,100.811,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{7669493e-311b-43d3-8fc6-cb8ade8a00ce}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
+  <FrameColor green="0" red="0" blue="0" alpha="255"/>
+  <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option name="name" type="QString" value=""/>
+     <Option name="properties"/>
+     <Option name="type" type="QString" value="collection"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties>
+    <Option/>
+   </customproperties>
+  </LayoutObject>
+  <symbol name="" clip_to_extent="1" type="line" force_rhr="0" frame_rate="10" is_animated="0" alpha="1">
+   <data_defined_properties>
+    <Option type="Map">
+     <Option name="name" type="QString" value=""/>
+     <Option name="properties"/>
+     <Option name="type" type="QString" value="collection"/>
+    </Option>
+   </data_defined_properties>
+   <layer id="{aab8618e-6148-4f06-9d2f-c30da13053a8}" class="SimpleLine" pass="0" enabled="1" locked="0">
+    <Option type="Map">
+     <Option name="align_dash_pattern" type="QString" value="0"/>
+     <Option name="capstyle" type="QString" value="square"/>
+     <Option name="customdash" type="QString" value="5;2"/>
+     <Option name="customdash_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+     <Option name="customdash_unit" type="QString" value="MM"/>
+     <Option name="dash_pattern_offset" type="QString" value="0"/>
+     <Option name="dash_pattern_offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+     <Option name="dash_pattern_offset_unit" type="QString" value="MM"/>
+     <Option name="draw_inside_polygon" type="QString" value="0"/>
+     <Option name="joinstyle" type="QString" value="bevel"/>
+     <Option name="line_color" type="QString" value="0,0,0,255,rgb:0,0,0,1"/>
+     <Option name="line_style" type="QString" value="solid"/>
+     <Option name="line_width" type="QString" value="0.3"/>
+     <Option name="line_width_unit" type="QString" value="MM"/>
+     <Option name="offset" type="QString" value="0"/>
+     <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+     <Option name="offset_unit" type="QString" value="MM"/>
+     <Option name="ring_filter" type="QString" value="0"/>
+     <Option name="trim_distance_end" type="QString" value="0"/>
+     <Option name="trim_distance_end_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+     <Option name="trim_distance_end_unit" type="QString" value="MM"/>
+     <Option name="trim_distance_start" type="QString" value="0"/>
+     <Option name="trim_distance_start_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+     <Option name="trim_distance_start_unit" type="QString" value="MM"/>
+     <Option name="tweak_dash_pattern_on_corners" type="QString" value="0"/>
+     <Option name="use_custom_dash" type="QString" value="0"/>
+     <Option name="width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+    </Option>
+    <data_defined_properties>
+     <Option type="Map">
+      <Option name="name" type="QString" value=""/>
+      <Option name="properties"/>
+      <Option name="type" type="QString" value="collection"/>
+     </Option>
+    </data_defined_properties>
+   </layer>
+  </symbol>
+  <nodes>
+   <node y="0" x="0"/>
+   <node y="1.58394" x="27.8066"/>
+  </nodes>
+ </LayoutItem>
+ <LayoutItem visibility="1" templateUuid="{bec1ce82-1223-4e0a-b89b-0b3b41ba75ae}" background="false" file="arrows/NorthArrow_02.svg" zValue="44" excludeFromExports="0" anchorPoint="0" referencePoint="0" northMode="0" position="257.981,126.05,mm" size="29.1296,27.5945,mm" opacity="1" pictureHeight="27.5945" svgBorderColor="0,0,0,255,rgb:0,0,0,1" id="item_map_rotation_icon" positionOnPage="257.981,126.05,mm" itemRotation="0" outlineWidthM="0.3,mm" svgBorderWidth="0.2" northOffset="0" svgFillColor="255,255,255,255,rgb:1,1,1,1" mode="0" frameJoinStyle="miter" blendMode="0" groupUuid="" resizeMode="0" uuid="{bec1ce82-1223-4e0a-b89b-0b3b41ba75ae}" pictureWidth="17.3532" pictureRotation="0" frame="true" type="65640" mapUuid="" positionLock="false">
+  <FrameColor green="0" red="0" blue="0" alpha="255"/>
+  <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option name="name" type="QString" value=""/>
+     <Option name="properties"/>
+     <Option name="type" type="QString" value="collection"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties>
+    <Option/>
+   </customproperties>
+  </LayoutObject>
+ </LayoutItem>
+ <LayoutItem visibility="1" templateUuid="{5d6c5fad-ded0-4c9a-96ee-c5ba7732adb9}" background="false" htmlState="0" zValue="43" excludeFromExports="0" referencePoint="0" position="152.584,95.5574,mm" size="39.0702,23.0549,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="152.584,95.5574,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Maßstab der Karte.&#xa;Item: item_map_scale_text" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{5d6c5fad-ded0-4c9a-96ee-c5ba7732adb9}" frame="true" type="65641" marginY="0" positionLock="false">
+  <FrameColor green="0" red="0" blue="0" alpha="255"/>
+  <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option name="name" type="QString" value=""/>
+     <Option name="properties"/>
+     <Option name="type" type="QString" value="collection"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties>
+    <Option/>
+   </customproperties>
+  </LayoutObject>
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
+   <families/>
+   <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
+   <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
+   <background shapeOffsetUnit="MM" shapeBorderWidth="0" shapeOpacity="1" shapeSizeUnit="MM" shapeSizeX="0" shapeSizeType="0" shapeFillColor="255,255,255,255,rgb:1,1,1,1" shapeBlendMode="0" shapeOffsetX="0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeRadiiX="0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidthUnit="MM" shapeJoinStyle="64" shapeDraw="0" shapeSVGFile="" shapeBorderColor="128,128,128,255,rgb:0.50196078431372548,0.50196078431372548,0.50196078431372548,1" shapeType="0" shapeSizeY="0" shapeRotation="0" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetY="0" shapeRadiiY="0" shapeRotationType="0" shapeRadiiUnit="MM" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0">
+    <symbol name="fillSymbol" clip_to_extent="1" type="fill" force_rhr="0" frame_rate="10" is_animated="0" alpha="1">
+     <data_defined_properties>
+      <Option type="Map">
+       <Option name="name" type="QString" value=""/>
+       <Option name="properties"/>
+       <Option name="type" type="QString" value="collection"/>
+      </Option>
+     </data_defined_properties>
+     <layer id="" class="SimpleFill" pass="0" enabled="1" locked="0">
+      <Option type="Map">
+       <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+       <Option name="color" type="QString" value="255,255,255,255,rgb:1,1,1,1"/>
+       <Option name="joinstyle" type="QString" value="bevel"/>
+       <Option name="offset" type="QString" value="0,0"/>
+       <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+       <Option name="offset_unit" type="QString" value="MM"/>
+       <Option name="outline_color" type="QString" value="128,128,128,255,rgb:0.50196078431372548,0.50196078431372548,0.50196078431372548,1"/>
+       <Option name="outline_style" type="QString" value="no"/>
+       <Option name="outline_width" type="QString" value="0"/>
+       <Option name="outline_width_unit" type="QString" value="MM"/>
+       <Option name="style" type="QString" value="solid"/>
+      </Option>
+      <data_defined_properties>
+       <Option type="Map">
+        <Option name="name" type="QString" value=""/>
+        <Option name="properties"/>
+        <Option name="type" type="QString" value="collection"/>
+       </Option>
+      </data_defined_properties>
+     </layer>
+    </symbol>
+   </background>
+   <shadow shadowOffsetDist="1" shadowUnder="0" shadowOffsetUnit="MM" shadowScale="100" shadowBlendMode="6" shadowOffsetGlobal="1" shadowRadiusUnit="MM" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowColor="0,0,0,255,rgb:0,0,0,1" shadowOpacity="0.69999999999999996" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowOffsetAngle="135" shadowRadius="1.5" shadowDraw="0" shadowRadiusAlphaOnly="0"/>
+   <dd_properties>
+    <Option type="Map">
+     <Option name="name" type="QString" value=""/>
+     <Option name="properties"/>
+     <Option name="type" type="QString" value="collection"/>
+    </Option>
+   </dd_properties>
+  </text-style>
+ </LayoutItem>
+ <LayoutItem visibility="1" templateUuid="{7c3a5266-33e3-4bff-bf22-e397d7764787}" background="true" labelMargin="0,mm" zValue="42" excludeFromExports="0" mapFlags="0" enableZRange="0" referencePoint="0" drawCanvasItems="true" keepLayerSet="false" position="5.12974,165.622,mm" size="82.6639,18.4521,mm" opacity="1" followPresetName="" isTemporal="0" id="item_minimap" positionOnPage="5.12974,165.622,mm" itemRotation="0" outlineWidthM="0.3,mm" mapRotation="0" followPreset="false" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{7c3a5266-33e3-4bff-bf22-e397d7764787}" frame="true" type="65639" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1589,7 +1589,7 @@
   </atlasClippingSettings>
   <itemClippingSettings forceLabelsInside="0" enabled="0" clippingType="1" clipSource=""/>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{c046a334-9ead-498e-ac24-af1a77d8b70d}" background="false" htmlState="0" zValue="35" excludeFromExports="0" referencePoint="0" position="198.343,72.2025,mm" size="39.0702,10.2075,mm" opacity="1" halign="8" id="item_page_max" marginX="0" positionOnPage="198.343,72.2025,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="18" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{c046a334-9ead-498e-ac24-af1a77d8b70d}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{abcfbd80-6daf-40a0-9e62-b6fee95db548}" background="false" htmlState="0" zValue="35" excludeFromExports="0" referencePoint="0" position="198.343,72.2025,mm" size="39.0702,10.2075,mm" opacity="1" halign="8" id="item_page_max" marginX="0" positionOnPage="198.343,72.2025,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="18" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{abcfbd80-6daf-40a0-9e62-b6fee95db548}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1604,7 +1604,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -1651,7 +1651,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{a689f375-8326-4caf-8d0c-ab99a8554cd0}" background="false" htmlState="0" zValue="34" excludeFromExports="0" referencePoint="0" position="154.051,167.031,mm" size="24.1696,5.5144,mm" opacity="1" halign="8" id="" marginX="0" positionOnPage="154.051,167.031,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Beschreibung" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{a689f375-8326-4caf-8d0c-ab99a8554cd0}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{9fb6e9c2-3078-49cc-b5df-7ab6e1e290bb}" background="false" htmlState="0" zValue="34" excludeFromExports="0" referencePoint="0" position="154.051,167.031,mm" size="24.1696,5.5144,mm" opacity="1" halign="8" id="" marginX="0" positionOnPage="154.051,167.031,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Beschreibung" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{9fb6e9c2-3078-49cc-b5df-7ab6e1e290bb}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1666,7 +1666,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -1713,7 +1713,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{e5ed4de8-c583-429a-9321-c76858930956}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="33" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="231.135,42.274,mm" size="23.0574,6.4237,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="231.135,42.274,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{e5ed4de8-c583-429a-9321-c76858930956}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{1946bd6c-ed6a-44fc-93ea-60d410ee9d9d}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="33" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="231.135,42.274,mm" size="23.0574,6.4237,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="231.135,42.274,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{1946bd6c-ed6a-44fc-93ea-60d410ee9d9d}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1780,7 +1780,7 @@
    <node y="6.4237" x="0"/>
   </nodes>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{156ec8e3-7fed-4948-8c8e-e3080db4bfa6}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="30" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="179.687,77.4562,mm" size="27.8066,1.58394,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="179.687,77.4562,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{156ec8e3-7fed-4948-8c8e-e3080db4bfa6}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{34db931d-2e14-4373-91c3-9b27079eb439}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="30" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="179.687,77.4562,mm" size="27.8066,1.58394,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="179.687,77.4562,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{34db931d-2e14-4373-91c3-9b27079eb439}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1847,7 +1847,7 @@
    <node y="1.58394" x="27.8066"/>
   </nodes>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{f904fa86-b90e-4fd5-953f-cdb5e302972e}" background="false" htmlState="0" zValue="28" excludeFromExports="0" referencePoint="0" position="152.584,72.2025,mm" size="39.0702,23.0549,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="152.584,72.2025,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Hier kommt die maximale Seitennummer rein.&#xa;&#xa;Item: item_page_max" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{f904fa86-b90e-4fd5-953f-cdb5e302972e}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{d86773cb-61f0-496e-aa37-2374cfd824cf}" background="false" htmlState="0" zValue="28" excludeFromExports="0" referencePoint="0" position="152.584,72.2025,mm" size="39.0702,23.0549,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="152.584,72.2025,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Hier kommt die maximale Seitennummer rein.&#xa;&#xa;Item: item_page_max" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{d86773cb-61f0-496e-aa37-2374cfd824cf}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1862,7 +1862,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -1909,7 +1909,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem equalColumnWidth="0" rasterBorderColor="0,0,0,255,rgb:0,0,0,1" size="4,7.5,mm" symbolAlignment="1" groupUuid="" uuid="{97336664-b5eb-4dd2-81fa-667eebb99f87}" referencePoint="0" map_uuid="{0735985b-115c-4ade-84d3-79b458a94ffd}" zValue="27" blendMode="0" minSymbolSize="0" symbolWidth="7" wmsLegendHeight="25" wrapChar="" visibility="1" resizeToContents="1" rasterBorder="1" position="198.192,136.097,mm" positionLock="false" positionOnPage="198.192,136.097,mm" itemRotation="0" frame="false" titleAlignment="1" type="65642" legendFilterByAtlas="0" frameJoinStyle="miter" background="true" title="" excludeFromExports="0" boxSpace="2" columnCount="1" symbolHeight="4" splitLayer="0" id="item_legend" maxSymbolSize="0" templateUuid="{97336664-b5eb-4dd2-81fa-667eebb99f87}" columnSpace="2" opacity="1" rasterBorderWidth="0" wmsLegendWidth="50" outlineWidthM="0.3,mm">
+ <LayoutItem equalColumnWidth="0" rasterBorderColor="0,0,0,255,rgb:0,0,0,1" size="4,7.5,mm" symbolAlignment="1" groupUuid="" uuid="{4ea0217f-bd58-4f18-9934-9eb729823e81}" referencePoint="0" map_uuid="{e3e64e99-1b04-481c-8c5c-f8f482bc5a93}" zValue="27" blendMode="0" minSymbolSize="0" symbolWidth="7" wmsLegendHeight="25" wrapChar="" visibility="1" resizeToContents="1" rasterBorder="1" position="198.192,136.097,mm" positionLock="false" positionOnPage="198.192,136.097,mm" itemRotation="0" frame="false" titleAlignment="1" type="65642" legendFilterByAtlas="0" frameJoinStyle="miter" background="true" title="" excludeFromExports="0" boxSpace="2" columnCount="1" symbolHeight="4" splitLayer="0" id="item_legend" maxSymbolSize="0" templateUuid="{4ea0217f-bd58-4f18-9934-9eb729823e81}" columnSpace="2" opacity="1" rasterBorderWidth="0" wmsLegendWidth="50" outlineWidthM="0.3,mm">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -1925,11 +1925,11 @@
    </customproperties>
   </LayoutObject>
   <filterByMaps>
-   <map uuid="{0735985b-115c-4ade-84d3-79b458a94ffd}"/>
+   <map uuid="{e3e64e99-1b04-481c-8c5c-f8f482bc5a93}"/>
   </filterByMaps>
   <styles>
    <style marginBottom="3.5" name="title" alignment="1" indent="0">
-    <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="16" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="6.6444479999999997" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="MM">
+    <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="16" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="6.6444479999999997" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="MM">
      <families/>
      <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
      <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -1977,7 +1977,7 @@
     </text-style>
    </style>
    <style marginTop="3" name="group" alignment="1" indent="0">
-    <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="14" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="5.9388920000000001" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="MM">
+    <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="14" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="5.9388920000000001" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="MM">
      <families/>
      <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
      <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -2025,7 +2025,7 @@
     </text-style>
    </style>
    <style marginTop="3" name="subgroup" alignment="1" indent="0">
-    <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="12" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="5.2333359999999995" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="MM">
+    <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="12" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="5.2333359999999995" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="MM">
      <families/>
      <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
      <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -2073,7 +2073,7 @@
     </text-style>
    </style>
    <style marginTop="2.5" name="symbol" alignment="1" indent="0">
-    <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="9.75" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+    <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="9.75" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
      <families/>
      <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
      <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -2121,7 +2121,7 @@
     </text-style>
    </style>
    <style marginTop="2" name="symbolLabel" marginLeft="2" alignment="1" indent="0">
-    <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="12" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="5.2333359999999995" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="MM">
+    <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="12" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="5.2333359999999995" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="MM">
      <families/>
      <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
      <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -2169,8 +2169,14 @@
     </text-style>
    </style>
   </styles>
+  <layer-tree-group>
+   <customproperties>
+    <Option/>
+   </customproperties>
+   <custom-order enabled="0"/>
+  </layer-tree-group>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{433785aa-6ea1-481f-a090-b9e5e89ea729}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="26" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="71.6541,171.478,mm" size="24.5508,0.817954,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="71.6541,171.478,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{433785aa-6ea1-481f-a090-b9e5e89ea729}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{f23b762c-9da3-42fa-852d-160e435ae335}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="26" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="71.6541,171.478,mm" size="24.5508,0.817954,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="71.6541,171.478,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{f23b762c-9da3-42fa-852d-160e435ae335}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -2237,7 +2243,7 @@
    <node y="0.817954" x="0"/>
   </nodes>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{503cdb5f-7edc-48b6-83d2-f2c5dad32944}" background="false" htmlState="0" zValue="24" excludeFromExports="0" referencePoint="0" position="91.8935,165.08,mm" size="53.6774,14.4313,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="91.8935,165.08,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Minimap. Auf Übersichtsseite nicht verfügbar.&#xa;Item: item_minimap" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{503cdb5f-7edc-48b6-83d2-f2c5dad32944}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{0328423a-e1eb-44d7-9a9f-2230b821611a}" background="false" htmlState="0" zValue="24" excludeFromExports="0" referencePoint="0" position="91.8935,165.08,mm" size="53.6774,14.4313,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="91.8935,165.08,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Minimap. Auf Übersichtsseite nicht verfügbar.&#xa;Item: item_minimap" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{0328423a-e1eb-44d7-9a9f-2230b821611a}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -2252,7 +2258,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -2299,7 +2305,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{a979404c-f193-4366-89e8-b84f609755d1}" background="false" htmlState="0" zValue="23" excludeFromExports="0" referencePoint="0" position="198.342,57.9992,mm" size="39.0702,10.2075,mm" opacity="1" halign="8" id="item_page_current" marginX="0" positionOnPage="198.342,57.9992,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="1" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{a979404c-f193-4366-89e8-b84f609755d1}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{1cd9a434-54c4-4e19-bfdb-2ff8d878b6b7}" background="false" htmlState="0" zValue="23" excludeFromExports="0" referencePoint="0" position="198.342,57.9992,mm" size="39.0702,10.2075,mm" opacity="1" halign="8" id="item_page_current" marginX="0" positionOnPage="198.342,57.9992,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="1" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{1cd9a434-54c4-4e19-bfdb-2ff8d878b6b7}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -2314,7 +2320,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -2361,7 +2367,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem size="57.2453,13.2225,mm" minBarWidth="25" alignment="0" mapUuid="{0735985b-115c-4ade-84d3-79b458a94ffd}" unitType="meters" lineCapStyle="square" boxContentSpace="1" groupUuid="" uuid="{e20ed492-0cab-405b-8278-d1e4ac45fe84}" labelBarSpace="3" referencePoint="0" zValue="19" blendMode="0" segmentMillimeters="nan" method="HorizontalBottom" lineJoinStyle="miter" style="Single Box" visibility="1" numMapUnitsPerScaleBarUnit="1" position="198.192,118.762,mm" segmentSizeMode="1" numSubdivisions="1" numSegmentsLeft="0" positionLock="false" positionOnPage="198.192,118.762,mm" height="3" itemRotation="0" frame="false" type="65646" labelVerticalPlacement="0" outlineWidth="0.3" frameJoinStyle="miter" labelHorizontalPlacement="0" subdivisionsHeight="1.5" background="false" excludeFromExports="0" maxBarWidth="50" id="item_map_scale_bar" numUnitsPerSegment="100" numSegments="2" templateUuid="{e20ed492-0cab-405b-8278-d1e4ac45fe84}" opacity="1" unitLabel="m" outlineWidthM="0.3,mm">
+ <LayoutItem size="57.2453,13.2225,mm" minBarWidth="25" alignment="0" mapUuid="{e3e64e99-1b04-481c-8c5c-f8f482bc5a93}" unitType="meters" lineCapStyle="square" boxContentSpace="1" groupUuid="" uuid="{494fc38a-52a9-44c5-b53f-0b17b1fcebed}" labelBarSpace="3" referencePoint="0" zValue="19" blendMode="0" segmentMillimeters="nan" method="HorizontalBottom" lineJoinStyle="miter" style="Single Box" visibility="1" numMapUnitsPerScaleBarUnit="1" position="198.192,118.762,mm" segmentSizeMode="1" numSubdivisions="1" numSegmentsLeft="0" positionLock="false" positionOnPage="198.192,118.762,mm" height="3" itemRotation="0" frame="false" type="65646" labelVerticalPlacement="0" outlineWidth="0.3" frameJoinStyle="miter" labelHorizontalPlacement="0" subdivisionsHeight="1.5" background="false" excludeFromExports="0" maxBarWidth="50" id="item_map_scale_bar" numUnitsPerSegment="100" numSegments="2" templateUuid="{494fc38a-52a9-44c5-b53f-0b17b1fcebed}" opacity="1" unitLabel="m" outlineWidthM="0.3,mm">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -2650,7 +2656,7 @@
    </symbol>
   </fillSymbol2>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{49f5e9c3-1a8c-40dd-8d87-554af3ec16d3}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="18" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="178.631,65.9255,mm" size="27.8066,1.58394,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="178.631,65.9255,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{49f5e9c3-1a8c-40dd-8d87-554af3ec16d3}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{3eaef11e-168b-40e1-a585-a116928be5da}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="18" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="178.631,65.9255,mm" size="27.8066,1.58394,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="178.631,65.9255,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{3eaef11e-168b-40e1-a585-a116928be5da}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -2717,7 +2723,7 @@
    <node y="1.58394" x="27.8066"/>
   </nodes>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{c617d7df-61a7-4ed2-9705-fd1050034ccd}" background="false" htmlState="0" zValue="16" excludeFromExports="0" referencePoint="0" position="152.584,48.8477,mm" size="39.0702,23.0549,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="152.584,48.8477,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Hier kommt die aktuelle Seitennummer rein.&#xa;&#xa;Item: item_page_current" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{c617d7df-61a7-4ed2-9705-fd1050034ccd}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{44825750-1122-408a-903a-d553d319124b}" background="false" htmlState="0" zValue="16" excludeFromExports="0" referencePoint="0" position="152.584,48.8477,mm" size="39.0702,23.0549,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="152.584,48.8477,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Hier kommt die aktuelle Seitennummer rein.&#xa;&#xa;Item: item_page_current" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{44825750-1122-408a-903a-d553d319124b}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -2732,7 +2738,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -2779,7 +2785,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{b437bb82-c164-441a-9fe4-433580ddbe8b}" background="false" htmlState="0" zValue="14" excludeFromExports="0" referencePoint="0" position="198.342,30.7465,mm" size="39.0702,10.2075,mm" opacity="1" halign="8" id="item_crs" marginX="0" positionOnPage="198.342,30.7465,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="EPSG:1234" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{b437bb82-c164-441a-9fe4-433580ddbe8b}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{021c6712-ffb3-49e8-97f7-ed8c8b5464af}" background="false" htmlState="0" zValue="14" excludeFromExports="0" referencePoint="0" position="198.342,30.7465,mm" size="39.0702,10.2075,mm" opacity="1" halign="8" id="item_crs" marginX="0" positionOnPage="198.342,30.7465,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="EPSG:1234" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{021c6712-ffb3-49e8-97f7-ed8c8b5464af}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -2794,7 +2800,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -2841,7 +2847,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{e1d4d11f-4ac2-4350-9c56-82e56d153e5b}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="9" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="179.687,35.2761,mm" size="27.8066,1.58394,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="179.687,35.2761,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{e1d4d11f-4ac2-4350-9c56-82e56d153e5b}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{30cec780-0ebc-44c9-b77a-337657dd2284}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="9" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="179.687,35.2761,mm" size="27.8066,1.58394,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="179.687,35.2761,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{30cec780-0ebc-44c9-b77a-337657dd2284}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -2908,7 +2914,7 @@
    <node y="1.58394" x="27.8066"/>
   </nodes>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{185d6d45-9715-4792-9c58-462175ee03ca}" background="false" htmlState="0" zValue="7" excludeFromExports="0" referencePoint="0" position="152.584,29.5406,mm" size="39.0702,19.0071,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="152.584,29.5406,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Dieser Text wird mit dem KBS ersetzt.&#xa;&#xa;Item: item_crs" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{185d6d45-9715-4792-9c58-462175ee03ca}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{1ee97ab9-5e1a-4a32-ad90-df0fbe2c666f}" background="false" htmlState="0" zValue="7" excludeFromExports="0" referencePoint="0" position="152.584,29.5406,mm" size="39.0702,19.0071,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="152.584,29.5406,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Dieser Text wird mit dem KBS ersetzt.&#xa;&#xa;Item: item_crs" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{1ee97ab9-5e1a-4a32-ad90-df0fbe2c666f}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -2923,7 +2929,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -2970,69 +2976,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{ae22b569-6112-45b7-96b3-238277fde27c}" background="false" htmlState="0" zValue="6" excludeFromExports="0" referencePoint="0" position="165.08,7.24163,mm" size="123.722,21.9989,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="165.08,7.24163,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Es kann nur eine Karte verwendet werden.&#xa;Je nach hier im Layout definierter Kartengröße hat dies auch Auswirkungen auf den PlotLayer (größe der Polygone/Druckbereiche).&#xa;Kartenrotation immer Nord.&#xa;Item: item_map" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{ae22b569-6112-45b7-96b3-238277fde27c}" frame="true" type="65641" marginY="0" positionLock="false">
-  <FrameColor green="0" red="0" blue="0" alpha="255"/>
-  <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
-  <LayoutObject>
-   <dataDefinedProperties>
-    <Option type="Map">
-     <Option name="name" type="QString" value=""/>
-     <Option name="properties"/>
-     <Option name="type" type="QString" value="collection"/>
-    </Option>
-   </dataDefinedProperties>
-   <customproperties>
-    <Option/>
-   </customproperties>
-  </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
-   <families/>
-   <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
-   <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
-   <background shapeOffsetUnit="MM" shapeBorderWidth="0" shapeOpacity="1" shapeSizeUnit="MM" shapeSizeX="0" shapeSizeType="0" shapeFillColor="255,255,255,255,rgb:1,1,1,1" shapeBlendMode="0" shapeOffsetX="0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeRadiiX="0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidthUnit="MM" shapeJoinStyle="64" shapeDraw="0" shapeSVGFile="" shapeBorderColor="128,128,128,255,rgb:0.50196078431372548,0.50196078431372548,0.50196078431372548,1" shapeType="0" shapeSizeY="0" shapeRotation="0" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetY="0" shapeRadiiY="0" shapeRotationType="0" shapeRadiiUnit="MM" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0">
-    <symbol name="fillSymbol" clip_to_extent="1" type="fill" force_rhr="0" frame_rate="10" is_animated="0" alpha="1">
-     <data_defined_properties>
-      <Option type="Map">
-       <Option name="name" type="QString" value=""/>
-       <Option name="properties"/>
-       <Option name="type" type="QString" value="collection"/>
-      </Option>
-     </data_defined_properties>
-     <layer id="" class="SimpleFill" pass="0" enabled="1" locked="0">
-      <Option type="Map">
-       <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-       <Option name="color" type="QString" value="255,255,255,255,rgb:1,1,1,1"/>
-       <Option name="joinstyle" type="QString" value="bevel"/>
-       <Option name="offset" type="QString" value="0,0"/>
-       <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-       <Option name="offset_unit" type="QString" value="MM"/>
-       <Option name="outline_color" type="QString" value="128,128,128,255,rgb:0.50196078431372548,0.50196078431372548,0.50196078431372548,1"/>
-       <Option name="outline_style" type="QString" value="no"/>
-       <Option name="outline_width" type="QString" value="0"/>
-       <Option name="outline_width_unit" type="QString" value="MM"/>
-       <Option name="style" type="QString" value="solid"/>
-      </Option>
-      <data_defined_properties>
-       <Option type="Map">
-        <Option name="name" type="QString" value=""/>
-        <Option name="properties"/>
-        <Option name="type" type="QString" value="collection"/>
-       </Option>
-      </data_defined_properties>
-     </layer>
-    </symbol>
-   </background>
-   <shadow shadowOffsetDist="1" shadowUnder="0" shadowOffsetUnit="MM" shadowScale="100" shadowBlendMode="6" shadowOffsetGlobal="1" shadowRadiusUnit="MM" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowColor="0,0,0,255,rgb:0,0,0,1" shadowOpacity="0.69999999999999996" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowOffsetAngle="135" shadowRadius="1.5" shadowDraw="0" shadowRadiusAlphaOnly="0"/>
-   <dd_properties>
-    <Option type="Map">
-     <Option name="name" type="QString" value=""/>
-     <Option name="properties"/>
-     <Option name="type" type="QString" value="collection"/>
-    </Option>
-   </dd_properties>
-  </text-style>
- </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{70fc4648-823f-4ed4-a055-496fb29470c8}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="6" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="150.12,21.4709,mm" size="14.9616,0.703965,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="150.12,21.4709,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{70fc4648-823f-4ed4-a055-496fb29470c8}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{367f6b82-dafd-495d-a19e-a9072ba9ee9d}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="6" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="150.12,21.4709,mm" size="14.9616,0.703965,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="150.12,21.4709,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{367f6b82-dafd-495d-a19e-a9072ba9ee9d}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -3099,7 +3043,69 @@
    <node y="0.703965" x="0"/>
   </nodes>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{d5d3fbe8-818e-48e8-a1b4-a12e1b6ce7f0}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="5" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="70.9244,142.641,mm" size="24.5508,0.817954,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="70.9244,142.641,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{d5d3fbe8-818e-48e8-a1b4-a12e1b6ce7f0}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{2eb311f6-7876-43ff-96d7-41b3d6fc94e4}" background="false" htmlState="0" zValue="6" excludeFromExports="0" referencePoint="0" position="165.08,7.24163,mm" size="123.722,21.9989,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="165.08,7.24163,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Es kann nur eine Karte verwendet werden.&#xa;Je nach hier im Layout definierter Kartengröße hat dies auch Auswirkungen auf den PlotLayer (größe der Polygone/Druckbereiche).&#xa;Kartenrotation immer Nord.&#xa;Item: item_map" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{2eb311f6-7876-43ff-96d7-41b3d6fc94e4}" frame="true" type="65641" marginY="0" positionLock="false">
+  <FrameColor green="0" red="0" blue="0" alpha="255"/>
+  <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option name="name" type="QString" value=""/>
+     <Option name="properties"/>
+     <Option name="type" type="QString" value="collection"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties>
+    <Option/>
+   </customproperties>
+  </LayoutObject>
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
+   <families/>
+   <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
+   <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
+   <background shapeOffsetUnit="MM" shapeBorderWidth="0" shapeOpacity="1" shapeSizeUnit="MM" shapeSizeX="0" shapeSizeType="0" shapeFillColor="255,255,255,255,rgb:1,1,1,1" shapeBlendMode="0" shapeOffsetX="0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeRadiiX="0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidthUnit="MM" shapeJoinStyle="64" shapeDraw="0" shapeSVGFile="" shapeBorderColor="128,128,128,255,rgb:0.50196078431372548,0.50196078431372548,0.50196078431372548,1" shapeType="0" shapeSizeY="0" shapeRotation="0" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetY="0" shapeRadiiY="0" shapeRotationType="0" shapeRadiiUnit="MM" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0">
+    <symbol name="fillSymbol" clip_to_extent="1" type="fill" force_rhr="0" frame_rate="10" is_animated="0" alpha="1">
+     <data_defined_properties>
+      <Option type="Map">
+       <Option name="name" type="QString" value=""/>
+       <Option name="properties"/>
+       <Option name="type" type="QString" value="collection"/>
+      </Option>
+     </data_defined_properties>
+     <layer id="" class="SimpleFill" pass="0" enabled="1" locked="0">
+      <Option type="Map">
+       <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+       <Option name="color" type="QString" value="255,255,255,255,rgb:1,1,1,1"/>
+       <Option name="joinstyle" type="QString" value="bevel"/>
+       <Option name="offset" type="QString" value="0,0"/>
+       <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+       <Option name="offset_unit" type="QString" value="MM"/>
+       <Option name="outline_color" type="QString" value="128,128,128,255,rgb:0.50196078431372548,0.50196078431372548,0.50196078431372548,1"/>
+       <Option name="outline_style" type="QString" value="no"/>
+       <Option name="outline_width" type="QString" value="0"/>
+       <Option name="outline_width_unit" type="QString" value="MM"/>
+       <Option name="style" type="QString" value="solid"/>
+      </Option>
+      <data_defined_properties>
+       <Option type="Map">
+        <Option name="name" type="QString" value=""/>
+        <Option name="properties"/>
+        <Option name="type" type="QString" value="collection"/>
+       </Option>
+      </data_defined_properties>
+     </layer>
+    </symbol>
+   </background>
+   <shadow shadowOffsetDist="1" shadowUnder="0" shadowOffsetUnit="MM" shadowScale="100" shadowBlendMode="6" shadowOffsetGlobal="1" shadowRadiusUnit="MM" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowColor="0,0,0,255,rgb:0,0,0,1" shadowOpacity="0.69999999999999996" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowOffsetAngle="135" shadowRadius="1.5" shadowDraw="0" shadowRadiusAlphaOnly="0"/>
+   <dd_properties>
+    <Option type="Map">
+     <Option name="name" type="QString" value=""/>
+     <Option name="properties"/>
+     <Option name="type" type="QString" value="collection"/>
+    </Option>
+   </dd_properties>
+  </text-style>
+ </LayoutItem>
+ <LayoutItem visibility="1" templateUuid="{ba1d8781-221b-4149-941b-7f874aa8352e}" background="false" arrowHeadOutlineColor="0,0,0,255,rgb:0,0,0,1" endMarkerFile="" zValue="5" startMarkerFile="" excludeFromExports="0" referencePoint="0" outlineWidth="1" startMarkerMode="0" position="70.9244,142.641,mm" size="24.5508,0.817954,mm" opacity="1" arrowHeadWidth="4" id="" positionOnPage="70.9244,142.641,mm" itemRotation="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" blendMode="0" markerMode="1" groupUuid="" uuid="{ba1d8781-221b-4149-941b-7f874aa8352e}" frame="false" type="65645" arrowHeadFillColor="0,0,0,255,rgb:0,0,0,1" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -3166,7 +3172,7 @@
    <node y="0.817954" x="0"/>
   </nodes>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{ce56e92b-6264-4d11-8d21-894f19b0a8c7}" background="false" htmlState="0" zValue="3" excludeFromExports="0" referencePoint="0" position="91.1638,132.108,mm" size="61.1202,30.8971,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="91.1638,132.108,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Logo hier.&#xa;Jedes Drucklayout hat immer das gleiche Logo.&#xa;Verschiedene werden nicht unterstützt.&#xa;&#xa;Item: item_company_icon" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{ce56e92b-6264-4d11-8d21-894f19b0a8c7}" frame="true" type="65641" marginY="0" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{fe4882e2-5363-410e-8d5c-fcd875087cb6}" background="false" htmlState="0" zValue="3" excludeFromExports="0" referencePoint="0" position="91.1638,132.108,mm" size="61.1202,30.8971,mm" opacity="1" halign="1" id="" marginX="0" positionOnPage="91.1638,132.108,mm" itemRotation="0" outlineWidthM="0.3,mm" labelText="Logo hier.&#xa;Jedes Drucklayout hat immer das gleiche Logo.&#xa;Verschiedene werden nicht unterstützt.&#xa;&#xa;Item: item_company_icon" valign="32" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{fe4882e2-5363-410e-8d5c-fcd875087cb6}" frame="true" type="65641" marginY="0" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -3181,7 +3187,7 @@
     <Option/>
    </customproperties>
   </LayoutObject>
-  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" multilineHeightUnit="Percentage">
+  <text-style fontWeight="50" fontUnderline="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" textOrientation="horizontal" fontStrikeout="0" forcedItalic="0" tabStopDistanceMapUnitScale="3x:0,0,0,0,0,0" allowHtml="0" textOpacity="1" capitalization="0" fontSizeUnit="Point" fontFamily="MS Shell Dlg 2" fontSize="10" fontWordSpacing="0" tabStopDistanceUnit="Percentage" textColor="0,0,0,255,rgb:0,0,0,1" multilineHeight="1" fontItalic="0" fontLetterSpacing="0" tabStopDistance="6" blendMode="0" fontKerning="1" namedStyle="" forcedBold="0" previewBkgrdColor="255,255,255,255,rgb:1,1,1,1" stretchFactor="100" multilineHeightUnit="Percentage">
    <families/>
    <text-buffer bufferSizeUnits="MM" bufferNoFill="1" bufferColor="255,255,255,255,rgb:1,1,1,1" bufferJoinStyle="128" bufferOpacity="1" bufferDraw="0" bufferBlendMode="0" bufferSize="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
    <text-mask maskEnabled="0" maskType="0" maskSizeUnits="MM" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="1.5" maskSize2="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskOpacity="1"/>
@@ -3228,7 +3234,7 @@
    </dd_properties>
   </text-style>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{3313477d-ee5b-4617-9b58-f23ce0c9f270}" background="false" file="" zValue="2" excludeFromExports="0" anchorPoint="0" referencePoint="0" northMode="0" position="5.27974,136.393,mm" size="82.3639,21.6469,mm" opacity="1" pictureHeight="nan" svgBorderColor="0,0,0,255,rgb:0,0,0,1" id="item_company_icon" positionOnPage="5.27974,136.393,mm" itemRotation="0" outlineWidthM="0.3,mm" svgBorderWidth="0.2" northOffset="0" svgFillColor="255,255,255,255,rgb:1,1,1,1" mode="2" frameJoinStyle="miter" blendMode="0" groupUuid="" resizeMode="0" uuid="{3313477d-ee5b-4617-9b58-f23ce0c9f270}" pictureWidth="nan" pictureRotation="0" frame="true" type="65640" mapUuid="" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{83fb9412-368e-46a7-a03a-2112d53df74e}" background="false" file="" zValue="2" excludeFromExports="0" anchorPoint="0" referencePoint="0" northMode="0" position="5.27974,136.393,mm" size="82.3639,21.6469,mm" opacity="1" pictureHeight="nan" svgBorderColor="0,0,0,255,rgb:0,0,0,1" id="item_company_icon" positionOnPage="5.27974,136.393,mm" itemRotation="0" outlineWidthM="0.3,mm" svgBorderWidth="0.2" northOffset="0" svgFillColor="255,255,255,255,rgb:1,1,1,1" mode="2" frameJoinStyle="miter" blendMode="0" groupUuid="" resizeMode="0" uuid="{83fb9412-368e-46a7-a03a-2112d53df74e}" pictureWidth="nan" pictureRotation="0" frame="true" type="65640" mapUuid="" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -3244,7 +3250,7 @@
    </customproperties>
   </LayoutObject>
  </LayoutItem>
- <LayoutItem visibility="1" templateUuid="{0735985b-115c-4ade-84d3-79b458a94ffd}" background="true" labelMargin="0,mm" zValue="1" excludeFromExports="0" mapFlags="0" enableZRange="0" referencePoint="0" drawCanvasItems="true" keepLayerSet="false" position="5.27974,7.5414,mm" size="143.22,123.546,mm" opacity="1" followPresetName="" isTemporal="0" id="item_map" positionOnPage="5.27974,7.5414,mm" itemRotation="0" outlineWidthM="0.3,mm" mapRotation="0" followPreset="false" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{0735985b-115c-4ade-84d3-79b458a94ffd}" frame="true" type="65639" positionLock="false">
+ <LayoutItem visibility="1" templateUuid="{e3e64e99-1b04-481c-8c5c-f8f482bc5a93}" background="true" labelMargin="0,mm" zValue="1" excludeFromExports="0" mapFlags="0" enableZRange="0" referencePoint="0" drawCanvasItems="true" keepLayerSet="false" position="5.27974,7.5414,mm" size="143.22,123.546,mm" opacity="1" followPresetName="" isTemporal="0" id="item_map" positionOnPage="5.27974,7.5414,mm" itemRotation="0" outlineWidthM="0.3,mm" mapRotation="0" followPreset="false" frameJoinStyle="miter" blendMode="0" groupUuid="" uuid="{e3e64e99-1b04-481c-8c5c-f8f482bc5a93}" frame="true" type="65639" positionLock="false">
   <FrameColor green="0" red="0" blue="0" alpha="255"/>
   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
   <LayoutObject>
@@ -3268,8 +3274,8 @@
   </atlasClippingSettings>
   <itemClippingSettings forceLabelsInside="0" enabled="0" clippingType="1" clipSource=""/>
  </LayoutItem>
- <LayoutMultiFrame contentMode="1" stylesheet="body { margin: 0 0;line-height: 122%;color: rgba(0,0,0,1.0000);font-family: MS Shell Dlg 2;font-style: normal;font-weight: 400;font-size: 14.6991px;text-align: left; }" resizeMode="0" stylesheetEnabled="true" evaluateExpressions="true" type="65648" url="" templateUuid="{79f5f4bf-106e-4eb5-a370-1ba5ad8a89d4}" useSmartBreaks="true" uuid="{79f5f4bf-106e-4eb5-a370-1ba5ad8a89d4}" html="Heutiges Datum. Automatisch.&#xa;&lt;a href=&quot;https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes&quot;>Formatierung&lt;/a>&#xa;Item: item_date" maxBreakDistance="10">
-  <childFrame templateUuid="{26d1df4e-37b5-4602-b817-ed2adcacbdce}" uuid="{26d1df4e-37b5-4602-b817-ed2adcacbdce}"/>
+ <LayoutMultiFrame contentMode="1" stylesheet="body { margin: 0 0;line-height: 122%;color: rgba(0,0,0,1.0000);font-family: MS Shell Dlg 2;font-style: normal;font-weight: 400;font-size: 14.6991px;text-align: left; }" resizeMode="0" stylesheetEnabled="true" evaluateExpressions="true" type="65648" url="" templateUuid="{67ee29cd-0560-411c-93fa-b27f618cf594}" useSmartBreaks="true" uuid="{67ee29cd-0560-411c-93fa-b27f618cf594}" html="Heutiges Datum. Automatisch.&#xa;&lt;a href=&quot;https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes&quot;>Formatierung&lt;/a>&#xa;Item: item_date" maxBreakDistance="10">
+  <childFrame templateUuid="{874c1999-60ab-44ec-85cf-7aff65b54373}" uuid="{874c1999-60ab-44ec-85cf-7aff65b54373}"/>
   <LayoutObject>
    <dataDefinedProperties>
     <Option type="Map">
