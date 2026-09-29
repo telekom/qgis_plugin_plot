@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # SPDX-FileCopyrightText: 2025 Deutsche Telekom Technik GmbH <f.vonstudsinske@telekom.de>
 # SPDX-License-Identifier: GPL-3.0-only
+"""Main user interface for managing plot layers, pages, templates, and exports."""
 
 import os
 import traceback
@@ -9,16 +10,33 @@ import importlib
 
 from pathlib import Path
 
-from qgis.core import (QgsProject, QgsMapLayer, QgsVectorLayer,
-                       QgsLayoutSize, QgsLayoutItemPage,
-                       QgsLayoutItemLabel, QgsLayoutItemPicture,
-                       QgsCoordinateReferenceSystem, QgsGeometry,
-                       QgsApplication, Qgis, QgsFeatureRequest, QgsPointXY)
+from qgis.core import (
+    QgsProject,
+    QgsMapLayer,
+    QgsVectorLayer,
+    QgsLayoutSize,
+    QgsLayoutItemPage,
+    QgsLayoutItemLabel,
+    QgsLayoutItemPicture,
+    QgsCoordinateReferenceSystem,
+    QgsGeometry,
+    QgsApplication,
+    Qgis,
+    QgsFeatureRequest,
+    QgsPointXY,
+)
 
 from qgis.PyQt.QtCore import Qt, QSize
 from qgis.PyQt.QtGui import QIcon
-from qgis.PyQt.QtWidgets import (QMainWindow, QApplication, QListWidgetItem,
-                                 QCheckBox, QFileDialog, QMessageBox, QToolButton)
+from qgis.PyQt.QtWidgets import (
+    QMainWindow,
+    QApplication,
+    QListWidgetItem,
+    QCheckBox,
+    QFileDialog,
+    QMessageBox,
+    QToolButton,
+)
 
 from typing import List, Union
 
@@ -46,12 +64,12 @@ FORM_CLASS, _ = UiModuleBase.get_uic_classes(__file__)
 
 
 class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
-    """ Main Plot Menu, inheriting other plot modules. """
+    """Main plot menu coordinating plot layers, pages, and related UI modules."""
 
     def __init__(self, **kwargs: dict):
-
+        """Initialize the plot menu and connect its controls to plugin actions."""
         UiModuleBase.__init__(self, **kwargs)
-        QMainWindow.__init__(self, kwargs.get('parent', None))
+        QMainWindow.__init__(self, kwargs.get("parent"))
 
         self.setupUi(self)
         self.global_layout_menu = None
@@ -88,62 +106,65 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.But_DeletePage.setText("")
 
         # add ui modules
-        self.progress: DoubleProgressGroup = self.add_ui_module("DoubleProgressGroup",
-                                                                self.Frame_Progress,
-                                                                DoubleProgressGroup)
+        self.progress: DoubleProgressGroup = self.add_ui_module(
+            "DoubleProgressGroup", self.Frame_Progress, DoubleProgressGroup
+        )
         self.progress.hide()
-        self.progress.Group_Progress.setTitle(self.tr_("Progress-Container"))
+        self.progress.Group_Progress.setTitle(self.__tr("Progress-Container"))
         self.List_Pages.setDragEnabled(True)
         self.List_Pages.setAcceptDrops(True)
 
         # add some Qt connections
-        self.connect(self.But_NewLayout.clicked, self.add_new_layout)
-        self.connect(self.But_Create_PDF.clicked, self.create_pdf)
-        self.connect(self.But_Create_PDF_QGIS.clicked, self.create_pdf_qgis)
-        self.connect(self.But_AddFile.clicked, self.add_file)
-        self.connect(self.But_Create_PrintLayout.clicked, self.create_qgs_print_layout)
-        self.connect(self.But_AddPage.clicked, self.add_new_page)
-        self.connect(self.But_AddPage_Portrait.clicked, self.add_new_page_portrait)
-        self.connect(self.But_AddPage_Landscape.clicked, self.add_new_page_landscape)
-        self.connect(self.But_CreateOverview.clicked, self.add_over_view_pages)
+        self.connect(self.But_NewLayout.clicked, self.__add_new_layout)
+        self.connect(self.But_Create_PDF.clicked, self.__create_pdf)
+        self.connect(self.But_Create_PDF_QGIS.clicked, self.__create_pdf_qgis)
+        self.connect(self.But_AddFile.clicked, self.__add_file)
+        self.connect(self.But_Create_PrintLayout.clicked, self.__create_qgs_print_layout)
+        self.connect(self.But_AddPage.clicked, self.__add_new_page)
+        self.connect(self.But_AddPage_Portrait.clicked, self.__add_new_page_portrait)
+        self.connect(self.But_AddPage_Landscape.clicked, self.__add_new_page_landscape)
+        self.connect(self.But_CreateOverview.clicked, self.__add_over_view_pages)
         self.connect(self.But_CreateFromLine.clicked, lambda *_: self.__start_digitize_map_tool())
-        self.connect(self.But_DeletePage.clicked, self.delete_page)
-        self.connect(self.DrD_PrintLayoutsGpkg.currentIndexChanged, self.layout_selected)
-        self.connect(QgsProject.instance().layersAdded, self.layers_added)
-        self.connect(QgsProject.instance().legendLayersAdded, self.layers_added)
-        self.connect(QgsProject.instance().layersRemoved, self.layers_removed)
-        self.connect(self.SpinBox_Dpi.valueChanged, self.dpi_changed)
-        self.connect(self.SpinBox_Scale.valueChanged, self.scale_changed)
+        self.connect(self.But_DeletePage.clicked, self.__delete_page)
+        self.connect(self.DrD_PrintLayoutsGpkg.currentIndexChanged, self.__layout_selected)
+        self.connect(QgsProject.instance().layersAdded, self.__layers_added)
+        self.connect(QgsProject.instance().legendLayersAdded, self.__layers_added)
+        self.connect(QgsProject.instance().layersRemoved, self.__layers_removed)
+        self.connect(self.SpinBox_Dpi.valueChanged, self.__dpi_changed)
+        self.connect(self.SpinBox_Scale.valueChanged, self.__scale_changed)
         self.SpinBox_Page_Scale.setValue(self.SpinBox_Scale.value())
-        self.connect(self.List_Pages.model().rowsMoved, self.page_moved)
-        self.connect(self.List_Pages.itemDoubleClicked, self.open_page_item)
-        self.connect(self.List_Pages.itemSelectionChanged, self.page_item_changed)
-        self.connect(self.CheckBox_Legend_Extra.stateChanged,
-                     lambda x: self.check_box_state_changed(self.CheckBox_Legend_Extra))
-        self.connect(self.CheckBox_Overview.stateChanged,
-                     lambda x: self.check_box_state_changed(self.CheckBox_Overview))
+        self.connect(self.List_Pages.model().rowsMoved, self.__page_moved)
+        self.connect(self.List_Pages.itemDoubleClicked, self.__open_page_item)
+        self.connect(self.List_Pages.itemSelectionChanged, self.__page_item_changed)
+        self.connect(
+            self.CheckBox_Legend_Extra.stateChanged,
+            lambda x: self.__check_box_state_changed(self.CheckBox_Legend_Extra),
+        )
+        self.connect(
+            self.CheckBox_Overview.stateChanged, lambda x: self.__check_box_state_changed(self.CheckBox_Overview)
+        )
 
         # other Qt Connections
-        self.connect(self.get_plugin().versionRead,
-                     lambda plugin: self.set_ui_version_info(self.Label_Version_Nr))
+        self.connect(self.get_plugin().versionRead, lambda plugin: self.set_ui_version_info(self.Label_Version_Nr))
 
         # load existing plot layers to drd
         self.DrD_PrintLayoutsGpkg.clear()
-        self.DrD_PrintLayoutsGpkg.addItem(f"-- {self.tr_('choose or create')} --", None)
-        self.layers_added(QgsProject.instance().mapLayers().values())
+        self.DrD_PrintLayoutsGpkg.addItem(f"-- {self.__tr('choose or create')} --", None)
+        self.__layers_added(QgsProject.instance().mapLayers().values())
 
-        self.page_item_changed()
+        self.__page_item_changed()
 
         self.initialize_tab_stop_widgets()
 
-    def init_layouts(self):
+    def __init_layouts(self):
+        """Load layout templates once and report loading progress in the menu."""
         if self.layouts is not None:
             # already initialized
             return
 
-        self.progress.start_progressbars(0, 100, use_subbar=False,
-                                         can_cancel=False, hide_widgets=[self.ScrollArea],
-                                         auto_restore=False)
+        self.progress.start_progressbars(
+            0, 100, use_subbar=False, can_cancel=False, hide_widgets=[self.ScrollArea], auto_restore=False
+        )
         self.layouts = PlotLayoutTemplates(plot_plugin_plots_dir=[self.get_plugin().plots_dir])
         self.layouts.progressChanged.connect(self.__show_progress_main)
         self.layouts.load_default_paths()
@@ -157,29 +178,30 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.progress.set_text_main(message)
 
     @classmethod
-    def tr_(cls, text: str):
+    def __tr(cls, text: str):
+        """Translate a user-visible string in the QGIS application context."""
         result = QgsApplication.translate("QgsApplication", text)
         return result
 
     def keyReleaseEvent(self, event):
-        """ User presses button """
+        """Handle F5 to refresh pages and Escape to close the menu."""
         pressed_key = event.key()
         if pressed_key == Qt.Key_F5:
-            self.global_layout_menu.key_f5_reset()
-            self.reload_pages()
+            self.global_layout_menu.reset_layer_visibility()
+            self.__reload_pages()
 
         if pressed_key == Qt.Key_Escape:
             self.close()
 
         event.accept()
 
-    def create_qgs_print_layout(self, checked: bool):
-        """ Creates new QgsPrintLayout in QgsProject """
+    def __create_qgs_print_layout(self, checked: bool):
+        """Create a print layout and add it to the current QGIS project."""
         self.__layout = None
 
-        self.progress.start_progressbars(0, 100, use_subbar=False,
-                                         can_cancel=False, hide_widgets=[self.ScrollArea],
-                                         auto_restore=False)
+        self.progress.start_progressbars(
+            0, 100, use_subbar=False, can_cancel=False, hide_widgets=[self.ScrollArea], auto_restore=False
+        )
         try:
             self.__layout = PrintLayout(self.plot_layer, self.layouts)
             self.__layout.progressChanged.connect(self.__show_progress_main)
@@ -188,34 +210,28 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         except Exception as e:
             self.log(traceback.format_exc(), level=self.CRITICAL)
             set_label_status(self.Label_Status, str(e), STYLE_SHEET_ERROR)
-            self.iface.messageBar().pushWarning(self.tr_("Print Menu"), str(e))
+            self.iface.messageBar().pushWarning(self.__tr("Print Menu"), str(e))
         self.progress.restore()
 
-    def create_pdf(self, checked: bool):
-        """ Creates new QgsPrintLayout in QgsProject """
+    def __create_pdf(self, checked: bool):
+        """Export the current plot layout to a PDF file selected by the user."""
         self.__layout = None
 
         save_path, _ = QFileDialog.getSaveFileName(
             self,
-            self.tr_("Save file"),
-            os.path.join(QgsProject.instance().absolutePath(),
-                         self.plot_layer.source.replace(".gpkg", ".pdf")),
-            'PDF (*.pdf)'
+            self.__tr("Save file"),
+            os.path.join(QgsProject.instance().absolutePath(), self.plot_layer.source.replace(".gpkg", ".pdf")),
+            "PDF (*.pdf)",
         )
         if not save_path:
             return
 
         if not PrintLayout.is_file_overwritable(save_path):
-            self.iface.messageBar().pushWarning(self.tr_("Print Menu"),
-                                                self.tr_("Write access to file blocked."))
-            self.warning(self.tr_("Print Menu"),
-                         self.tr_("Write access to file blocked."))
+            self.iface.messageBar().pushWarning(self.__tr("Print Menu"), self.__tr("Write access to file blocked."))
+            self.warning(self.__tr("Print Menu"), self.__tr("Write access to file blocked."))
             return
 
-        self.progress.start_progressbars(0, 100,
-                                         use_subbar=False,
-                                         hide_widgets=[self.ScrollArea],
-                                         auto_restore=False)
+        self.progress.start_progressbars(0, 100, use_subbar=False, hide_widgets=[self.ScrollArea], auto_restore=False)
         try:
             self.__layout = PrintLayout(self.plot_layer, self.layouts)
             self.__layout.progressChanged.connect(self.__show_progress_main)
@@ -224,13 +240,14 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         except AssertionError as e:
             set_label_status(self.Label_Status, str(e), STYLE_SHEET_ERROR)
             self.log(traceback.format_exc(), level=self.WARNING)
-            self.iface.messageBar().pushWarning(self.tr_("Print Menu"), str(e))
+            self.iface.messageBar().pushWarning(self.__tr("Print Menu"), str(e))
 
             if "FileError" in str(e) and Path(save_path).is_file():
-                QMessageBox.warning(self.iface.mainWindow(),
-                                    self._tr("Error"),
-                                    self.tr_("File %s could not be saved.<br/>"
-                                             "Please close needed applications.") % save_path)
+                QMessageBox.warning(
+                    self.iface.mainWindow(),
+                    self._tr("Error"),
+                    self.__tr("File %s could not be saved.<br/>Please close needed applications.") % save_path,
+                )
             self.progress.restore()
             self.__layout = None
             return
@@ -238,7 +255,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         except Exception as e:
             self.log(traceback.format_exc(), level=self.CRITICAL)
             set_label_status(self.Label_Status, str(e), STYLE_SHEET_ERROR)
-            self.iface.messageBar().pushWarning(self.tr_("Print Menu"), str(e))
+            self.iface.messageBar().pushWarning(self.__tr("Print Menu"), str(e))
             self.progress.restore()
             self.__layout = None
             return
@@ -247,9 +264,12 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.__show_progress_main(
                 self.progress.get_mainbar().value() + 1,
                 self.progress.get_mainbar().maximum() + 1,
-                self.tr_("Preparing writing PDF %s.<br/>"
-                         "Depending on your layers, network connection, layout size "
-                         "and more this process can take a moment.") % save_path
+                self.__tr(
+                    "Preparing writing PDF %s.<br/>"
+                    "Depending on your layers, network connection, layout size "
+                    "and more this process can take a moment."
+                )
+                % save_path,
             )
 
         error = self.__layout.create_pdf(save_path)
@@ -257,28 +277,21 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         if error:
             QMessageBox.information(
-                self.iface.mainWindow(),
-                self.tr_("Error"),
-                self.tr_("PDF print finished with errors.") + "\n" + error
+                self.iface.mainWindow(), self.__tr("Error"), self.__tr("PDF print finished with errors.") + "\n" + error
             )
 
         else:
             QMessageBox.information(
-                self.iface.mainWindow(),
-                self.tr_("Print Menu"),
-                self.tr_("PDF print finished without errors.")
+                self.iface.mainWindow(), self.__tr("Print Menu"), self.__tr("PDF print finished without errors.")
             )
 
         self.__layout = None
 
-    def create_pdf_qgis(self, checked: bool):
-        """ Creates new QgsPrintLayout in QgsProject with the QGIS tool "layout manager """
+    def __create_pdf_qgis(self, checked: bool):
+        """Open the QGIS layout designer and trigger its built-in PDF export."""
         self.__layout = None
 
-        self.progress.start_progressbars(0, 100,
-                                         use_subbar=False,
-                                         hide_widgets=[self.ScrollArea],
-                                         auto_restore=False)
+        self.progress.start_progressbars(0, 100, use_subbar=False, hide_widgets=[self.ScrollArea], auto_restore=False)
         try:
             self.__layout = PrintLayout(self.plot_layer, self.layouts)
             self.__layout.progressChanged.connect(self.__show_progress_main)
@@ -288,7 +301,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         except AssertionError as e:
             set_label_status(self.Label_Status, str(e), STYLE_SHEET_ERROR)
             self.log(traceback.format_exc(), level=self.WARNING)
-            self.iface.messageBar().pushWarning(self.tr_("Print Menu"), str(e))
+            self.iface.messageBar().pushWarning(self.__tr("Print Menu"), str(e))
             self.progress.restore()
             self.__layout = None
             return
@@ -296,7 +309,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         except Exception as e:
             self.log(traceback.format_exc(), level=self.CRITICAL)
             set_label_status(self.Label_Status, str(e), STYLE_SHEET_ERROR)
-            self.iface.messageBar().pushWarning(self.tr_("Print Menu"), str(e))
+            self.iface.messageBar().pushWarning(self.__tr("Print Menu"), str(e))
             self.progress.restore()
             self.__layout = None
             return
@@ -340,7 +353,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         if not button:
             set_label_status(self.Label_Status, "Button für PDF-Export nicht gefunden.", STYLE_SHEET_ERROR)
-            self.iface.messageBar().pushWarning(self.tr_("Print Menu"), "Button für PDF-Export nicht gefunden.")
+            self.iface.messageBar().pushWarning(self.__tr("Print Menu"), "Button für PDF-Export nicht gefunden.")
             self.progress.restore()
             # close the dialog immediately (objects stay accessible)
             designer.close()
@@ -358,16 +371,14 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.progress.restore()
 
         QMessageBox.information(
-            self.iface.mainWindow(),
-            self.tr_("Print Menu"),
-            self.tr_("Advanced PDF export finished.")
+            self.iface.mainWindow(), self.__tr("Print Menu"), self.__tr("Advanced PDF export finished.")
         )
 
         self.__layout.remove_from_instance()
         self.__layout = None
 
-    def delete_page(self, checked: bool):
-        """ Deletes a page from plot layer """
+    def __delete_page(self, checked: bool):
+        """Delete the selected plot page or pages after confirming a multi-delete."""
         items = self.List_Pages.selectedItems()
 
         if not items:
@@ -376,15 +387,15 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         if len(items) > 1:
             reply = QMessageBox.question(
                 self.iface.mainWindow(),
-                self.tr_("Print Menu"),
-                self.tr_("You are about to delete %s pages. Continue?") % len(items)
+                self.__tr("Print Menu"),
+                self.__tr("You are about to delete %s pages. Continue?") % len(items),
             )
             if reply != QMessageBox.Yes:
                 return
 
         self.plot_layer.delete_fids([item.data(Qt.UserRole) for item in items])
-        self.reload_pages()
-        self.page_moved()  # triggers page recalculation
+        self.__reload_pages()
+        self.__page_moved()  # triggers page recalculation
 
         if len(items) == 1:
             row = self.List_Pages.currentRow()
@@ -393,34 +404,30 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             else:
                 self.List_Pages.setCurrentRow(row)
 
-    def add_new_page_landscape(self, checked: bool, bring_to_front: bool = True):
-
+    def __add_new_page_landscape(self, checked: bool, bring_to_front: bool = True):
+        """Select a landscape template and start the new-page map tool."""
         for row in range(self.DrD_Page_Templates.count()):
             layout = self.DrD_Page_Templates.itemData(row, Qt.UserRole)
-            if layout is not None:
-                if layout.page.orientation() == QgsLayoutItemPage.Landscape:
-                    self.DrD_Page_Templates.setCurrentIndex(row)
-                    self.add_new_page(True, bring_to_front=bring_to_front)
-                    break
+            if layout is not None and layout.page.orientation() == QgsLayoutItemPage.Landscape:
+                self.DrD_Page_Templates.setCurrentIndex(row)
+                self.__add_new_page(True, bring_to_front=bring_to_front)
+                break
         else:
-            set_label_status(self.Label_Status,
-                             self.tr_("Something went wrong. No landscape layout found."))
+            set_label_status(self.Label_Status, self.__tr("Something went wrong. No landscape layout found."))
 
-    def add_new_page_portrait(self, checked: bool, bring_to_front: bool = True):
-
+    def __add_new_page_portrait(self, checked: bool, bring_to_front: bool = True):
+        """Select a portrait template and start the new-page map tool."""
         for row in range(self.DrD_Page_Templates.count()):
             layout = self.DrD_Page_Templates.itemData(row, Qt.UserRole)
-            if layout is not None:
-                if layout.page.orientation() == QgsLayoutItemPage.Portrait:
-                    self.DrD_Page_Templates.setCurrentIndex(row)
-                    self.add_new_page(True, bring_to_front=bring_to_front)
-                    break
+            if layout is not None and layout.page.orientation() == QgsLayoutItemPage.Portrait:
+                self.DrD_Page_Templates.setCurrentIndex(row)
+                self.__add_new_page(True, bring_to_front=bring_to_front)
+                break
         else:
-            set_label_status(self.Label_Status,
-                             self.tr_("Something went wrong. No portrait layout found."))
+            set_label_status(self.Label_Status, self.__tr("Something went wrong. No portrait layout found."))
 
-    def add_new_page(self, checked: bool, bring_to_front: bool = True):
-        """ Activates map tool to create new pages """
+    def __add_new_page(self, checked: bool, bring_to_front: bool = True):
+        """Activate the map tool used to draw and create a page."""
         layout: PlotLayout = self.DrD_Page_Templates.currentData()
 
         if self.DrD_Page_Templates.count() < 0:
@@ -430,30 +437,27 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         # select matching layout from plot layer and call it again
         if layout is None:
             file = self.plot_layer.file
-            self.select_page_layout_template(file)
+            self.__select_page_layout_template(file)
 
-            self.add_new_page(checked)
+            self.__add_new_page(checked)
             return
 
         scale = self.SpinBox_Page_Scale.value()
 
         iface = self.get_plugin().iface
-        self.initialize_defaults(self.plot_layer, layout)
+        self.__initialize_defaults(self.plot_layer, layout)
 
-        map_tool = PlotPageMapTool(iface,
-                                   iface.mapCanvas().mapTool(),
-                                   layout,
-                                   scale,
-                                   self.plot_layer,
-                                   drawings=self.get_plugin().drawings)
-        map_tool.pageAdded.connect(lambda x=0: self.reload_pages())
+        map_tool = PlotPageMapTool(
+            iface, iface.mapCanvas().mapTool(), layout, scale, self.plot_layer, drawings=self.get_plugin().drawings
+        )
+        map_tool.pageAdded.connect(lambda x=0: self.__reload_pages())
         if bring_to_front:
             map_tool.finished.connect(lambda x=0: self.showNormal() if self.isMinimized() else self.show())
         self.get_plugin().iface.mapCanvas().setMapTool(map_tool)
         self.showMinimized()
 
-    def select_page_layout_template(self, file: str):
-        """ Selects given file in page layout dropdown or the first item, if not found """
+    def __select_page_layout_template(self, file: str):
+        """Select the template matching ``file``, or the first template if not found."""
 
         for row in range(self.DrD_Page_Templates.count()):
             layout: PlotLayout = self.DrD_Page_Templates.itemData(row, Qt.UserRole)
@@ -464,8 +468,8 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.DrD_Page_Templates.setCurrentIndex(0)
             self.log(f"{file} not found in dropdown layouts")
 
-    def page_item_changed(self):
-        """ Current page Item changed """
+    def __page_item_changed(self):
+        """Update the delete control and map selection for selected page items."""
         items = self.List_Pages.selectedItems()
         if not items:
             self.Frame_DeletePage.hide()
@@ -478,7 +482,8 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.plot_layer.select_features(fids)
         self.Frame_DeletePage.show()
 
-    def check_box_state_changed(self, box: QCheckBox):
+    def __check_box_state_changed(self, box: QCheckBox):
+        """Store the changed overview or extra-legend setting on the current plot layer."""
         if box is self.CheckBox_Legend_Extra:
             # save state for extra legend
             self.plot_layer.legend_on_extra_page = Qt.Checked == self.CheckBox_Legend_Extra.checkState()
@@ -487,17 +492,17 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             # save state for overview page
             self.plot_layer.create_overview_page = Qt.Checked == self.CheckBox_Overview.checkState()
 
-    def page_moved(self, *args, **kwargs):
-        """ Internal page moved """
+    def __page_moved(self, *args, **kwargs):
+        """Update page numbering and repaint the plot layer after a reorder."""
         for row in range(self.List_Pages.count()):
             page: PlotPage = self.plot_layer.get_page_from_fid(self.List_Pages.item(row).data(Qt.UserRole))
             page.page = row + 1
 
-        self.reload_pages()
+        self.__reload_pages()
         self.plot_layer.layer_pages.triggerRepaint()
 
-    def open_page_item(self, current):
-        """ Current page item changed """
+    def __open_page_item(self, current):
+        """Open the options menu for the activated page item."""
 
         item: QListWidgetItem = self.List_Pages.currentItem()
         if item is None or item is not current:
@@ -507,28 +512,21 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         page: PlotPage = self.plot_layer.get_page_from_fid(fid)
         layout = self.layouts[page.file]
 
-        self.page_layout_menu = self.add_module("PagePlotLayoutMenu",
-                                                PlotLayoutMenu,
-                                                parent=self,
-                                                plot_layout=layout,
-                                                plot_layer=self.plot_layer,
-                                                edit=page)
+        self.page_layout_menu = self.add_module(
+            "PagePlotLayoutMenu", PlotLayoutMenu, parent=self, plot_layout=layout, plot_layer=self.plot_layer, edit=page
+        )
         self.page_layout_menu.show()
         self.page_layout_menu.setWindowTitle(item.text())
         self.page_layout_menu.setWindowModality(Qt.WindowModal)
 
-    def initialize_defaults(self, plot_layer: PlotLayer, layout: PlotLayout = None):
-        """ Loads defaults into PlotLayer """
+    def __initialize_defaults(self, plot_layer: PlotLayer, layout: PlotLayout = None):
+        """Initialize missing plot-layer field values and available layout icons."""
         try:
             options = plot_layer.options
             if layout is None:
                 layout = self.layouts[plot_layer.file]
         except KeyError:
-            QMessageBox.warning(
-                self,
-                self.tr_("Error"),
-                self.tr_("No layout found with path '%s'") % plot_layer.file
-            )
+            QMessageBox.warning(self, self.__tr("Error"), self.__tr("No layout found with path '%s'") % plot_layer.file)
             self.DrD_PrintLayoutsGpkg.setCurrentIndex(0)
             return
 
@@ -536,7 +534,6 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             return
 
         for item_id, value_pair in layout.defaults.items():
-
             type_, value = value_pair
 
             current_value = options.get(item_id, ("", False))[0]
@@ -549,7 +546,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                 # call something from defined function with importlib
                 try:
                     path = Path(self.get_plugin().plugin_dir)
-                    if path.name == "":
+                    if not path.name:
                         path = path.parent
                     parents = []
                     while path.name != "plugins":
@@ -561,20 +558,21 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                     *import_path, attribute = import_path.split(".")
                     module = importlib.import_module(".".join(import_path))
                     value_to_set = getattr(module, attribute)(self.get_plugin(), layout, item)
-                except:
+                except Exception:
                     self.log(str(traceback.format_exc()), "plot-function-call")
                     value_to_set = ""
                 if not isinstance(value_to_set, str):
-                    raise TypeError(f"returned value from plot_functions.{value} is not a string, "
-                                    f"got '{value_to_set}' with type {type(value_to_set)}")
+                    raise TypeError(
+                        f"returned value from plot_functions.{value} is not a string, "
+                        f"got '{value_to_set}' with type {type(value_to_set)}"
+                    )
 
             if type_ == "value":
                 value_to_set = value
 
-            if item is not None and value_to_set is not None:
-                if isinstance(item, QgsLayoutItemLabel):
-                    # item.setText(value_to_set)
-                    options[item_id] = (value_to_set, False)
+            if item is not None and value_to_set is not None and isinstance(item, QgsLayoutItemLabel):
+                # item.setText(value_to_set)
+                options[item_id] = (value_to_set, False)
         plot_layer.options = options
 
         # load icons, e.g. company icon
@@ -585,25 +583,20 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                 # apply the icon if the file path exists as file
                 item.setPicturePath(icon_str)
 
-    def load_page_templates(self, selected_layout: PlotLayout):
-        """ Something to setup later, after module has been fully loaded """
+    def __load_page_templates(self, selected_layout: PlotLayout):
+        """Populate page-template choices compatible with the selected layout."""
 
-        def is_layout_loadable(l: PlotLayout):
-            """ Checks, if given layout size equals to selected layout size.
-                Sizes are checked with swapped size values.
+        def is_layout_loadable(layout: PlotLayout):
+            """Check whether a candidate layout has compatible dimensions and group."""
 
-            """
-            size: QgsLayoutSize = l.page.pageSize()
+            size: QgsLayoutSize = layout.page.pageSize()
             size_swapped = QgsLayoutSize(size.height(), size.width(), size.units())
 
-            if selected_layout.group != l.group and selected_layout.group:
+            if selected_layout.group != layout.group and selected_layout.group:
                 # only layouts with same group name or empty group name
                 return False
 
-            if selected_layout.page.pageSize() == size or selected_layout.page.pageSize() == size_swapped:
-                return True
-
-            return False
+            return selected_layout.page.pageSize() == size or selected_layout.page.pageSize() == size_swapped
 
         # loads available print templates to dropdown
         self.DrD_Page_Templates.clear()
@@ -614,16 +607,15 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         count_landscape = 0
         count_portrait = 0
         for i, layout in enumerate(self.layouts):
-
             if is_layout_loadable(layout):
                 if layout.group:
                     self.DrD_Page_Templates.addItem(f"{layout.name} [{layout.group}]", layout)
                 else:
                     self.DrD_Page_Templates.addItem(f"{layout.name}", layout)
 
-                self.DrD_Page_Templates.setItemData(self.DrD_Page_Templates.count() - 1,
-                                                    f"{layout.path}\n{layout.filepath}",
-                                                    Qt.ToolTipRole)
+                self.DrD_Page_Templates.setItemData(
+                    self.DrD_Page_Templates.count() - 1, f"{layout.path}\n{layout.filepath}", Qt.ToolTipRole
+                )
 
                 orientation = layout.page.orientation()
                 if orientation == QgsLayoutItemPage.Landscape:
@@ -631,7 +623,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                 if orientation == QgsLayoutItemPage.Portrait:
                     count_portrait += 1
 
-        self.select_page_layout_template(selected_layout.path)
+        self.__select_page_layout_template(selected_layout.path)
 
         if count_portrait == 1 and count_landscape == 1:
             # hides normal page add button when only 1 portrait page and only 1 landscape page is there
@@ -641,64 +633,61 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.But_AddPage_Landscape.show()
 
             self.add_action(
-                f"{self.tr_('Add new page (portrait)')} - {self.plot_layer.layer_pages.name()}",
+                f"{self.__tr('Add new page (portrait)')} - {self.plot_layer.layer_pages.name()}",
                 QIcon(self.get_plugin().get_icon_path("add_page_portrait.svg")),
-                lambda x=0: self.add_new_page_portrait(True, False),
+                lambda x=0: self.__add_new_page_portrait(True, False),
                 toolbar_name="qgis_plot_plugin",
-                toolbar_displayname=self.tr_("Print Menu"),
+                toolbar_displayname=self.__tr("Print Menu"),
                 to_plugin_menu=False,
             )
 
             self.add_action(
-                f"{self.tr_('Add new page (landscape)')} - {self.plot_layer.layer_pages.name()}",
+                f"{self.__tr('Add new page (landscape)')} - {self.plot_layer.layer_pages.name()}",
                 QIcon(self.get_plugin().get_icon_path("add_page_landscape.svg")),
-                lambda x=0: self.add_new_page_landscape(True, False),
+                lambda x=0: self.__add_new_page_landscape(True, False),
                 toolbar_name="qgis_plot_plugin",
-                toolbar_displayname=self.tr_("Print Menu"),
+                toolbar_displayname=self.__tr("Print Menu"),
                 to_plugin_menu=False,
             )
 
-    def dpi_changed(self, value: int):
+    def __dpi_changed(self, value: int):
+        """Update the current plot layer's export resolution."""
         self.global_layout_menu.plot_layer.dpi = value
 
-    def scale_changed(self, value: int):
+    def __scale_changed(self, value: int):
+        """Update the current plot scale and synchronize the page-scale control."""
         self.global_layout_menu.plot_layer.scale = value
         self.SpinBox_Page_Scale.setValue(value)
 
-    def get_layer_index(self, layer: Union[str, QgsMapLayer]):
-        """ Returns index from layer in dropdown, if layer is already in dropdown
-            Defaults to -1.
-
-        """
+    def __get_layer_index(self, layer: Union[str, QgsMapLayer]):
+        """Return the dropdown index for ``layer``, or ``-1`` when it is absent."""
         for row in range(self.DrD_PrintLayoutsGpkg.count()):
             data = self.DrD_PrintLayoutsGpkg.itemData(row, Qt.UserRole)
 
-            if isinstance(layer, QgsVectorLayer):
-                if data == layer.id():
-                    return row
-            elif isinstance(layer, str):
-                if data == layer:
-                    return row
+            if isinstance(layer, QgsVectorLayer) and data == layer.id():
+                return row
+            if isinstance(layer, str) and data == layer:
+                return row
 
         return -1
 
-    def layers_removed(self, layers: List[str]):
-        """ removes dropdown items """
+    def __layers_removed(self, layers: List[str]):
+        """Remove deleted project layers from the plot-layer dropdown."""
         for layer_id in layers:
-            index = self.get_layer_index(layer_id)
+            index = self.__get_layer_index(layer_id)
+            if index > -1 and index == self.DrD_PrintLayoutsGpkg.currentIndex():
+                # Do this because upcoming plot layout menus depend on the selected layer.
+                self.DrD_PrintLayoutsGpkg.setCurrentIndex(0)
             if index > -1:
-                if index == self.DrD_PrintLayoutsGpkg.currentIndex():
-                    # need to do, because upcoming plot layout menus
-                    self.DrD_PrintLayoutsGpkg.setCurrentIndex(0)
                 self.DrD_PrintLayoutsGpkg.removeItem(index)
 
         if self.global_layout_menu is not None:
-            self.global_layout_menu.reset_layer_view()
+            self.global_layout_menu.refresh_layer_visibility_table()
 
-    def layers_added(self, layers: List[QgsMapLayer]):
-        """ adds layers to dropdown """
+    def __layers_added(self, layers: List[QgsMapLayer]):
+        """Add newly available plot layers to the plot-layer dropdown."""
         for layer in layers:
-            index = self.get_layer_index(layer)
+            index = self.__get_layer_index(layer)
             is_vector = isinstance(layer, QgsVectorLayer)
             is_plot = PlotLayer.is_plot_layer(layer)
 
@@ -706,14 +695,15 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                 self.DrD_PrintLayoutsGpkg.addItem(layer.name(), layer.id())
 
         if self.global_layout_menu is not None:
-            self.global_layout_menu.reset_layer_view()
+            self.global_layout_menu.refresh_layer_visibility_table()
 
     def set_layer(self, layer: QgsVectorLayer):
-        index = self.get_layer_index(layer)
+        """Select ``layer`` in the plot-layer dropdown."""
+        index = self.__get_layer_index(layer)
         self.DrD_PrintLayoutsGpkg.setCurrentIndex(index)
 
-    def layout_selected(self, index: int):
-        """ Plot layer selected in dropdown, do something """
+    def __layout_selected(self, index: int):
+        """Load the selected plot layer and initialize its layout and page controls."""
         data: str = self.DrD_PrintLayoutsGpkg.currentData()
         layer: QgsVectorLayer = QgsProject.instance().mapLayer(data)
 
@@ -731,9 +721,9 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.plot_layer = None
 
         try:
-            self['PlotLayoutMenu'].unload(True)
-            self['PlotLayoutMenu'].hide()
-            self['PlotLayoutMenu'].close()
+            self["PlotLayoutMenu"].unload(True)
+            self["PlotLayoutMenu"].hide()
+            self["PlotLayoutMenu"].close()
             self.global_layout_menu = None
             self.plot_layer = None
         except KeyError:
@@ -741,24 +731,20 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         if layer is None:
             self.Frame_Plotlayer.setEnabled(False)
-            set_label_status(self.Label_Status,
-                             self.tr_("No Print Layer selected."),
-                             STYLE_SHEET_ERROR)
+            set_label_status(self.Label_Status, self.__tr("No Print Layer selected."), STYLE_SHEET_ERROR)
         else:
             self.Frame_Plotlayer.setEnabled(True)
-            layer.loadNamedStyle(os.path.join(self.get_plugin().plugin_dir,
-                                              'templates',
-                                              'plots',
-                                              'plot_layer_stil.qml'),
-                                 True)
+            layer.loadNamedStyle(
+                os.path.join(self.get_plugin().plugin_dir, "templates", "plots", "plot_layer_stil.qml"), True
+            )
             self.plot_layer = PlotLayer(layer)
             layer.updateExtents(force=True)
             layer.dataProvider().updateExtents()
-            self.initialize_defaults(self.plot_layer)
+            self.__initialize_defaults(self.plot_layer)
             for layout in self.layouts:
                 if layout.path != self.plot_layer.file:
                     continue
-                self.initialize_defaults(self.plot_layer, layout)
+                self.__initialize_defaults(self.plot_layer, layout)
 
             try:
                 layout = self.layouts[self.plot_layer.file]
@@ -766,14 +752,16 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                 self.DrD_PrintLayoutsGpkg.setCurrentIndex(0)
                 return
 
-            self.load_page_templates(layout)
+            self.__load_page_templates(layout)
 
-            self.global_layout_menu = self.add_ui_module("PlotLayoutMenu",
-                                                         self.Frame_Layout_Menu_Global,
-                                                         PlotLayoutMenu,
-                                                         plot_layout=layout,
-                                                         plot_layer=self.plot_layer,
-                                                         edit=self.plot_layer)
+            self.global_layout_menu = self.add_ui_module(
+                "PlotLayoutMenu",
+                self.Frame_Layout_Menu_Global,
+                PlotLayoutMenu,
+                plot_layout=layout,
+                plot_layer=self.plot_layer,
+                edit=self.plot_layer,
+            )
             self.global_layout_menu.GroupBox_Layers.setCheckable(False)
             self.global_layout_menu.Label_Layers.hide()
             self.global_layout_menu.Label_Field_Info.hide()
@@ -783,71 +771,79 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.Frame_Plotlayer.setEnabled(True)
 
             # load values to window
-            self.CheckBox_Legend_Extra.setCheckState(Qt.Checked if self.plot_layer.legend_on_extra_page
-                                                     else Qt.Unchecked)
-            self.CheckBox_Overview.setCheckState(Qt.Checked if self.plot_layer.create_overview_page
-                                                 else Qt.Unchecked)
+            self.CheckBox_Legend_Extra.setCheckState(
+                Qt.Checked if self.plot_layer.legend_on_extra_page else Qt.Unchecked
+            )
+            self.CheckBox_Overview.setCheckState(Qt.Checked if self.plot_layer.create_overview_page else Qt.Unchecked)
             self.SpinBox_Dpi.setValue(self.plot_layer.dpi)
             self.SpinBox_Scale.setValue(self.plot_layer.scale)
 
-            self.reload_pages()
+            self.__reload_pages()
             self.List_Pages.setCurrentItem(None)
 
             # check if plot layer crs is different to current QgsProject projection
             if self.plot_layer.get_crs().authid().lower() != QgsProject.instance().crs().authid().lower():
-                set_label_status(self.Label_Status,
-                                 self.tr_(
-                                     "Coordinate Reference System from Print Layer and current QGIS Project are different. "
-                                     "Maybe the page rectangles will have mystery orientations."),
-                                 STYLE_SHEET_WARNING)
+                set_label_status(
+                    self.Label_Status,
+                    self.__tr(
+                        "Coordinate Reference System from Print Layer and current QGIS Project are different. "
+                        "Maybe the page rectangles will have mystery orientations."
+                    ),
+                    STYLE_SHEET_WARNING,
+                )
 
-    def reload_pages(self):
-        # loads pages from plot layer
+    def __reload_pages(self):
+        """Rebuild the page list from the currently selected plot layer."""
         self.List_Pages.clear()
         for page in self.plot_layer:
-            self.add_page_feature(page)
+            self.__add_page_feature(page)
 
-    def add_page_feature(self, page: PlotPage):
+    def __add_page_feature(self, page: PlotPage):
+        """Add one plot page to the page list with its orientation and feature ID."""
         orientation = self.layouts.get_orientation(page.file)
         if orientation == QgsLayoutItemPage.Portrait:
-            orientation = self.tr_("portr.")
+            orientation = self.__tr("portr.")
         elif orientation == QgsLayoutItemPage.Landscape:
-            orientation = self.tr_("lands.")
+            orientation = self.__tr("lands.")
         else:
             orientation = "unknown"
 
-        item = QListWidgetItem(f'#{page.page} ({orientation})')
+        item = QListWidgetItem(f"#{page.page} ({orientation})")
         item.setData(Qt.UserRole, page.fid)
 
         self.List_Pages.addItem(item)
 
-    def add_new_layout(self, checked: bool):
+    def __add_new_layout(self, checked: bool):
+        """Open the dialog for creating a new plot layout."""
         self.add_module("PlotNewLayout", PlotNewLayout, parent=self)
 
-    def add_file(self, checked: bool):
-        """ Select existing GeoPackage plot file and add it to project """
+    def __add_file(self, checked: bool):
+        """Add an existing compatible plot GeoPackage to the current project."""
         set_label_status(self.Label_Status, "")
         file, _ = QFileDialog.getOpenFileName(
             self.iface.mainWindow(),
-            'Wählen Sie eine GeoPackage:',
+            "Wählen Sie eine GeoPackage:",
             QgsProject.instance().absolutePath(),
-            "GeoPackage (*.gpkg)")
+            "GeoPackage (*.gpkg)",
+        )
 
         if not file:
             return
 
         ok = PlotLayer.is_plot_file(file)
         if not ok:
-            set_label_status(self.Label_Status,
-                             self.tr_("File '%s' not compatible.") % os.path.basename(file),
-                             STYLE_SHEET_ERROR)
+            set_label_status(
+                self.Label_Status, self.__tr("File '%s' not compatible.") % os.path.basename(file), STYLE_SHEET_ERROR
+            )
             return
 
         layer = QgsVectorLayer(PlotLayer.get_plot_uri(file), os.path.basename(file).split(".")[0])
         if not layer.isValid():
-            set_label_status(self.Label_Status,
-                             self.tr_("File '%s' could not be opened.") % os.path.basename(file),
-                             STYLE_SHEET_ERROR)
+            set_label_status(
+                self.Label_Status,
+                self.__tr("File '%s' could not be opened.") % os.path.basename(file),
+                STYLE_SHEET_ERROR,
+            )
             return
 
         layer = QgsProject.instance().addMapLayer(layer, False)
@@ -856,19 +852,19 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.set_layer(layer)
 
     def __start_digitize_map_tool(self):
-        """ Starts the map tool to digitize new pages. """
+        """Start digitizing a line that will be converted into plot pages."""
 
         authid = self.plot_layer.layer_pages.dataProvider().crs().authid()
         self.__map_tool = MapToolDigitizeFeature.start_from_layer(
             QgsVectorLayer(f"LineString?crs={authid}", "temp line layer", "memory"),
             self.iface,
             warn_disabled_snapping=False,
-            previous_layer_id=self.iface.activeLayer().id() if self.iface.activeLayer() else None
+            previous_layer_id=self.iface.activeLayer().id() if self.iface.activeLayer() else None,
         )
         self.__map_tool.drawingFinished.connect(self.__create_new_pages_from_line)
 
     def __create_new_pages_from_line(self, geometry: QgsGeometry):
-        """ Adds the pages along the line geometry """
+        """Create plot pages along the supplied line geometry."""
         # get basic information
         scale = self.SpinBox_Page_Scale.value()
         crs = self.plot_layer.layer_pages.dataProvider().crs()
@@ -878,32 +874,29 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         for row in range(self.DrD_Page_Templates.count()):
             layout = self.DrD_Page_Templates.itemData(row, Qt.UserRole)
             if layout is not None:
+                layout.item_map.setCrs(crs)
                 layouts.append(layout)
 
-        layout.item_map.setCrs(crs)
-        scale = self.SpinBox_Page_Scale.value()
-        rectangles = [self.layouts.get_layout_extent(layout.path, QgsPointXY(100, 100), scale)
-                      for layout in layouts]
+        rectangles = [self.layouts.get_layout_extent(layout.path, QgsPointXY(100, 100), scale) for layout in layouts]
 
         overview = PlotRectanglesFromLines([geometry.asPolyline()], rectangles)
         for i, rectangle in enumerate(overview.run()):
             layout = layouts[overview.rectangle_template_indices[i]]
             self.plot_layer.add_page(layout, QgsGeometry.fromRect(rectangle), scale)
 
-        self.reload_pages()
+        self.__reload_pages()
 
-    def add_over_view_pages(self, checked: bool):
-        """ Adds pages from calculated page rectangles """
+    def __add_over_view_pages(self, checked: bool):
+        """Create plot pages around selected features from visible project layers."""
         layers = QgsProject.instance().mapLayers().values()
-        layers = [layer for layer in layers
-                  if isinstance(layer, QgsVectorLayer) and not PlotLayer.is_plot_layer(layer)]
+        layers = [layer for layer in layers if isinstance(layer, QgsVectorLayer) and not PlotLayer.is_plot_layer(layer)]
 
         layout: PlotLayout = self.DrD_Page_Templates.currentData()
 
         crs: QgsCoordinateReferenceSystem = self.plot_layer.layer_pages.dataProvider().crs()
-        bbox = transform_geometry(QgsGeometry.fromRect(crs.bounds()),
-                                  QgsCoordinateReferenceSystem("EPSG:4326"),
-                                  crs).boundingBox()
+        bbox = transform_geometry(
+            QgsGeometry.fromRect(crs.bounds()), QgsCoordinateReferenceSystem("EPSG:4326"), crs
+        ).boundingBox()
         center = bbox.center()
 
         # workaround with CRS with 0/0 as center x/y -> EPSG:4326
@@ -912,9 +905,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         layout.item_map.setCrs(crs)
         scale = self.SpinBox_Page_Scale.value()
-        rectangle = self.layouts.get_layout_extent(layout.path,
-                                                   center,
-                                                   scale)
+        rectangle = self.layouts.get_layout_extent(layout.path, center, scale)
 
         geometries = []
         target_crs = self.plot_layer.layer_pages.dataProvider().crs()
@@ -933,16 +924,16 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.plot_layer.add_page(layout, QgsGeometry.fromRect(rectangle), scale)
 
         if not overview.rectangles:
-            QMessageBox.information(self.iface.mainWindow(),
-                                    self.tr_("Plot Menu (Overview)"),
-                                    self.tr_("No pages calculated."))
+            QMessageBox.information(
+                self.iface.mainWindow(), self.__tr("Plot Menu (Overview)"), self.__tr("No pages calculated.")
+            )
         else:
-            self.reload_pages()
+            self.__reload_pages()
 
     def unload(self, self_unload: bool = False):
-        """ Will be called, when module will be unloaded.
+        """Release loaded layout resources and unload this UI module.
 
-            :param self_unload: only self unload, defaults to False
+        :param self_unload: Whether only this module should unload; defaults to False.
         """
 
         # clear loaded layouts (remove all pages and items)
@@ -957,8 +948,9 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
     @classmethod
     def load(cls, parent_module: UiModuleBase):
-        """ Loads this module into parent module.
-            It will be loaded as a stand-alone ui.
+        """Show an existing menu or load this menu as a standalone UI module.
+
+        :param parent_module: UI module that owns or will contain this menu.
         """
 
         if cls.__name__ in parent_module:
@@ -968,20 +960,22 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         else:
             module: Union[cls, UiModuleBase] = parent_module.add_module(cls.__name__, cls)
             module.show()
-            module.get_plugin().iface.messageBar().pushMessage(cls.tr_("Plot Menu"),
-                                                               cls.tr_("Templates loading. Please wait."))
+            module.get_plugin().iface.messageBar().pushMessage(
+                cls.__tr("Plot Menu"), cls.__tr("Templates loading. Please wait.")
+            )
             module.setEnabled(False)
             QApplication.setOverrideCursor(Qt.BusyCursor)
-            module.init_layouts()
+            module.__init_layouts()
             module.setEnabled(True)
             QApplication.restoreOverrideCursor()
 
             if module.layouts.exceptions:
-                error = cls.tr_("Errors occured while loading QGIS Printlayout Templates") \
-                        + ("\n".join(module.layouts.exceptions))
-                module.get_plugin().iface.messageBar().pushWarning(cls.tr_("Print Menu"),
-                                                                   cls.tr_(
-                                                                       "Errors occured while loading QGIS Printlayout Templates"))
+                error = cls.__tr("Errors occured while loading QGIS Printlayout Templates") + (
+                    "\n".join(module.layouts.exceptions)
+                )
+                module.get_plugin().iface.messageBar().pushWarning(
+                    cls.__tr("Print Menu"), cls.__tr("Errors occured while loading QGIS Printlayout Templates")
+                )
             else:
                 error = ""
             set_label_status(module.Label_Status, error, STYLE_SHEET_ERROR)
