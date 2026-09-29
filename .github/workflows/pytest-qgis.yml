@@ -38,4 +38,5 @@ jobs:
           "$RUNNER_TEMP/qgis-venv/bin/python" -m pip install -r requirements-dev.txt openpyxl
 
       - name: Run plugin tests
-        run: "$RUNNER_TEMP/qgis-venv/bin/python" ./test.py
+        run: |
+          "$RUNNER_TEMP/qgis-venv/bin/python" ./test.py
