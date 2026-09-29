@@ -26,7 +26,7 @@
     <message>
         <location filename="plot_menu.ui" line="149"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Calculates new pages along the digitized polyline.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Berechne Seiten entlang des gezeichneten Hilfsinie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Berechne Seiten entlang der gezeichneten Hilfsinie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="plot_menu.ui" line="155"/>
@@ -116,7 +116,7 @@
     <message>
         <location filename="plot_menu.ui" line="504"/>
         <source>Scale</source>
-        <translation>Maßtab</translation>
+        <translation>Maßstab</translation>
     </message>
     <message>
         <location filename="plot_menu.ui" line="531"/>

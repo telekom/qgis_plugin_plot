@@ -936,7 +936,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.progress.reset_sub_bar(0, max(1, selected_feature_count))
             for layer in layers:
                 if layer.selectedFeatureCount():
-                    transform = get_transform(layer.dataProvider().crs(), target_crs)
+                    transform = get_transform(layer.crs(), target_crs)
                     request = QgsFeatureRequest().setCoordinateTransform(transform)
                     for feature in layer.getSelectedFeatures(request):
                         geometries.append(feature.geometry())
