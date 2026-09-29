@@ -186,6 +186,31 @@ class PluginPlot(Plugin):
 
         self.versionRead.emit(self)
 
+    def load_frame_picker(self):
+        """ Load the developer frame picker into the existing plugin UI. """
+        from .modules.dev.frame_quick_reload import FramePicker
+
+        if "FramePicker" not in self:
+            picker = self.add_module("FramePicker", FramePicker)
+        else:
+            picker = self["FramePicker"]
+
+        action = self.add_action(
+            f"Frame neu laden (Picker)",
+            self.getThemeIcon("cursors/mSelect.svg"),
+            None,  # connected manually below to receive the checked state
+            toolbar_name=self.plugin_menu_name,
+            toolbar_displayname=self.plugin_menu_name)
+        action.setCheckable(True)
+        action.setStatusTip("Einen Frame anklicken, um dessen Modul "
+                            "neu zu laden (ohne Plugin-Neustart).\n"
+                            "Mausrad: Eltern-Frame · Esc/Rechtsklick: Abbrechen.")
+        action.setToolTip(action.statusTip())
+        picker.set_action(action)
+        self.connect(
+            action.triggered,
+            lambda checked: picker.start() if checked else picker.cancel())
+
     def check_map_tool_changed(self, new_tool, old_tool):
         for drawing in self.drawings:
             if drawing:
@@ -307,6 +332,12 @@ class PluginPlot(Plugin):
                                      "Kann möglicherweise nur einmalig ausgeführt werden (QGIS CRASH DANACH MÖGLICH).\n\n"
                                      "Alle pytest-Plugins sind deaktiviert.")
 
+            # TestDockWidget, you can comment this out, when you don't need to test these classes
+            from .modules.examples import dockwidget
+            dockwidget.init(self)
+
+            self.load_frame_picker()
+
         # init gui from ui control
         from .utilities.ui_control import init_plugin_gui
         init_plugin_gui(self)
@@ -314,18 +345,6 @@ class PluginPlot(Plugin):
         # Do not add you actions in initGui, keep it clean and use load_tool_bar instead
         from .utilities.ui_control import load_tool_bar
         load_tool_bar(self)
-
-    def __test(self):
-        from .modules.examples.test_focus import TestFocus
-
-        module = self.add_module("TestFocus", TestFocus)
-
-        module._accessibility_config.read(module._accessibility_config_path)
-
-        if module._accessibility_config.getboolean('accessibility', 'enable', fallback=False):
-            module.setup_accessibility()
-
-        module.show()
 
     def __switch_logging_debug_mode(self):
         """ Disables the DEBUG logging from the plugin and restarts the plugin.
