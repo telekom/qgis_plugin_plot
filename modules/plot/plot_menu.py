@@ -649,7 +649,6 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                 toolbar_name="qgis_plot_plugin",
                 toolbar_displayname=self.tr_("Print Menu"),
                 to_plugin_menu=False,
-                manage=True
             )
 
             self.add_action(
@@ -659,7 +658,6 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                 toolbar_name="qgis_plot_plugin",
                 toolbar_displayname=self.tr_("Print Menu"),
                 to_plugin_menu=False,
-                manage=True
             )
 
     def dpi_changed(self, value: int):
@@ -724,7 +722,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.List_Pages.clear()
         set_label_status(self.Label_Status, "")
 
-        self.remove_actions(only_managed=True)
+        self.remove_actions()
 
         if self.global_layout_menu is not None:
             self.Frame_Layout_Menu_Global._ui_module_base.replace_with_empty_frame()
