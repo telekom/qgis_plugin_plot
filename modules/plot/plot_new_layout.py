@@ -38,8 +38,8 @@ class PlotNewLayout(UiModuleBase, FORM_CLASS, QMainWindow):
         self.show()
 
         # Qt Connection
-        self.connect(self.But_Cancel.clicked, self.close)
-        self.connect(self.But_Create.clicked, self.__create_plot_layer)
+        self.connect(self.But_Cancel.clicked, lambda *_: self.close())
+        self.connect(self.But_Create.clicked, lambda *_: self.__create_plot_layer())
         self.connect(self.CheckBox_Temporary.stateChanged, self.__on_temporary_mode_changed)
 
         self.__on_temporary_mode_changed(self.CheckBox_Temporary.checkState())
@@ -96,7 +96,7 @@ class PlotNewLayout(UiModuleBase, FORM_CLASS, QMainWindow):
         """Translate a user-visible string in the QGIS application context."""
         return QgsApplication.translate("QgsApplication", text)
 
-    def __create_plot_layer(self, checked: bool):
+    def __create_plot_layer(self):
         """Create the plot layer after validating the selected template, path, and CRS."""
         set_label_status(self.Label_Status, "")
 

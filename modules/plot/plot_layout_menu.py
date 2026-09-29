@@ -63,20 +63,22 @@ class PlotLayoutMenu(UiModuleBase, QMainWindow, FORM_CLASS):
             raise TypeError(f"plot_layout({self.plot_layout}) is not given")
 
         self.connect(
-            self.GroupBox_Layers.toggled, lambda x=0: self.__on_layer_option_scope_changed(self.GroupBox_Layers)
+            self.GroupBox_Layers.toggled,
+            lambda *_: self.__on_layer_option_scope_changed(self.GroupBox_Layers)
         )
         self.connect(self.Table_UserItems.itemClicked, self.__on_user_field_option_clicked)
-        self.connect(self.Table_Layers.clicked, self.__sync_layer_visibility_from_table)
+        self.connect(self.Table_Layers.clicked, lambda *_: self.__sync_layer_visibility_from_table())
         self.connect(
-            self.CheckBox_MiniMap.stateChanged, lambda x: self.__on_display_option_changed(self.CheckBox_MiniMap)
+            self.CheckBox_MiniMap.stateChanged,
+            lambda *_: self.__on_display_option_changed(self.CheckBox_MiniMap)
         )
         self.connect(
             self.CheckBox_ShowMapTips.stateChanged,
-            lambda x: self.__on_display_option_changed(self.CheckBox_ShowMapTips),
+            lambda *_: self.__on_display_option_changed(self.CheckBox_ShowMapTips),
         )
         self.connect(
             self.CheckBox_MiniPageLegend.stateChanged,
-            lambda x: self.__on_display_option_changed(self.CheckBox_MiniPageLegend),
+            lambda *_: self.__on_display_option_changed(self.CheckBox_MiniPageLegend),
         )
 
         if self.plot_layout.item_minimap is None:
@@ -147,7 +149,7 @@ class PlotLayoutMenu(UiModuleBase, QMainWindow, FORM_CLASS):
 
         self.refresh_layer_visibility_table()
 
-    def __sync_layer_visibility_from_table(self, _index=None):
+    def __sync_layer_visibility_from_table(self):
         """Copy table checkbox values to visibility settings and synchronize them."""
         table: QTableWidget = self.Table_Layers
 

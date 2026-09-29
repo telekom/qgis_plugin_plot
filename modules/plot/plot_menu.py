@@ -115,18 +115,18 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.List_Pages.setAcceptDrops(True)
 
         # add some Qt connections
-        self.connect(self.But_NewLayout.clicked, self.__add_new_layout)
-        self.connect(self.But_Create_PDF.clicked, self.__create_pdf)
-        self.connect(self.But_Create_PDF_QGIS.clicked, self.__create_pdf_qgis)
-        self.connect(self.But_AddFile.clicked, self.__add_file)
-        self.connect(self.But_Create_PrintLayout.clicked, self.__create_qgs_print_layout)
-        self.connect(self.But_AddPage.clicked, self.__add_new_page)
-        self.connect(self.But_AddPage_Portrait.clicked, self.__add_new_page_portrait)
-        self.connect(self.But_AddPage_Landscape.clicked, self.__add_new_page_landscape)
-        self.connect(self.But_CreateOverview.clicked, self.__add_over_view_pages)
+        self.connect(self.But_NewLayout.clicked, lambda *_: self.__add_new_layout())
+        self.connect(self.But_Create_PDF.clicked, lambda *_: self.__create_pdf())
+        self.connect(self.But_Create_PDF_QGIS.clicked, lambda *_: self.__create_pdf_qgis())
+        self.connect(self.But_AddFile.clicked, lambda *_: self.__add_file())
+        self.connect(self.But_Create_PrintLayout.clicked, lambda *_: self.__create_qgs_print_layout())
+        self.connect(self.But_AddPage.clicked, lambda *_: self.__add_new_page())
+        self.connect(self.But_AddPage_Portrait.clicked, lambda *_: self.__add_new_page_portrait())
+        self.connect(self.But_AddPage_Landscape.clicked, lambda *_: self.__add_new_page_landscape())
+        self.connect(self.But_CreateOverview.clicked, lambda *_: self.__add_over_view_pages())
         self.connect(self.But_CreateFromLine.clicked, lambda *_: self.__start_digitize_map_tool())
-        self.connect(self.But_DeletePage.clicked, self.__delete_page)
-        self.connect(self.DrD_PrintLayoutsGpkg.currentIndexChanged, self.__layout_selected)
+        self.connect(self.But_DeletePage.clicked, lambda *_: self.__delete_page())
+        self.connect(self.DrD_PrintLayoutsGpkg.currentIndexChanged, lambda *_: self.__layout_selected())
         self.connect(QgsProject.instance().layersAdded, self.__layers_added)
         self.connect(QgsProject.instance().legendLayersAdded, self.__layers_added)
         self.connect(QgsProject.instance().layersRemoved, self.__layers_removed)
@@ -195,7 +195,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         event.accept()
 
-    def __create_qgs_print_layout(self, checked: bool):
+    def __create_qgs_print_layout(self):
         """Create a print layout and add it to the current QGIS project."""
         self.__layout = None
 
@@ -213,7 +213,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.iface.messageBar().pushWarning(self.__tr("Print Menu"), str(e))
         self.progress.restore()
 
-    def __create_pdf(self, checked: bool):
+    def __create_pdf(self):
         """Export the current plot layout to a PDF file selected by the user."""
         self.__layout = None
 
@@ -287,7 +287,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         self.__layout = None
 
-    def __create_pdf_qgis(self, checked: bool):
+    def __create_pdf_qgis(self):
         """Open the QGIS layout designer and trigger its built-in PDF export."""
         self.__layout = None
 
@@ -377,7 +377,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.__layout.remove_from_instance()
         self.__layout = None
 
-    def __delete_page(self, checked: bool):
+    def __delete_page(self):
         """Delete the selected plot page or pages after confirming a multi-delete."""
         items = self.List_Pages.selectedItems()
 
@@ -404,29 +404,29 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             else:
                 self.List_Pages.setCurrentRow(row)
 
-    def __add_new_page_landscape(self, checked: bool, bring_to_front: bool = True):
+    def __add_new_page_landscape(self, bring_to_front: bool = True):
         """Select a landscape template and start the new-page map tool."""
         for row in range(self.DrD_Page_Templates.count()):
             layout = self.DrD_Page_Templates.itemData(row, Qt.UserRole)
             if layout is not None and layout.page.orientation() == QgsLayoutItemPage.Landscape:
                 self.DrD_Page_Templates.setCurrentIndex(row)
-                self.__add_new_page(True, bring_to_front=bring_to_front)
+                self.__add_new_page(bring_to_front=bring_to_front)
                 break
         else:
             set_label_status(self.Label_Status, self.__tr("Something went wrong. No landscape layout found."))
 
-    def __add_new_page_portrait(self, checked: bool, bring_to_front: bool = True):
+    def __add_new_page_portrait(self, bring_to_front: bool = True):
         """Select a portrait template and start the new-page map tool."""
         for row in range(self.DrD_Page_Templates.count()):
             layout = self.DrD_Page_Templates.itemData(row, Qt.UserRole)
             if layout is not None and layout.page.orientation() == QgsLayoutItemPage.Portrait:
                 self.DrD_Page_Templates.setCurrentIndex(row)
-                self.__add_new_page(True, bring_to_front=bring_to_front)
+                self.__add_new_page(bring_to_front=bring_to_front)
                 break
         else:
             set_label_status(self.Label_Status, self.__tr("Something went wrong. No portrait layout found."))
 
-    def __add_new_page(self, checked: bool, bring_to_front: bool = True):
+    def __add_new_page(self, bring_to_front: bool = True):
         """Activate the map tool used to draw and create a page."""
         layout: PlotLayout = self.DrD_Page_Templates.currentData()
 
@@ -439,7 +439,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             file = self.plot_layer.file
             self.__select_page_layout_template(file)
 
-            self.__add_new_page(checked)
+            self.__add_new_page()
             return
 
         scale = self.SpinBox_Page_Scale.value()
@@ -635,7 +635,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.add_action(
                 f"{self.__tr('Add new page (portrait)')} - {self.plot_layer.layer_pages.name()}",
                 QIcon(self.get_plugin().get_icon_path("add_page_portrait.svg")),
-                lambda x=0: self.__add_new_page_portrait(True, False),
+                lambda *_: self.__add_new_page_portrait(False),
                 toolbar_name="qgis_plot_plugin",
                 toolbar_displayname=self.__tr("Print Menu"),
                 to_plugin_menu=False,
@@ -644,7 +644,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.add_action(
                 f"{self.__tr('Add new page (landscape)')} - {self.plot_layer.layer_pages.name()}",
                 QIcon(self.get_plugin().get_icon_path("add_page_landscape.svg")),
-                lambda x=0: self.__add_new_page_landscape(True, False),
+                lambda *_: self.__add_new_page_landscape(False),
                 toolbar_name="qgis_plot_plugin",
                 toolbar_displayname=self.__tr("Print Menu"),
                 to_plugin_menu=False,
@@ -702,7 +702,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         index = self.__get_layer_index(layer)
         self.DrD_PrintLayoutsGpkg.setCurrentIndex(index)
 
-    def __layout_selected(self, index: int):
+    def __layout_selected(self):
         """Load the selected plot layer and initialize its layout and page controls."""
         data: str = self.DrD_PrintLayoutsGpkg.currentData()
         layer: QgsVectorLayer = QgsProject.instance().mapLayer(data)
@@ -813,11 +813,11 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         self.List_Pages.addItem(item)
 
-    def __add_new_layout(self, checked: bool):
+    def __add_new_layout(self):
         """Open the dialog for creating a new plot layout."""
         self.add_module("PlotNewLayout", PlotNewLayout, parent=self)
 
-    def __add_file(self, checked: bool):
+    def __add_file(self):
         """Add an existing compatible plot GeoPackage to the current project."""
         set_label_status(self.Label_Status, "")
         file, _ = QFileDialog.getOpenFileName(
@@ -865,70 +865,117 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
     def __create_new_pages_from_line(self, geometry: QgsGeometry):
         """Create plot pages along the supplied line geometry."""
-        # get basic information
-        scale = self.SpinBox_Page_Scale.value()
-        crs = self.plot_layer.layer_pages.dataProvider().crs()
+        self.progress.start_progressbars(0, 100, hide_widgets=[self.ScrollArea], use_subbar=True, auto_restore=False)
+        self.progress.set_text_main(self.__tr("Preparing pages from line"))
+        overview = None
+        try:
+            # Get the available layouts from the template dropdown.
+            scale = self.SpinBox_Page_Scale.value()
+            crs = self.plot_layer.layer_pages.dataProvider().crs()
+            layouts = []
+            for row in range(self.DrD_Page_Templates.count()):
+                layout = self.DrD_Page_Templates.itemData(row, Qt.UserRole)
+                if layout is not None:
+                    layout.item_map.setCrs(crs)
+                    layouts.append(layout)
 
-        # get the available layouts from the visible or hidden template dropdown
-        layouts = []
-        for row in range(self.DrD_Page_Templates.count()):
-            layout = self.DrD_Page_Templates.itemData(row, Qt.UserRole)
-            if layout is not None:
-                layout.item_map.setCrs(crs)
-                layouts.append(layout)
+            rectangles = [
+                self.layouts.get_layout_extent(layout.path, QgsPointXY(100, 100), scale) for layout in layouts
+            ]
 
-        rectangles = [self.layouts.get_layout_extent(layout.path, QgsPointXY(100, 100), scale) for layout in layouts]
+            overview = PlotRectanglesFromLines([geometry.asPolyline()], rectangles)
+            overview.progressChanged.connect(self.__update_main_progress)
+            overview.subProgressChanged.connect(self.__update_sub_progress)
+            rectangles = overview.run()
 
-        overview = PlotRectanglesFromLines([geometry.asPolyline()], rectangles)
-        for i, rectangle in enumerate(overview.run()):
-            layout = layouts[overview.rectangle_template_indices[i]]
-            self.plot_layer.add_page(layout, QgsGeometry.fromRect(rectangle), scale)
+            self.progress.set_text_main(self.__tr("Adding pages"))
+            self.progress.reset_main_bar(0, max(1, len(rectangles)))
+            for index, rectangle in enumerate(rectangles):
+                layout = layouts[overview.rectangle_template_indices[index]]
+                self.plot_layer.add_page(layout, QgsGeometry.fromRect(rectangle), scale)
+                self.progress.add_main()
 
-        self.__reload_pages()
-
-    def __add_over_view_pages(self, checked: bool):
-        """Create plot pages around selected features from visible project layers."""
-        layers = QgsProject.instance().mapLayers().values()
-        layers = [layer for layer in layers if isinstance(layer, QgsVectorLayer) and not PlotLayer.is_plot_layer(layer)]
-
-        layout: PlotLayout = self.DrD_Page_Templates.currentData()
-
-        crs: QgsCoordinateReferenceSystem = self.plot_layer.layer_pages.dataProvider().crs()
-        bbox = transform_geometry(
-            QgsGeometry.fromRect(crs.bounds()), QgsCoordinateReferenceSystem("EPSG:4326"), crs
-        ).boundingBox()
-        center = bbox.center()
-
-        # workaround with CRS with 0/0 as center x/y -> EPSG:4326
-        center.setX(center.x() + (bbox.width() / 4))
-        center.setY(center.y() + (bbox.height() / 4))
-
-        layout.item_map.setCrs(crs)
-        scale = self.SpinBox_Page_Scale.value()
-        rectangle = self.layouts.get_layout_extent(layout.path, center, scale)
-
-        geometries = []
-        target_crs = self.plot_layer.layer_pages.dataProvider().crs()
-        for layer in layers:
-            if not layer.selectedFeatureCount():
-                # ignore layers without selections
-                continue
-
-            # transform the feature coordinates
-            transform = get_transform(layer.dataProvider().crs(), target_crs)
-            request = QgsFeatureRequest().setCoordinateTransform(transform)
-            geometries.extend(feature.geometry() for feature in layer.getSelectedFeatures(request))
-
-        overview = PlotRectanglesFromGeometries(geometries, [rectangle])
-        for rectangle in overview.run():
-            self.plot_layer.add_page(layout, QgsGeometry.fromRect(rectangle), scale)
-
-        if not overview.rectangles:
-            QMessageBox.information(
-                self.iface.mainWindow(), self.__tr("Plot Menu (Overview)"), self.__tr("No pages calculated.")
-            )
-        else:
             self.__reload_pages()
+        finally:
+            if overview is not None:
+                overview.progressChanged.disconnect(self.__update_main_progress)
+                overview.subProgressChanged.disconnect(self.__update_sub_progress)
+            self.progress.restore()
+
+    def __add_over_view_pages(self):
+        """Create plot pages around selected features from visible project layers."""
+        self.progress.start_progressbars(0, 100, hide_widgets=[self.ScrollArea], use_subbar=True, auto_restore=False)
+        self.progress.set_text_main(self.__tr("Collecting selected features"))
+        overview = None
+        try:
+            layers = QgsProject.instance().mapLayers().values()
+            layers = [
+                layer for layer in layers if isinstance(layer, QgsVectorLayer) and not PlotLayer.is_plot_layer(layer)
+            ]
+
+            layout: PlotLayout = self.DrD_Page_Templates.currentData()
+
+            crs: QgsCoordinateReferenceSystem = self.plot_layer.layer_pages.dataProvider().crs()
+            bbox = transform_geometry(
+                QgsGeometry.fromRect(crs.bounds()), QgsCoordinateReferenceSystem("EPSG:4326"), crs
+            ).boundingBox()
+            center = bbox.center()
+
+            # Workaround for CRS bounds whose center is (0, 0), e.g. EPSG:4326.
+            center.setX(center.x() + (bbox.width() / 4))
+            center.setY(center.y() + (bbox.height() / 4))
+
+            layout.item_map.setCrs(crs)
+            scale = self.SpinBox_Page_Scale.value()
+            rectangle = self.layouts.get_layout_extent(layout.path, center, scale)
+
+            geometries = []
+            target_crs = self.plot_layer.layer_pages.dataProvider().crs()
+            selected_feature_count = sum(layer.selectedFeatureCount() for layer in layers)
+            self.progress.reset_main_bar(0, max(1, len(layers)))
+            self.progress.reset_sub_bar(0, max(1, selected_feature_count))
+            for layer in layers:
+                if layer.selectedFeatureCount():
+                    transform = get_transform(layer.dataProvider().crs(), target_crs)
+                    request = QgsFeatureRequest().setCoordinateTransform(transform)
+                    for feature in layer.getSelectedFeatures(request):
+                        geometries.append(feature.geometry())
+                        self.progress.add_sub()
+                self.progress.add_main()
+
+            overview = PlotRectanglesFromGeometries(geometries, [rectangle])
+            overview.progressChanged.connect(self.__update_main_progress)
+            overview.subProgressChanged.connect(self.__update_sub_progress)
+            rectangles = overview.run()
+
+            if not rectangles:
+                QMessageBox.information(
+                    self.iface.mainWindow(), self.__tr("Plot Menu (Overview)"), self.__tr("No pages calculated.")
+                )
+                return
+
+            self.progress.set_text_main(self.__tr("Adding pages"))
+            self.progress.reset_main_bar(0, max(1, len(rectangles)))
+            for rectangle in rectangles:
+                self.plot_layer.add_page(layout, QgsGeometry.fromRect(rectangle), scale)
+                self.progress.add_main()
+
+            self.__reload_pages()
+        finally:
+            if overview is not None:
+                overview.progressChanged.disconnect(self.__update_main_progress)
+                overview.subProgressChanged.disconnect(self.__update_sub_progress)
+            self.progress.restore()
+
+    def __update_main_progress(self, current: int, maximum: int, message: str):
+        """Display a calculation phase and its progress in the main progress bar."""
+        self.progress.reset_main_bar(0, maximum, value=current)
+        self.progress.set_text_main(message)
+
+    def __update_sub_progress(self, current: int, maximum: int, message: str):
+        """Display the current input or grouping step in the secondary progress bar."""
+        self.progress.reset_sub_bar(0, maximum, value=current)
+        self.progress.set_text_single(message)
 
     def unload(self, self_unload: bool = False):
         """Release loaded layout resources and unload this UI module.
@@ -954,11 +1001,11 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         """
 
         if cls.__name__ in parent_module:
-            module: cls = parent_module[cls.__name__]
+            module = parent_module[cls.__name__]
             module.show()
             module.activateWindow()
         else:
-            module: Union[cls, UiModuleBase] = parent_module.add_module(cls.__name__, cls)
+            module = parent_module.add_module(cls.__name__, cls)
             module.show()
             module.get_plugin().iface.messageBar().pushMessage(
                 cls.__tr("Plot Menu"), cls.__tr("Templates loading. Please wait.")
