@@ -32,7 +32,8 @@
         "${workspaceFolder}/pytest.ini",
         "-o",
         "consider_namespace_packages=true",
-        "${workspaceFolder}/tests"
+        "${workspaceFolder}/tests",
+        "${workspaceFolder}/submodules/base/tests"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
