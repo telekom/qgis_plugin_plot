@@ -143,6 +143,19 @@
                    </property>
                   </widget>
                  </item>
+                 <item row="2" column="0">
+                  <widget class="QPushButton" name="But_CreateFromLine">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Calculates new pages along the digitized polyline.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="whatsThis">
+                    <string/>
+                   </property>
+                   <property name="text">
+                    <string>From Line</string>
+                   </property>
+                  </widget>
+                 </item>
                 </layout>
                </widget>
               </item>
@@ -904,6 +917,7 @@
   <tabstop>But_AddPage_Portrait</tabstop>
   <tabstop>But_AddPage_Landscape</tabstop>
   <tabstop>But_CreateOverview</tabstop>
+  <tabstop>But_CreateFromLine</tabstop>
   <tabstop>But_Create_PDF</tabstop>
   <tabstop>But_Create_PrintLayout</tabstop>
   <tabstop>But_Create_PDF_QGIS</tabstop>
