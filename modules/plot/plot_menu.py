@@ -802,9 +802,9 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         """Add one plot page to the page list with its orientation and feature ID."""
         orientation = self.layouts.get_orientation(page.file)
         if orientation == QgsLayoutItemPage.Portrait:
-            orientation = self.__tr("portr.")
+            orientation = self.__tr("portrait")
         elif orientation == QgsLayoutItemPage.Landscape:
-            orientation = self.__tr("lands.")
+            orientation = self.__tr("landscape")
         else:
             orientation = "unknown"
 
