@@ -868,6 +868,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.progress.start_progressbars(0, 100, hide_widgets=[self.ScrollArea], use_subbar=True, auto_restore=False)
         self.progress.set_text_main(self.__tr("Preparing pages from line"))
         overview = None
+        overlap = self.SpinBox_Overlapping.value() / 100
         try:
             # Get the available layouts from the template dropdown.
             scale = self.SpinBox_Page_Scale.value()
@@ -883,7 +884,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                 self.layouts.get_layout_extent(layout.path, QgsPointXY(100, 100), scale) for layout in layouts
             ]
 
-            overview = PlotRectanglesFromLines([geometry.asPolyline()], rectangles)
+            overview = PlotRectanglesFromLines([geometry.asPolyline()], rectangles, overlap=overlap)
             overview.progressChanged.connect(self.__update_main_progress)
             overview.subProgressChanged.connect(self.__update_sub_progress)
             rectangles = overview.run()
@@ -907,6 +908,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.progress.start_progressbars(0, 100, hide_widgets=[self.ScrollArea], use_subbar=True, auto_restore=False)
         self.progress.set_text_main(self.__tr("Collecting selected features"))
         overview = None
+        overlap = self.SpinBox_Overlapping.value() / 100
         try:
             layers = QgsProject.instance().mapLayers().values()
             layers = [
@@ -943,7 +945,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                         self.progress.add_sub()
                 self.progress.add_main()
 
-            overview = PlotRectanglesFromGeometries(geometries, [rectangle])
+            overview = PlotRectanglesFromGeometries(geometries, [rectangle], overlap=overlap)
             overview.progressChanged.connect(self.__update_main_progress)
             overview.subProgressChanged.connect(self.__update_sub_progress)
             rectangles = overview.run()

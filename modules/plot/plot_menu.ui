@@ -130,7 +130,7 @@
                  <property name="spacing">
                   <number>0</number>
                  </property>
-                 <item row="1" column="0">
+                 <item row="2" column="0" colspan="2">
                   <widget class="QPushButton" name="But_CreateOverview">
                    <property name="toolTip">
                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Calculates new pages from QGIS canvas selection from selection on differenct vector layers.&lt;/p&gt;&lt;p&gt;Calculation is done from lowest x-coordinate to highes x-coordinate. Y-coordinate will be ignored.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -143,7 +143,7 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="0">
+                 <item row="3" column="0" colspan="2">
                   <widget class="QPushButton" name="But_CreateFromLine">
                    <property name="toolTip">
                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Calculates new pages along the digitized polyline.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -154,6 +154,50 @@
                    <property name="text">
                     <string>From Line</string>
                    </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" colspan="2">
+                  <widget class="QWidget" name="Widget_Overlapping" native="true">
+                   <layout class="QHBoxLayout" name="horizontalLayout_3">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="Label_Overlapping">
+                      <property name="text">
+                       <string>Overlap:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QSpinBox" name="SpinBox_Overlapping">
+                      <property name="toolTip">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Value for overlapping pages during generation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                      <property name="suffix">
+                       <string> %</string>
+                      </property>
+                      <property name="minimum">
+                       <number>1</number>
+                      </property>
+                      <property name="maximum">
+                       <number>90</number>
+                      </property>
+                      <property name="value">
+                       <number>10</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
@@ -916,6 +960,7 @@
   <tabstop>But_DeletePage</tabstop>
   <tabstop>But_AddPage_Portrait</tabstop>
   <tabstop>But_AddPage_Landscape</tabstop>
+  <tabstop>SpinBox_Overlapping</tabstop>
   <tabstop>But_CreateOverview</tabstop>
   <tabstop>But_CreateFromLine</tabstop>
   <tabstop>But_Create_PDF</tabstop>
