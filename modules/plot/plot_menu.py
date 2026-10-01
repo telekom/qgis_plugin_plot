@@ -866,7 +866,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
     def __create_new_pages_from_line(self, geometry: QgsGeometry):
         """Create plot pages along the supplied line geometry."""
         self.progress.start_progressbars(0, 100, hide_widgets=[self.ScrollArea], use_subbar=True, auto_restore=False)
-        self.progress.set_text_main(self.__tr("Preparing pages from line"))
+        self.progress.set_text_main("")
         overview = None
         overlap = self.SpinBox_Overlapping.value() / 100
         try:
