@@ -991,6 +991,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         super().unload(self_unload)
         self.__layout = None
+        self.__map_tool = None
         self.close()
 
         del self
