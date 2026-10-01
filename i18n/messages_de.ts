@@ -1,19 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="de_DE" sourcelanguage="en">
 <context>
     <name>QgsApplication</name>
     <message>
         <source>Print Menu</source>
-        <translation>Druckmenü</translation>
+        <translation>Druckmen&#252;</translation>
     </message>
     <message>
         <source>Open Print Menu</source>
-        <translation>Druckmenü öffnen</translation>
+        <translation>Druckmen&#252; &#246;ffnen</translation>
     </message>
     <message>
         <source>Open templates folder</source>
-        <translation>Öffne Vorlagen - Verzeichnis</translation>
+        <translation>&#214;ffne Vorlagen - Verzeichnis</translation>
     </message>
     <message>
         <source>Page</source>
@@ -25,15 +24,15 @@
     </message>
     <message>
         <source>(not available in this layout)</source>
-        <translation>(nicht verfügbar in Layout)</translation>
+        <translation>(nicht verf&#252;gbar in Layout)</translation>
     </message>
     <message>
         <source>Page Options</source>
-        <translation>Einstellungen für diese Seite</translation>
+        <translation>Einstellungen f&#252;r diese Seite</translation>
     </message>
     <message>
         <source>Use global optios.</source>
-        <translation>Übernehme aus globalen Einstellungen.</translation>
+        <translation>&#220;bernehme aus globalen Einstellungen.</translation>
     </message>
     <message>
         <source>Legend</source>
@@ -41,15 +40,15 @@
     </message>
     <message>
         <source>Overview</source>
-        <translation>Übersicht</translation>
+        <translation>&#220;bersicht</translation>
     </message>
     <message>
-        <source>Plot Layer Option &apos;overview page&apos; uses this.</source>
-        <translation>Findet Anwendung, wenn in den globalen Plot-Layer-Einstellungen die Übersichtskarte aktiviert ist.</translation>
+        <source>Plot Layer Option 'overview page' uses this.</source>
+        <translation>Findet Anwendung, wenn in den globalen Plot-Layer-Einstellungen die &#220;bersichtskarte aktiviert ist.</translation>
     </message>
     <message>
-        <source>Plot Layer Option &apos;legend on page&apos; uses this.</source>
-        <translation>Findet Anwendung, wenn der Layer auch auf mindestens einer Seite/ Übersicht sichtbar werden soll.</translation>
+        <source>Plot Layer Option 'legend on page' uses this.</source>
+        <translation>Findet Anwendung, wenn der Layer auch auf mindestens einer Seite/ &#220;bersicht sichtbar werden soll.</translation>
     </message>
     <message>
         <source>Show layer in page?</source>
@@ -77,7 +76,7 @@
     </message>
     <message>
         <source>Value</source>
-        <translation>Wert für Seite</translation>
+        <translation>Wert f&#252;r Seite</translation>
     </message>
     <message>
         <source>Layout ID</source>
@@ -117,7 +116,7 @@
     </message>
     <message>
         <source>Left mouse button click on canvas to add new pages. Right mouse button click to finish/cancel map tool.</source>
-        <translation>Hinzufügen von Druckbereichen. Linksklick: Bereich hinzufügen, Rechtsklick: Ende.</translation>
+        <translation>Hinzuf&#252;gen von Druckbereichen. Linksklick: Bereich hinzuf&#252;gen, Rechtsklick: Ende.</translation>
     </message>
     <message>
         <source>Finished</source>
@@ -125,7 +124,7 @@
     </message>
     <message>
         <source>choose or create</source>
-        <translation>bitte wählen oder erstellen</translation>
+        <translation>bitte w&#228;hlen oder erstellen</translation>
     </message>
     <message>
         <source>Save file</source>
@@ -141,7 +140,7 @@
     </message>
     <message>
         <source>File %s could not be saved.&lt;br/&gt;Please close needed applications.</source>
-        <translation>Die Datei &apos;%s&apos; ist ggf. geöffnet.&lt;br/&gt;Druck konnte nicht erfolgreich abgeschlossen werden.</translation>
+        <translation>Die Datei '%s' ist ggf. ge&#246;ffnet.&lt;br/&gt;Druck konnte nicht erfolgreich abgeschlossen werden.</translation>
     </message>
     <message>
         <source>PDF print finished without errors.</source>
@@ -153,27 +152,27 @@
     </message>
     <message>
         <source>Something went wrong. No landscape layout found.</source>
-        <translation>Da ist etwas schief gelaufen :(&lt;br/&gt;Kein Layout gefunden für Querformat.</translation>
+        <translation>Da ist etwas schief gelaufen :(&lt;br/&gt;Kein Layout gefunden f&#252;r Querformat.</translation>
     </message>
     <message>
         <source>Something went wrong.No portrait layout found.</source>
-        <translation>Da ist etwas schief gelaufen :(&lt;br/&gt;Kein Layout gefunden für Hochformat.</translation>
+        <translation>Da ist etwas schief gelaufen :(&lt;br/&gt;Kein Layout gefunden f&#252;r Hochformat.</translation>
     </message>
     <message>
         <source>Add new page (portrait)</source>
-        <translation>Seite(Hochformat) hinzufügen</translation>
+        <translation>Seite(Hochformat) hinzuf&#252;gen</translation>
     </message>
     <message>
         <source>Add new page (landscape)</source>
-        <translation>Seite (Querformat) hinzufügen</translation>
+        <translation>Seite (Querformat) hinzuf&#252;gen</translation>
     </message>
     <message>
         <source>No Print Layer selected.</source>
-        <translation>Keine Druckzusammenstellung gewählt.</translation>
+        <translation>Keine Druckzusammenstellung gew&#228;hlt.</translation>
     </message>
     <message>
         <source>Coordinate Reference System from Print Layer and current QGIS Project are different. Maybe the page rectangles will have mystery orientations.</source>
-        <translation>Koordinatensystem zwischen Plot-Layer und QGIS-Projekt unterschiedlich.&lt;br/&gt;Möglicherweise sind die Druckseiten in der Darstellung etwas verzerrt/gedreht.</translation>
+        <translation>Koordinatensystem zwischen Plot-Layer und QGIS-Projekt unterschiedlich.&lt;br/&gt;M&#246;glicherweise sind die Druckseiten in der Darstellung etwas verzerrt/gedreht.</translation>
     </message>
     <message>
         <source>portrait</source>
@@ -184,16 +183,16 @@
         <translation>quer</translation>
     </message>
     <message>
-        <source>File &apos;%s&apos; not compatible.</source>
-        <translation>Datei &apos;%s&apos; ist nicht kompatibel.</translation>
+        <source>File '%s' not compatible.</source>
+        <translation>Datei '%s' ist nicht kompatibel.</translation>
     </message>
     <message>
-        <source>File &apos;%s&apos; could not be opened.</source>
-        <translation>Datei &apos;%s&apos; konnte nicht geöffnet werden.</translation>
+        <source>File '%s' could not be opened.</source>
+        <translation>Datei '%s' konnte nicht ge&#246;ffnet werden.</translation>
     </message>
     <message>
         <source>Plot Menu(Overview)</source>
-        <translation>Druckmenü (Übersicht)</translation>
+        <translation>Druckmen&#252; (&#220;bersicht)</translation>
     </message>
     <message>
         <source>No pages calculated.</source>
@@ -209,39 +208,39 @@
     </message>
     <message>
         <source>Preparing writing PDF %s.&lt;br/&gt;Depending on your layers, network connection, layout size and more this process can take a moment.</source>
-        <translation>Speichern der PDF vorbereiten: %s&lt;br/&gt;Die Dauer wird abhängig von folgenden Druckeigenschaften abgängen:&lt;br/&gt;- Seitenanzahl&lt;br/&gt;- Seitengröße (A4=schnell, A0=sehr langsam)&lt;br/&gt;- Layer aus dem Internet/Firmennetzwerk&lt;br/&gt; - Hintergrundkarten(Flur / ALKIS / Satellit / OSM, ...)&lt;br/&gt; - Internetgeschwindigkeit&lt;br/&gt; - DPI(hohe DPI = lange)</translation>
+        <translation>Speichern der PDF vorbereiten: %s&lt;br/&gt;Die Dauer wird abh&#228;ngig von folgenden Druckeigenschaften abg&#228;ngen:&lt;br/&gt;- Seitenanzahl&lt;br/&gt;- Seitengr&#246;&#223;e (A4=schnell, A0=sehr langsam)&lt;br/&gt;- Layer aus dem Internet/Firmennetzwerk&lt;br/&gt; - Hintergrundkarten(Flur / ALKIS / Satellit / OSM, ...)&lt;br/&gt; - Internetgeschwindigkeit&lt;br/&gt; - DPI(hohe DPI = lange)</translation>
     </message>
     <message>
         <source>memory</source>
-        <translation>temporär</translation>
+        <translation>tempor&#228;r</translation>
     </message>
     <message>
         <source>Select save location</source>
-        <translation>Bitte Speicherort wählen</translation>
+        <translation>Bitte Speicherort w&#228;hlen</translation>
     </message>
     <message>
         <source>temporary layer</source>
-        <translation>Drucklayout temporär verwalten</translation>
+        <translation>Drucklayout tempor&#228;r verwalten</translation>
     </message>
     <message>
         <source>No Print Layout template selected.</source>
-        <translation>Kein Layout gewählt.</translation>
+        <translation>Kein Layout gew&#228;hlt.</translation>
     </message>
     <message>
         <source>No save location set.</source>
-        <translation>Kein Dateipfad gewählt.</translation>
+        <translation>Kein Dateipfad gew&#228;hlt.</translation>
     </message>
     <message>
         <source>Save location invalid.</source>
-        <translation>Dateispeicherort ist ungültig.</translation>
+        <translation>Dateispeicherort ist ung&#252;ltig.</translation>
     </message>
     <message>
-        <source>File &apos;%s&apos; already exists.</source>
-        <translation>Datei &apos;%s&apos; existiert bereits.</translation>
+        <source>File '%s' already exists.</source>
+        <translation>Datei '%s' existiert bereits.</translation>
     </message>
     <message>
-        <source>CRS &apos;%s&apos; is invalid.</source>
-        <translation>KBS &apos;%s&apos; ist ungültig.</translation>
+        <source>CRS '%s' is invalid.</source>
+        <translation>KBS '%s' ist ung&#252;ltig.</translation>
     </message>
     <message>
         <source>Layout could not be created. Unknown error.</source>
@@ -253,35 +252,35 @@
     </message>
     <message>
         <source>No Vectorlayer selected</source>
-        <translation>Kein Vektorlayer gewählt</translation>
+        <translation>Kein Vektorlayer gew&#228;hlt</translation>
     </message>
     <message>
         <source>selected Vectorlayer is not compatible</source>
-        <translation>Gewählter Vektorlayer ist nicht kompatibel</translation>
+        <translation>Gew&#228;hlter Vektorlayer ist nicht kompatibel</translation>
     </message>
     <message>
         <source>Import old print layer</source>
         <translation>Alten Drucklayer importieren</translation>
     </message>
     <message>
-        <source>No layout found with path &apos;%s&apos;</source>
-        <translation>Kein Layout gefunden für &apos;%s&apos;</translation>
+        <source>No layout found with path '%s'</source>
+        <translation>Kein Layout gefunden f&#252;r '%s'</translation>
     </message>
     <message>
         <source>You are about to delete %s pages. Continue?</source>
-        <translation>Möchtest du wirklich %s Seiten löschen?</translation>
+        <translation>M&#246;chtest du wirklich %s Seiten l&#246;schen?</translation>
     </message>
     <message>
         <source>Write access to file blocked.</source>
-        <translation>Dateizugriff blockiert. Datei kann nicht überschrieben werden.</translation>
+        <translation>Dateizugriff blockiert. Datei kann nicht &#252;berschrieben werden.</translation>
     </message>
     <message>
         <source>Adding pages</source>
-        <translation>Seiten hinzufügen</translation>
+        <translation>Seiten hinzuf&#252;gen</translation>
     </message>
     <message>
         <source>Collecting selected features</source>
-        <translation>Hole wählte Kartenobjekte</translation>
+        <translation>Ausgew&#228;hlte Objekte werden gesammelt</translation>
     </message>
 </context>
 </TS>
