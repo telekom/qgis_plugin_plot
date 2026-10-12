@@ -9,6 +9,8 @@ import importlib
 
 from pathlib import Path
 
+from .preview import Preview
+
 from qgis.core import (QgsProject, QgsMapLayer, QgsVectorLayer,
                        QgsLayoutSize, QgsLayoutItemPage,
                        QgsLayoutItemLabel, QgsLayoutItemPicture,
@@ -133,6 +135,8 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         self.initialize_tab_stop_widgets()
 
+        self.preview = None
+
     def init_layouts(self):
         if self.layouts is not None:
             # already initialized
@@ -187,6 +191,22 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.__layout.progressChanged.connect(self.__show_progress_main)
             self.__layout.init()
             self.__layout.add_to_instance()
+            
+            # Preview Window Setup
+            qgis_layout = self.__layout.layout
+
+            if self.preview:
+                # print("reload")
+                pass
+            else:
+                self.preview = self.add_module("PreviewWindow",
+                    Preview,
+                    parent=self
+                )
+            
+            self.preview.show_preview(qgis_layout)
+            # end Preview Window Setup
+        
         except Exception as e:
             self.log(traceback.format_exc(), level=self.CRITICAL)
             set_label_status(self.Label_Status, str(e), STYLE_SHEET_ERROR)
