@@ -18,7 +18,10 @@ def load_tool_bar(plugin: PluginPlot):
     # load translation
     language = QgisApp.instance().locale()
 
-    plugin.install_translator(str(Path(__file__).parent.parent / "i18n" / f"translation_{language}.qm"))
+    # install translator
+    plugin.install_translator(str(Path(__file__).parent.parent / "i18n" / f"plot_layout_menu_{language}.qm"))
+    plugin.install_translator(str(Path(__file__).parent.parent / "i18n" / f"plot_new_layout_{language}.qm"))
+    plugin.install_translator(str(Path(__file__).parent.parent / "i18n" / f"plot_menu_{language}.qm"))
     plugin.install_translator(str(Path(__file__).parent.parent / "i18n" / f"messages_{language}.qm"))
 
     tr_ = lambda text: QgisApp.translate("QgsApplication", text)

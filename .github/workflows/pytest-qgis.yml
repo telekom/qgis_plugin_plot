@@ -1,0 +1,42 @@
+# SPDX-FileCopyrightText: NONE
+# SPDX-License-Identifier: CC0-1.0
+
+name: QGIS pytest
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test-qgis:
+    name: QGIS 3.40.7 tests
+    runs-on: ubuntu-22.04
+    container:
+      image: qgis/qgis:3.40.7
+    env:
+      QT_QPA_PLATFORM: offscreen
+      XDG_RUNTIME_DIR: /tmp/runtime-root
+
+    steps:
+      - name: Checkout repository and submodules
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          submodules: recursive
+
+      - name: Prepare headless Qt runtime
+        run: |
+          mkdir -p "$XDG_RUNTIME_DIR"
+          chmod 700 "$XDG_RUNTIME_DIR"
+
+      - name: Create QGIS-compatible virtual environment
+        run: python3 -m venv --system-site-packages "$RUNNER_TEMP/qgis-venv"
+
+      - name: Install test dependencies
+        run: |
+          "$RUNNER_TEMP/qgis-venv/bin/python" -m pip install -r requirements-dev.txt openpyxl
+
+      - name: Run plugin tests
+        run: |
+          "$RUNNER_TEMP/qgis-venv/bin/python" ./test.py

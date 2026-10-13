@@ -11,7 +11,7 @@ icon=templates/icons/icon.svg
 name_menu_bar=QGIS Plot Plugin
 
 # qgisMinimumVersion: minimum compatible QGIS version number
-qgisMinimumVersion=3.34.6
+qgisMinimumVersion=3.40.0
 qgisMaximumVersion=3.40.99
 
 # some default plugin information

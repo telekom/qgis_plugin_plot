@@ -7,12 +7,6 @@ from ...submodules.base.ui.base_tab_widget import TabModuleBase
 from ...submodules.base.ui.dummy import ModuleDummy
 
 FORM_CLASS, BASE_CLASS = UiModuleBase.get_uic_classes(__file__)
-FORM_CLASS: 'Ui'
-try:
-    from .test_show_modules_generated_ui import Ui as FORM_CLASS
-
-except ModuleNotFoundError:
-    pass
 
 
 class WrongInheritanceOrder0:
@@ -59,7 +53,7 @@ class TestTabModuleDummy5(TabModuleBase):
         super().__init__(*args, **kwargs)
         _, frame_0 = self.insert_module_tab(0, "Hilfe", 'dummy0')
         _, frame_1 = self.insert_module_tab(1, "TestModuleDummy1", 'dummy1')
-        
+
         self.add_ui_module("TestModuleDummy1", frame_0, TestModuleDummy1)
         self.add_ui_module("TestModuleDummy1", frame_1, TestModuleDummy1)
 
