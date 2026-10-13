@@ -17,8 +17,8 @@ from qgis.core import (QgsProject, QgsMapLayer, QgsVectorLayer,
                        QgsCoordinateReferenceSystem, QgsGeometry,
                        QgsApplication, Qgis)
 
-from qgis.PyQt.QtCore import Qt, QSize
-from qgis.PyQt.QtGui import QIcon
+from qgis.PyQt.QtCore import Qt, QSize, QRegExp
+from qgis.PyQt.QtGui import QIcon, QRegExpValidator
 from qgis.PyQt.QtWidgets import (QMainWindow, QApplication, QListWidgetItem,
                                  QCheckBox, QFileDialog, QMessageBox, QToolButton)
 
@@ -121,6 +121,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                      lambda x: self.check_box_state_changed(self.CheckBox_Legend_Extra))
         self.connect(self.CheckBox_Overview.stateChanged,
                      lambda x: self.check_box_state_changed(self.CheckBox_Overview))
+        self.connect(self.LineEdit_Plot_Page_Select.editingFinished, self.plot_page_selection)
 
         # other Qt Connections
         self.connect(self.get_plugin().versionRead,
@@ -136,6 +137,14 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.initialize_tab_stop_widgets()
 
         self.preview = None
+
+        #Regex Filter rules
+        re_pattern_plot_page_select = r"^(?:$|\d+(?:-\d+)?(?:,\d+(?:-\d+)?)*$)"
+        rx_plot_page_select = QRegExp(re_pattern_plot_page_select)
+        plot_page_select_validator = QRegExpValidator(rx_plot_page_select)
+        self.LineEdit_Plot_Page_Select.setValidator(plot_page_select_validator)
+
+        self.pages_to_plot_array = []
 
     def init_layouts(self):
         if self.layouts is not None:
@@ -189,7 +198,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         try:
             self.__layout = PrintLayout(self.plot_layer, self.layouts)
             self.__layout.progressChanged.connect(self.__show_progress_main)
-            self.__layout.init()
+            self.__layout.init(self.pages_to_plot_array)
             self.__layout.add_to_instance()
             
             # Preview Window Setup
@@ -242,6 +251,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.__layout = PrintLayout(self.plot_layer, self.layouts)
             self.__layout.progressChanged.connect(self.__show_progress_main)
             self.__layout.init()
+            # TODO: PageSelect | Page Select
 
         except AssertionError as e:
             set_label_status(self.Label_Status, str(e), STYLE_SHEET_ERROR)
@@ -929,6 +939,41 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.close()
 
         del self
+
+    def plot_page_selection(self):
+        "Page Select"
+        page_array = set()
+        selectStr = self.LineEdit_Plot_Page_Select.text()
+
+        split_blocks = selectStr.split(',')
+        for block in split_blocks:
+            block = block.strip()
+            if not block:
+                continue
+
+            
+            if '-' in block:
+                try:
+                    range_start, range_ende = map(int, block.split('-'))
+
+                    if range_start > range_ende:
+                        print(f"Warning: start cant be greater then end ({range_start} - {range_ende})")
+
+                    range_array = range(min(range_start, range_ende), max(range_start, range_ende) + 1)
+                    page_array.update(range_array)
+
+                except ValueError:
+                                print(f"Error: not a number '{block}'")
+
+            else:
+                if block.isdigit():
+                    page_array.add(int(block))
+                else:
+                    print("Error: not a number '", block, "'")
+
+        sorted_page_array = sorted(page_array)
+        self.pages_to_plot_array = sorted_page_array
+        print("->", self.pages_to_plot_array)
 
     @classmethod
     def load(cls, parent_module: UiModuleBase):
