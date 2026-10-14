@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 Deutsche Telekom IT GmbH <sandro.kerner@telekom.de>
+# SPDX-License-Identifier: GPL-3.0-only
+
 import os
 import traceback
 
