@@ -147,7 +147,8 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.connect(
             self.CheckBox_Overview.stateChanged, lambda x: self.__check_box_state_changed(self.CheckBox_Overview)
         )
-        self.connect(self.LineEdit_Plot_Page_Select.editingFinished, self.plot_page_selection)
+        self.connect(self.LineEdit_Plot_Page_Select.editingFinished, self.__plot_page_selection)
+        self.connect(self.But_Plot_Selection.clicked, lambda *_: self.__plot_list_widget_selection())
 
         # other Qt Connections
         self.connect(self.get_plugin().versionRead, lambda plugin: self.set_ui_version_info(self.Label_Version_Nr))
@@ -163,7 +164,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         self.preview = None
 
-        #Regex Filter rules
+        # Regex Filter rules
         re_pattern_plot_page_select = r"^(?:$|\d+(?:-\d+)?(?:,\d+(?:-\d+)?)*$)"
         rx_plot_page_select = QRegExp(re_pattern_plot_page_select)
         plot_page_select_validator = QRegExpValidator(rx_plot_page_select)
@@ -1027,7 +1028,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         del self
 
-    def plot_page_selection(self):
+    def __plot_page_selection(self):
         """Page Select"""
         page_array = set()
         selectStr = self.LineEdit_Plot_Page_Select.text()
@@ -1059,9 +1060,9 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         sorted_page_array = sorted(page_array)
         self.pages_to_plot_array = sorted_page_array
         print("->", self.pages_to_plot_array)
-        self.update_list_pages_selection()
+        self.__update_list_pages_selection()
 
-    def update_list_pages_selection(self):
+    def __update_list_pages_selection(self):
         """Markes Selected Pages from plot_page_selection in List_Pages"""
         for i in range(self.List_Pages.count()):
             item = self.List_Pages.item(i)
@@ -1075,6 +1076,16 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             else:
                 toggle_item(item, False)
 
+    def __plot_list_widget_selection(self):
+        """"Inputs the selected pages into the dedicated input field and starts the plot process"""
+        items = self.List_Pages.selectedItems()
+        selected_indices = [self.List_Pages.row(i) + 1 for i in items]
+        selected_indices.sort()
+        page_str = ",".join(map(str, selected_indices))
+        self.LineEdit_Plot_Page_Select.setText(page_str)
+
+        self.__plot_page_selection()
+        self.__create_pdf()
 
     @classmethod
     def load(cls, parent_module: UiModuleBase):
@@ -1119,6 +1130,8 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 def toggle_item(item, enable):
     """"Enable or Disable QListWidget Item"""
     if enable:
-        item.setFlags(item.flags() | Qt.ItemIsEnabled)
+        # item.setFlags(item.flags() | Qt.ItemIsEnabled)
+        item.setHidden(False)
     else:
-        item.setFlags(item.flags() & ~Qt.ItemIsEnabled)
+        # item.setFlags(item.flags() & ~Qt.ItemIsEnabled)
+        item.setHidden(True)
