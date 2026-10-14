@@ -266,8 +266,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         try:
             self.__layout = PrintLayout(self.plot_layer, self.layouts)
             self.__layout.progressChanged.connect(self.__show_progress_main)
-            self.__layout.init()
-            # TODO: PageSelect | Page Select
+            self.__layout.init(self.pages_to_plot_array)
 
         except AssertionError as e:
             set_label_status(self.Label_Status, str(e), STYLE_SHEET_ERROR)
@@ -327,7 +326,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         try:
             self.__layout = PrintLayout(self.plot_layer, self.layouts)
             self.__layout.progressChanged.connect(self.__show_progress_main)
-            self.__layout.init()
+            self.__layout.init(self.pages_to_plot_array)
             self.__layout.add_to_instance()
 
         except AssertionError as e:
@@ -1029,7 +1028,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         del self
 
     def plot_page_selection(self):
-        "Page Select"
+        """Page Select"""
         page_array = set()
         selectStr = self.LineEdit_Plot_Page_Select.text()
 
@@ -1039,7 +1038,6 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             if not block:
                 continue
 
-            
             if '-' in block:
                 try:
                     range_start, range_ende = map(int, block.split('-'))
@@ -1051,17 +1049,32 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                     page_array.update(range_array)
 
                 except ValueError:
-                                print(f"Error: not a number '{block}'")
+                    print(f"Error: not a number '{block}'")
 
+            elif block.isdigit():
+                page_array.add(int(block))
             else:
-                if block.isdigit():
-                    page_array.add(int(block))
-                else:
-                    print("Error: not a number '", block, "'")
+                print("Error: not a number '", block, "'")
 
         sorted_page_array = sorted(page_array)
         self.pages_to_plot_array = sorted_page_array
         print("->", self.pages_to_plot_array)
+        self.update_list_pages_selection()
+
+    def update_list_pages_selection(self):
+        """Markes Selected Pages from plot_page_selection in List_Pages"""
+        for i in range(self.List_Pages.count()):
+            item = self.List_Pages.item(i)
+            if not self.pages_to_plot_array:
+                toggle_item(item, True)
+                continue
+
+            page_number = i + 1
+            if page_number in self.pages_to_plot_array:
+                toggle_item(item, True)
+            else:
+                toggle_item(item, False)
+
 
     @classmethod
     def load(cls, parent_module: UiModuleBase):
@@ -1101,3 +1114,11 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             parent_module.load_version_info()
 
         return module
+
+
+def toggle_item(item, enable):
+    """"Enable or Disable QListWidget Item"""
+    if enable:
+        item.setFlags(item.flags() | Qt.ItemIsEnabled)
+    else:
+        item.setFlags(item.flags() & ~Qt.ItemIsEnabled)
