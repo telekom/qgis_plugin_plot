@@ -10,6 +10,10 @@ import importlib
 
 from pathlib import Path
 
+from .preview import Preview
+
+from .preview import Preview
+
 from qgis.core import (
     QgsProject,
     QgsMapLayer,
@@ -26,8 +30,8 @@ from qgis.core import (
     QgsPointXY,
 )
 
-from qgis.PyQt.QtCore import Qt, QSize
-from qgis.PyQt.QtGui import QIcon
+from qgis.PyQt.QtCore import Qt, QSize, QRegExp
+from qgis.PyQt.QtGui import QIcon, QRegExpValidator
 from qgis.PyQt.QtWidgets import (
     QMainWindow,
     QApplication,
@@ -143,6 +147,8 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.connect(
             self.CheckBox_Overview.stateChanged, lambda x: self.__check_box_state_changed(self.CheckBox_Overview)
         )
+        self.connect(self.LineEdit_Plot_Page_Select.editingFinished, self.__plot_page_selection)
+        self.connect(self.But_Plot_Selection.clicked, lambda *_: self.__plot_list_widget_selection())
 
         # other Qt Connections
         self.connect(self.get_plugin().versionRead, lambda plugin: self.set_ui_version_info(self.Label_Version_Nr))
@@ -155,6 +161,16 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.__page_item_changed()
 
         self.initialize_tab_stop_widgets()
+
+        self.preview = None
+
+        # Regex Filter rules
+        re_pattern_plot_page_select = r"^(?:$|\d+(?:-\d+)?(?:,\d+(?:-\d+)?)*$)"
+        rx_plot_page_select = QRegExp(re_pattern_plot_page_select)
+        plot_page_select_validator = QRegExpValidator(rx_plot_page_select)
+        self.LineEdit_Plot_Page_Select.setValidator(plot_page_select_validator)
+
+        self.pages_to_plot_array = []
 
     def __init_layouts(self):
         """Load layout templates once and report loading progress in the menu."""
@@ -205,8 +221,24 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         try:
             self.__layout = PrintLayout(self.plot_layer, self.layouts)
             self.__layout.progressChanged.connect(self.__show_progress_main)
-            self.__layout.init()
+            self.__layout.init(self.pages_to_plot_array)
             self.__layout.add_to_instance()
+            
+            # Preview Window Setup
+            qgis_layout = self.__layout.layout
+
+            if self.preview:
+                # print("reload")
+                pass
+            else:
+                self.preview = self.add_module("PreviewWindow",
+                    Preview,
+                    parent=self
+                )
+            
+            self.preview.show_preview(qgis_layout)
+            # end Preview Window Setup
+        
         except Exception as e:
             self.log(traceback.format_exc(), level=self.CRITICAL)
             set_label_status(self.Label_Status, str(e), STYLE_SHEET_ERROR)
@@ -235,7 +267,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         try:
             self.__layout = PrintLayout(self.plot_layer, self.layouts)
             self.__layout.progressChanged.connect(self.__show_progress_main)
-            self.__layout.init()
+            self.__layout.init(self.pages_to_plot_array)
 
         except AssertionError as e:
             set_label_status(self.Label_Status, str(e), STYLE_SHEET_ERROR)
@@ -295,7 +327,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         try:
             self.__layout = PrintLayout(self.plot_layer, self.layouts)
             self.__layout.progressChanged.connect(self.__show_progress_main)
-            self.__layout.init()
+            self.__layout.init(self.pages_to_plot_array)
             self.__layout.add_to_instance()
 
         except AssertionError as e:
@@ -996,6 +1028,66 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         del self
 
+    def __plot_page_selection(self):
+        """Page Select"""
+        page_array = set()
+        selectStr = self.LineEdit_Plot_Page_Select.text()
+
+        split_blocks = selectStr.split(',')
+        for block in split_blocks:
+            block = block.strip()
+            if not block:
+                continue
+
+            if '-' in block:
+                try:
+                    range_start, range_ende = map(int, block.split('-'))
+
+                    if range_start > range_ende:
+                        print(f"Warning: start cant be greater then end ({range_start} - {range_ende})")
+
+                    range_array = range(min(range_start, range_ende), max(range_start, range_ende) + 1)
+                    page_array.update(range_array)
+
+                except ValueError:
+                    print(f"Error: not a number '{block}'")
+
+            elif block.isdigit():
+                page_array.add(int(block))
+            else:
+                print("Error: not a number '", block, "'")
+
+        sorted_page_array = sorted(page_array)
+        self.pages_to_plot_array = sorted_page_array
+        print("->", self.pages_to_plot_array)
+        self.__update_list_pages_selection()
+
+    def __update_list_pages_selection(self):
+        """Markes Selected Pages from plot_page_selection in List_Pages"""
+        for i in range(self.List_Pages.count()):
+            item = self.List_Pages.item(i)
+            if not self.pages_to_plot_array:
+                toggle_item(item, True)
+                continue
+
+            page_number = i + 1
+            if page_number in self.pages_to_plot_array:
+                toggle_item(item, True)
+            else:
+                toggle_item(item, False)
+
+    def __plot_list_widget_selection(self):
+        """"Inputs the selected pages into the dedicated input field and starts the plot process"""
+        items = self.List_Pages.selectedItems()
+        if items:
+            selected_indices = [self.List_Pages.row(i) + 1 for i in items]
+            selected_indices.sort()
+            page_str = ",".join(map(str, selected_indices))
+            self.LineEdit_Plot_Page_Select.setText(page_str)
+
+        self.__plot_page_selection()
+        self.__create_pdf()
+
     @classmethod
     def load(cls, parent_module: UiModuleBase):
         """Show an existing menu or load this menu as a standalone UI module.
@@ -1034,3 +1126,13 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             parent_module.load_version_info()
 
         return module
+
+
+def toggle_item(item, enable):
+    """"Enable or Disable QListWidget Item"""
+    if enable:
+        # item.setFlags(item.flags() | Qt.ItemIsEnabled)
+        item.setHidden(False)
+    else:
+        # item.setFlags(item.flags() & ~Qt.ItemIsEnabled)
+        item.setHidden(True)
