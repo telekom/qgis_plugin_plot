@@ -1079,10 +1079,11 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
     def __plot_list_widget_selection(self):
         """"Inputs the selected pages into the dedicated input field and starts the plot process"""
         items = self.List_Pages.selectedItems()
-        selected_indices = [self.List_Pages.row(i) + 1 for i in items]
-        selected_indices.sort()
-        page_str = ",".join(map(str, selected_indices))
-        self.LineEdit_Plot_Page_Select.setText(page_str)
+        if items:
+            selected_indices = [self.List_Pages.row(i) + 1 for i in items]
+            selected_indices.sort()
+            page_str = ",".join(map(str, selected_indices))
+            self.LineEdit_Plot_Page_Select.setText(page_str)
 
         self.__plot_page_selection()
         self.__create_pdf()
