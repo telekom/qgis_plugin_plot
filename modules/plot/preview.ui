@@ -73,7 +73,7 @@
     <string>+</string>
    </property>
    <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zoom In&lt;/p&gt;&lt;p&gt;(CTL+'+' or CTL + wheelUp)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zoom In&lt;/p&gt;&lt;p&gt;(Ctrl +'+' or Ctrl + wheelUp)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="shortcut">
     <string>Ctrl++</string>
@@ -84,7 +84,7 @@
     <string>-</string>
    </property>
    <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zoom Out&lt;/p&gt;&lt;p&gt;(CTL+'-' or CTL + wheelDown)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zoom Out&lt;/p&gt;&lt;p&gt;(Ctrl +'-' or Ctrl + wheelDown)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+-</string>
