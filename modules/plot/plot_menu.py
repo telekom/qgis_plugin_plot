@@ -12,8 +12,6 @@ from pathlib import Path
 
 from .preview import Preview
 
-from .preview import Preview
-
 from qgis.core import (
     QgsProject,
     QgsMapLayer,
@@ -165,12 +163,16 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.preview = None
 
         # Regex Filter rules
+        # only allows numbers follwed by "," or "-". repeatable
         re_pattern_plot_page_select = r"^(?:$|\d+(?:-\d+)?(?:,\d+(?:-\d+)?)*$)"
         rx_plot_page_select = QRegExp(re_pattern_plot_page_select)
         plot_page_select_validator = QRegExpValidator(rx_plot_page_select)
         self.LineEdit_Plot_Page_Select.setValidator(plot_page_select_validator)
 
         self.pages_to_plot_array = []
+
+        # hide error msg
+        self.Lable_Error_Msg.setText("")
 
     def __init_layouts(self):
         """Load layout templates once and report loading progress in the menu."""
@@ -223,22 +225,19 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.__layout.progressChanged.connect(self.__show_progress_main)
             self.__layout.init(self.pages_to_plot_array)
             self.__layout.add_to_instance()
-            
+
             # Preview Window Setup
             qgis_layout = self.__layout.layout
 
-            if self.preview:
-                # print("reload")
-                pass
-            else:
+            if not self.preview:
                 self.preview = self.add_module("PreviewWindow",
                     Preview,
                     parent=self
                 )
-            
+
             self.preview.show_preview(qgis_layout)
             # end Preview Window Setup
-        
+
         except Exception as e:
             self.log(traceback.format_exc(), level=self.CRITICAL)
             set_label_status(self.Label_Status, str(e), STYLE_SHEET_ERROR)
@@ -1029,36 +1028,42 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         del self
 
     def __plot_page_selection(self):
-        """Page Select"""
+        """ Reads text from 'LineEdit_Plot_Page_Select' and builds page selection array """
         page_array = set()
-        selectStr = self.LineEdit_Plot_Page_Select.text()
+        select_str = self.LineEdit_Plot_Page_Select.text()
+        max_pages = self.List_Pages.count()
+        self.Lable_Error_Msg.setText("")
 
-        split_blocks = selectStr.split(',')
+        split_blocks = select_str.split(',')
         for block in split_blocks:
-            block = block.strip()
+
             if not block:
                 continue
 
             if '-' in block:
                 try:
-                    range_start, range_ende = map(int, block.split('-'))
+                    range_start, range_end = map(int, block.split('-'))
 
-                    if range_start > range_ende:
-                        print(f"Warning: start cant be greater then end ({range_start} - {range_ende})")
+                    if not (1 <= range_start <= max_pages) or not (1 <= range_end <= max_pages):
+                        self.Lable_Error_Msg.setText(f"Must be a number between 1 and {max_pages}")
+                        return
 
-                    range_array = range(min(range_start, range_ende), max(range_start, range_ende) + 1)
+                    range_array = range(min(range_start, range_end), max(range_start, range_end) + 1)
                     page_array.update(range_array)
 
                 except ValueError:
                     print(f"Error: not a number '{block}'")
 
             elif block.isdigit():
-                page_array.add(int(block))
+                single_page = int(block)
+                if not (1 <= single_page <= max_pages):
+                    self.Lable_Error_Msg.setText(f"Must be a number between 1 and {max_pages}")
+                    return
+                page_array.add(single_page)
             else:
                 print("Error: not a number '", block, "'")
 
-        sorted_page_array = sorted(page_array)
-        self.pages_to_plot_array = sorted_page_array
+        self.pages_to_plot_array = sorted(page_array)
         print("->", self.pages_to_plot_array)
         self.__update_list_pages_selection()
 
