@@ -29,7 +29,7 @@ from qgis.core import (
 )
 
 from qgis.PyQt.QtCore import Qt, QSize, QRegExp
-from qgis.PyQt.QtGui import QIcon, QRegExpValidator
+from qgis.PyQt.QtGui import QIcon, QRegExpValidator, QPixmap
 from qgis.PyQt.QtWidgets import (
     QMainWindow,
     QApplication,
@@ -147,6 +147,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         )
         self.connect(self.LineEdit_Plot_Page_Select.editingFinished, self.__plot_page_selection)
         self.connect(self.But_Plot_Selection.clicked, lambda *_: self.__plot_list_widget_selection())
+        self.connect(self.But_company_icon.clicked, lambda x: self.__update_company_icon())
 
         # other Qt Connections
         self.connect(self.get_plugin().versionRead, lambda plugin: self.set_ui_version_info(self.Label_Version_Nr))
@@ -173,6 +174,15 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         # hide error msg
         self.Lable_Error_Msg.setText("")
+
+        # init plot_settings_path
+        self.plot_settings_path = os.path.join(QgsApplication.qgisSettingsDirPath(), 'qgis_plugin_plot_settings')
+        if not os.path.exists(self.plot_settings_path):
+            os.makedirs(self.plot_settings_path)
+
+        # load company logo
+        self.custom_company_icon_path = ""
+        self.__load_But_company_icon()
 
     def __init_layouts(self):
         """Load layout templates once and report loading progress in the menu."""
@@ -1092,6 +1102,36 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         self.__plot_page_selection()
         self.__create_pdf()
+
+    def __load_But_company_icon(self):
+        """" Loads the icon into the QToolButton """
+        self.custom_company_icon_path = os.path.join(self.plot_settings_path, 'custom_company_icon.png')
+        if os.path.isfile(self.custom_company_icon_path):
+            print("Found: Load Icon")
+            self.But_company_icon.setIcon(QIcon(self.custom_company_icon_path))
+        else:
+            print("Not Found: fallback to default")
+            self.But_company_icon.setIcon(QIcon(self.get_plugin().get_icon_path("icon.svg")))
+        self.But_company_icon.setIconSize(QSize(65, 65))
+
+    def __update_company_icon(self):
+        """" open file dialog and save selected image """
+        file_path, _ = QFileDialog.getOpenFileName(
+            self,
+            "Select Company Logo",
+            "",
+            "Images (*.png *.svg *.jpg *.jpeg)"
+        )
+
+        if file_path:
+            pixmap = QPixmap(file_path)
+            if not pixmap.isNull():
+                pixmap = pixmap.scaled(65, 65, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+
+                pixmap.save(self.custom_company_icon_path, "PNG")
+
+        self.__load_But_company_icon()
+
 
     @classmethod
     def load(cls, parent_module: UiModuleBase):
