@@ -620,6 +620,10 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         for item_id, icon_str in layout.icons.items():
             item = layout.layout.itemById(item_id)
 
+            if item_id == "item_company_icon" and Path(self.custom_company_icon_path).is_file():
+                layout.icons[item_id] = self.custom_company_icon_path
+                icon_str = layout.icons[item_id]
+
             if isinstance(item, QgsLayoutItemPicture) and Path(icon_str).is_file():
                 # apply the icon if the file path exists as file
                 item.setPicturePath(icon_str)
@@ -1103,10 +1107,14 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         self.__plot_page_selection()
         self.__create_pdf()
 
+    def __has_custom_company_icon(self) -> bool:
+        """ Checks if a cutome company icon was set """
+        return os.path.isfile(self.custom_company_icon_path)
+
     def __load_But_company_icon(self):
         """" Loads the icon into the QToolButton """
         self.custom_company_icon_path = os.path.join(self.plot_settings_path, 'custom_company_icon.png')
-        if os.path.isfile(self.custom_company_icon_path):
+        if self.__has_custom_company_icon():
             print("Found: Load Icon")
             self.But_company_icon.setIcon(QIcon(self.custom_company_icon_path))
         else:
@@ -1131,6 +1139,12 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                 pixmap.save(self.custom_company_icon_path, "PNG")
 
         self.__load_But_company_icon()
+        # self.__layout_selected()  # apply icons for layout; works but not nice
+        self.__initialize_defaults(self.plot_layer)
+        for layout in self.layouts:
+            if layout.path != self.plot_layer.file:
+                continue
+            self.__initialize_defaults(self.plot_layer, layout)
 
 
     @classmethod
