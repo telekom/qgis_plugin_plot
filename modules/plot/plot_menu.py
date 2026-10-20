@@ -9,6 +9,7 @@ import traceback
 import importlib
 
 from pathlib import Path
+from xmlrpc.client import Boolean
 
 from .preview import Preview
 
@@ -30,6 +31,7 @@ from qgis.core import (
 
 from qgis.PyQt.QtCore import Qt, QSize, QRegExp
 from qgis.PyQt.QtGui import QIcon, QRegExpValidator, QPixmap
+from qgis.PyQt import QtWidgets
 from qgis.PyQt.QtWidgets import (
     QMainWindow,
     QApplication,
@@ -147,7 +149,6 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         )
         self.connect(self.LineEdit_Plot_Page_Select.editingFinished, self.__plot_page_selection)
         self.connect(self.But_Plot_Selection.clicked, lambda *_: self.__plot_list_widget_selection())
-        self.connect(self.But_company_icon.clicked, lambda x: self.__update_company_icon())
 
         # other Qt Connections
         self.connect(self.get_plugin().versionRead, lambda plugin: self.set_ui_version_info(self.Label_Version_Nr))
@@ -183,6 +184,15 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         # load company logo
         self.custom_company_icon_path = ""
         self.__load_But_company_icon()
+
+        # setup company logo selection window
+        self.company_icon_action_menu = QtWidgets.QMenu(self)
+        change_icon_action = self.company_icon_action_menu.addAction("Change Icon")
+        change_icon_action.triggered.connect(lambda x: self.__update_company_icon())
+        delete_icon_action = self.company_icon_action_menu.addAction("Delete Icon")
+        delete_icon_action.triggered.connect(lambda x: self.__delete_company_icon())
+        self.But_company_icon.setMenu(self.company_icon_action_menu)
+        self.But_company_icon.setPopupMode(QtWidgets.QToolButton.ToolButtonPopupMode.InstantPopup)
 
     def __init_layouts(self):
         """Load layout templates once and report loading progress in the menu."""
@@ -622,6 +632,10 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
             if item_id == "item_company_icon" and Path(self.custom_company_icon_path).is_file():
                 layout.icons[item_id] = self.custom_company_icon_path
+                icon_str = layout.icons[item_id]
+
+            elif item_id == "item_company_icon":
+                layout.icons[item_id] = self.get_plugin().get_icon_path("icon.svg")
                 icon_str = layout.icons[item_id]
 
             if isinstance(item, QgsLayoutItemPicture) and Path(icon_str).is_file():
@@ -1139,12 +1153,25 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                 pixmap.save(self.custom_company_icon_path, "PNG")
 
         self.__load_But_company_icon()
-        # self.__layout_selected()  # apply icons for layout; works but not nice
-        self.__initialize_defaults(self.plot_layer)
-        for layout in self.layouts:
-            if layout.path != self.plot_layer.file:
-                continue
-            self.__initialize_defaults(self.plot_layer, layout)
+        self.__update_company_icon_in_layout()
+
+    def __delete_company_icon(self):
+        """" deletes the costom company icon from qgis profile folder """
+        if self.__has_custom_company_icon():
+            os.remove(self.custom_company_icon_path)
+
+            self.__load_But_company_icon()
+            self.__update_company_icon_in_layout()
+
+    def __update_company_icon_in_layout(self):
+        """ Applies the icons for the layout """
+        # self.__layout_selected()  # apply icons for layout; works but not nice; maybe:
+        if self.plot_layer:
+            self.__initialize_defaults(self.plot_layer)
+            for layout in self.layouts:
+                if layout.path != self.plot_layer.file:
+                    continue
+                self.__initialize_defaults(self.plot_layer, layout)
 
 
     @classmethod
