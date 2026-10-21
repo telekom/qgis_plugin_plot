@@ -267,6 +267,10 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.iface.messageBar().pushWarning(self.__tr("Print Menu"), str(e))
         self.progress.restore()
 
+    def start_pdf_export(self):
+        """ Allows to start pdf export from outside off class """
+        self.__create_pdf()
+
     def __create_pdf(self):
         """Export the current plot layout to a PDF file selected by the user."""
         self.__layout = None
@@ -1198,6 +1202,9 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             return self.custom_company_icon_path
         return self.get_plugin().get_icon_path("icon.svg")
 
+    def get_plot_icon(self) -> str:
+        """ Returns the path to the plot plugin icon """
+        return self.get_plugin().get_icon_path("icon.svg")
 
     @classmethod
     def load(cls, parent_module: UiModuleBase):

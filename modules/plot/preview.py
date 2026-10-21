@@ -30,8 +30,8 @@ FORM_CLASS, _ = UiModuleBase.get_uic_classes(__file__)
 
 ### Settings
 IMAGE_DPI = 96
-MAX_SCALE_IN_FACTOR= 3.5
-MAX_SCALE_OUT_FACTOR= 0.25
+MAX_SCALE_IN_FACTOR = 3.5
+MAX_SCALE_OUT_FACTOR = 0.25
 ZOOM_FACTOR = 1.2
 
 BACKGROUND_COLOR = "#f0f0f0"
@@ -45,7 +45,7 @@ class Preview(UiModuleBase, FORM_CLASS, QMainWindow):
 
         UiModuleBase.__init__(self, **kwargs)
         QMainWindow.__init__(self, None, Qt.Window)
-        self._parent = kwargs.get('parent', None)
+        self._parent = kwargs.get('parent')
         self.setupUi(self)
         # self.scrollAreaWidgetContents
         self.scale = 1
@@ -56,15 +56,27 @@ class Preview(UiModuleBase, FORM_CLASS, QMainWindow):
         self.zoom_in_action.triggered.connect(self.zoom_in)
         self.zoom_out_action.triggered.connect(self.zoom_out)
         self.zoom_percent_action.triggered.connect(self.zoom_reset)
+        self.create_pdf_action.triggered.connect(self.start_pdf_export)
+
+        # set toolbar icons
+        self.create_pdf_action.setIcon(QIcon(self._parent.get_plot_icon()))
 
         # center toolbar
+        margin_px = 10
+        create_pdf_action_width = self.toolBar.widgetForAction(self.create_pdf_action).sizeHint().width()
+
         self.left_spacer = QWidget()
         self.right_spacer = QWidget()
+        self.left_margin = QWidget()
+        self.right_margin = QWidget()
         self.left_spacer.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
         self.right_spacer.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
+        self.left_margin.setFixedWidth(create_pdf_action_width + margin_px)
+        self.right_margin.setFixedWidth(margin_px)
 
         self.toolBar.clear()
 
+        self.toolBar.addWidget(self.left_margin)
         self.toolBar.addWidget(self.left_spacer)
 
         self.toolBar.addAction(self.zoom_out_action)
@@ -72,6 +84,8 @@ class Preview(UiModuleBase, FORM_CLASS, QMainWindow):
         self.toolBar.addAction(self.zoom_in_action)
 
         self.toolBar.addWidget(self.right_spacer)
+        self.toolBar.addAction(self.create_pdf_action)
+        self.toolBar.addWidget(self.right_margin)
 
         # window Settings
         self.setWindowTitle("Preview")
@@ -156,6 +170,11 @@ class Preview(UiModuleBase, FORM_CLASS, QMainWindow):
         percent_scale = int(round(100 * self.scale, 0))
         self.zoom_percent_action.setText(f"{percent_scale}%")
 
+    def start_pdf_export(self):
+        """ Triggers the pdf export """
+        # """ Triggers the pdf export with the current layout """
+        self._parent.start_pdf_export()
+
     # Shortcuts
     def eventFilter(self, source, event) -> bool:
         if event.type() == event.Type.Wheel:
@@ -166,6 +185,6 @@ class Preview(UiModuleBase, FORM_CLASS, QMainWindow):
                     self.zoom_in()
                 elif event.angleDelta().y() < 0:
                     self.zoom_out()
-                
+
                 return True
         return super().eventFilter(source, event)
