@@ -9,9 +9,11 @@ import traceback
 import importlib
 
 from pathlib import Path
-from xmlrpc.client import Boolean
 
 from .preview import Preview
+
+import hashlib
+import shutil
 
 from qgis.core import (
     QgsProject,
@@ -68,6 +70,8 @@ FORM_CLASS, _ = UiModuleBase.get_uic_classes(__file__)
 
 COMPANY_ICON_MAX_WIDTH = 323
 COMPANY_ICON_MAX_HEIGHT = 98
+
+VERSIONED_COMPANY_ICON_PREFIX = "cci_versioned_"
 
 class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
     """Main plot menu coordinating plot layers, pages, and related UI modules."""
@@ -185,6 +189,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         # load company logo
         self.custom_company_icon_path = ""
+        self.versioned_custom_company_icon_path = ""  # for Invalidate Image Cache fallback
         self.__load_But_company_icon()
 
         # setup company logo selection window
@@ -1154,12 +1159,36 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                     Qt.SmoothTransformation,
                 )
                 if pixmap.save(self.custom_company_icon_path, "PNG"):
+
+                    # Invalidate Image Cache
+                    # QgsApplication.imageCache().invalidateCacheEntry(self.custom_company_icon_path)
+                    # not avilable in current qgis version, starting 3.44 -> fallback in: __get_company_icon_path(self)
+                    # and __set_versioned_company_icon(self)
+                    self.__set_versioned_company_icon()
+
                     self.__load_But_company_icon()
                     self.__update_company_icon_in_layout()
+
                     return
 
         self.__load_But_company_icon()
         self.__update_company_icon_in_layout()
+
+    def __set_versioned_company_icon(self):
+        """ Removes old versioned company icons and set new one """
+        settings_dir = Path(self.plot_settings_path)
+
+        for file_path in settings_dir.iterdir():
+            if file_path.is_file() and file_path.name.startswith(VERSIONED_COMPANY_ICON_PREFIX):
+                file_path.unlink()
+
+        source = Path(self.custom_company_icon_path)
+        digest = hashlib.sha256(source.read_bytes()).hexdigest()
+        versioned_path = Path(os.path.join(self.plot_settings_path, f"{VERSIONED_COMPANY_ICON_PREFIX}{digest}.png"))
+
+        if not versioned_path.is_file():
+            shutil.copy2(source, versioned_path)
+            self.versioned_custom_company_icon_path = versioned_path.as_posix()
 
     def __delete_company_icon(self):
         """" deletes the costom company icon from qgis profile folder """
@@ -1198,6 +1227,9 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
     def __get_company_icon_path(self) -> str:
         """" Gets the path to the company icon """
+        if os.path.isfile(self.versioned_custom_company_icon_path) and self.__has_custom_company_icon():  # cache issue fallback code
+            return self.versioned_custom_company_icon_path                                                # cache issue fallback code
+
         if self.__has_custom_company_icon():
             return self.custom_company_icon_path
         return self.get_plugin().get_icon_path("icon.svg")
