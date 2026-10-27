@@ -12,6 +12,9 @@ from pathlib import Path
 
 from .preview import Preview
 
+import hashlib
+import shutil
+
 from qgis.core import (
     QgsProject,
     QgsMapLayer,
@@ -29,7 +32,8 @@ from qgis.core import (
 )
 
 from qgis.PyQt.QtCore import Qt, QSize, QRegExp
-from qgis.PyQt.QtGui import QIcon, QRegExpValidator
+from qgis.PyQt.QtGui import QIcon, QRegExpValidator, QPixmap
+from qgis.PyQt import QtWidgets
 from qgis.PyQt.QtWidgets import (
     QMainWindow,
     QApplication,
@@ -64,6 +68,10 @@ from ...submodules.base.qgis.maptool_digitize_geometry import MapToolDigitizeFea
 
 FORM_CLASS, _ = UiModuleBase.get_uic_classes(__file__)
 
+COMPANY_ICON_MAX_WIDTH = 323
+COMPANY_ICON_MAX_HEIGHT = 98
+
+VERSIONED_COMPANY_ICON_PREFIX = "cci_versioned_"
 
 class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
     """Main plot menu coordinating plot layers, pages, and related UI modules."""
@@ -174,6 +182,25 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         # hide error msg
         self.Lable_Error_Msg.setText("")
 
+        # init plot_settings_path
+        self.plot_settings_path = os.path.join(QgsApplication.qgisSettingsDirPath(), 'qgis_plugin_plot_settings')
+        if not os.path.exists(self.plot_settings_path):
+            os.makedirs(self.plot_settings_path)
+
+        # load company logo
+        self.custom_company_icon_path = ""
+        self.versioned_custom_company_icon_path = ""  # for Invalidate Image Cache fallback
+        self.__load_But_company_icon()
+
+        # setup company logo selection window
+        self.company_icon_action_menu = QtWidgets.QMenu(self)
+        change_icon_action = self.company_icon_action_menu.addAction("Change Icon")
+        change_icon_action.triggered.connect(lambda x: self.__update_company_icon())
+        delete_icon_action = self.company_icon_action_menu.addAction("Delete Icon")
+        delete_icon_action.triggered.connect(lambda x: self.__delete_company_icon())
+        self.But_company_icon.setMenu(self.company_icon_action_menu)
+        self.But_company_icon.setPopupMode(QtWidgets.QToolButton.ToolButtonPopupMode.InstantPopup)
+
     def __init_layouts(self):
         """Load layout templates once and report loading progress in the menu."""
         if self.layouts is not None:
@@ -221,6 +248,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             0, 100, use_subbar=False, can_cancel=False, hide_widgets=[self.ScrollArea], auto_restore=False
         )
         try:
+            self.__apply_company_icon_to_layouts()
             self.__layout = PrintLayout(self.plot_layer, self.layouts)
             self.__layout.progressChanged.connect(self.__show_progress_main)
             self.__layout.init(self.pages_to_plot_array)
@@ -244,6 +272,10 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
             self.iface.messageBar().pushWarning(self.__tr("Print Menu"), str(e))
         self.progress.restore()
 
+    def start_pdf_export(self):
+        """ Allows to start pdf export from outside off class """
+        self.__create_pdf()
+
     def __create_pdf(self):
         """Export the current plot layout to a PDF file selected by the user."""
         self.__layout = None
@@ -264,6 +296,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         self.progress.start_progressbars(0, 100, use_subbar=False, hide_widgets=[self.ScrollArea], auto_restore=False)
         try:
+            self.__apply_company_icon_to_layouts()
             self.__layout = PrintLayout(self.plot_layer, self.layouts)
             self.__layout.progressChanged.connect(self.__show_progress_main)
             self.__layout.init(self.pages_to_plot_array)
@@ -324,6 +357,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         self.progress.start_progressbars(0, 100, use_subbar=False, hide_widgets=[self.ScrollArea], auto_restore=False)
         try:
+            self.__apply_company_icon_to_layouts()
             self.__layout = PrintLayout(self.plot_layer, self.layouts)
             self.__layout.progressChanged.connect(self.__show_progress_main)
             self.__layout.init(self.pages_to_plot_array)
@@ -609,10 +643,11 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         # load icons, e.g. company icon
         for item_id, icon_str in layout.icons.items():
             item = layout.layout.itemById(item_id)
-
             if isinstance(item, QgsLayoutItemPicture) and Path(icon_str).is_file():
                 # apply the icon if the file path exists as file
                 item.setPicturePath(icon_str)
+
+        self.__apply_company_icon(layout)
 
     def __load_page_templates(self, selected_layout: PlotLayout):
         """Populate page-template choices compatible with the selected layout."""
@@ -776,6 +811,8 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                 if layout.path != self.plot_layer.file:
                     continue
                 self.__initialize_defaults(self.plot_layer, layout)
+
+            self.__apply_company_icon_to_layouts()
 
             try:
                 layout = self.layouts[self.plot_layer.file]
@@ -1092,6 +1129,114 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
 
         self.__plot_page_selection()
         self.__create_pdf()
+
+    def __has_custom_company_icon(self) -> bool:
+        """ Checks if a cutome company icon was set """
+        return os.path.isfile(self.custom_company_icon_path)
+
+    def __load_But_company_icon(self):
+        """" Loads the icon into the QToolButton """
+        self.custom_company_icon_path = Path(os.path.join(self.plot_settings_path, 'custom_company_icon.png')).as_posix()
+        self.But_company_icon.setIcon(QIcon(self.__get_company_icon_path()))
+        self.But_company_icon.setIconSize(QSize(65, 65))
+
+    def __update_company_icon(self):
+        """" open file dialog and save selected image """
+        file_path, _ = QFileDialog.getOpenFileName(
+            self,
+            "Select Company Logo",
+            "",
+            "Images (*.png *.svg *.jpg *.jpeg)"
+        )
+
+        if file_path:
+            pixmap = QPixmap(file_path)
+            if not pixmap.isNull():
+                pixmap = pixmap.scaled(
+                    min(pixmap.width(), COMPANY_ICON_MAX_WIDTH),
+                    min(pixmap.height(), COMPANY_ICON_MAX_HEIGHT),
+                    Qt.KeepAspectRatio,
+                    Qt.SmoothTransformation,
+                )
+                if pixmap.save(self.custom_company_icon_path, "PNG"):
+
+                    # Invalidate Image Cache
+                    # QgsApplication.imageCache().invalidateCacheEntry(self.custom_company_icon_path)
+                    # not avilable in current qgis version, starting 3.44 -> fallback in: __get_company_icon_path(self)
+                    # and __set_versioned_company_icon(self)
+                    self.__set_versioned_company_icon()
+
+                    self.__load_But_company_icon()
+                    self.__update_company_icon_in_layout()
+
+                    return
+
+        self.__load_But_company_icon()
+        self.__update_company_icon_in_layout()
+
+    def __set_versioned_company_icon(self):
+        """ Removes old versioned company icons and set new one """
+        settings_dir = Path(self.plot_settings_path)
+
+        for file_path in settings_dir.iterdir():
+            if file_path.is_file() and file_path.name.startswith(VERSIONED_COMPANY_ICON_PREFIX):
+                file_path.unlink()
+
+        source = Path(self.custom_company_icon_path)
+        digest = hashlib.sha256(source.read_bytes()).hexdigest()
+        versioned_path = Path(os.path.join(self.plot_settings_path, f"{VERSIONED_COMPANY_ICON_PREFIX}{digest}.png"))
+
+        if not versioned_path.is_file():
+            shutil.copy2(source, versioned_path)
+            self.versioned_custom_company_icon_path = versioned_path.as_posix()
+
+    def __delete_company_icon(self):
+        """" deletes the costom company icon from qgis profile folder """
+        if self.__has_custom_company_icon():
+            os.remove(self.custom_company_icon_path)
+
+            self.__load_But_company_icon()
+            self.__update_company_icon_in_layout()
+
+    def __update_company_icon_in_layout(self):
+        """ Applies the icons for the layout """
+        if self.plot_layer:
+            self.__initialize_defaults(self.plot_layer)
+
+        self.__apply_company_icon_to_layouts()
+
+    def __apply_company_icon_to_layouts(self):
+        """ Apply the selected icon to all registered layouts """
+        if not self.layouts:
+            return
+
+        for layout in self.layouts:
+            self.__apply_company_icon(layout)
+
+    def __apply_company_icon(self, layout: PlotLayout):
+        """ Apply and refresh the company icon """
+        item_id = "item_company_icon"
+        item = layout.layout.itemById(item_id)
+        icon_path = self.__get_company_icon_path()
+
+        if isinstance(item, QgsLayoutItemPicture) and Path(icon_path).is_file():
+            layout.icons[item_id] = icon_path
+            # item.setResizeMode(QgsLayoutItemPicture.Zoom)
+            item.setPicturePath(icon_path)
+            item.refreshPicture()
+
+    def __get_company_icon_path(self) -> str:
+        """" Gets the path to the company icon """
+        if os.path.isfile(self.versioned_custom_company_icon_path) and self.__has_custom_company_icon():  # cache issue fallback code
+            return self.versioned_custom_company_icon_path                                                # cache issue fallback code
+
+        if self.__has_custom_company_icon():
+            return self.custom_company_icon_path
+        return self.get_plugin().get_icon_path("icon.svg")
+
+    def get_plot_icon(self) -> str:
+        """ Returns the path to the plot plugin icon """
+        return self.get_plugin().get_icon_path("icon.svg")
 
     @classmethod
     def load(cls, parent_module: UiModuleBase):

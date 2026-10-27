@@ -25,8 +25,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>1154</width>
-         <height>751</height>
+         <width>1158</width>
+         <height>762</height>
         </rect>
        </property>
       </widget>
@@ -40,7 +40,7 @@
      <x>0</x>
      <y>0</y>
      <width>1178</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -67,6 +67,7 @@
    <addaction name="zoom_out_action"/>
    <addaction name="zoom_percent_action"/>
    <addaction name="zoom_in_action"/>
+   <addaction name="create_pdf_action"/>
   </widget>
   <action name="zoom_in_action">
    <property name="text">
@@ -96,6 +97,17 @@
    </property>
    <property name="toolTip">
     <string>Reset Zoom</string>
+   </property>
+  </action>
+  <action name="create_pdf_action">
+   <property name="text">
+    <string>Create PDF</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Export as PDF&lt;/p&gt;&lt;p&gt;(Ctrl + S)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
  </widget>
