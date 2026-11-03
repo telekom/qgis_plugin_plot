@@ -52,6 +52,9 @@ class Preview(UiModuleBase, FORM_CLASS, QMainWindow):
         self.page_label_array = []
         self.pixmap_array = []
 
+        # vars
+        self.layout = None
+
         # connect slots
         self.zoom_in_action.triggered.connect(self.zoom_in)
         self.zoom_out_action.triggered.connect(self.zoom_out)
@@ -59,7 +62,9 @@ class Preview(UiModuleBase, FORM_CLASS, QMainWindow):
         self.create_pdf_action.triggered.connect(self.start_pdf_export)
 
         # set toolbar icons
-        self.create_pdf_action.setIcon(QIcon(self._parent.get_plot_icon()))
+        self.create_pdf_action.setIcon(QIcon(QgsApplication.getThemeIcon("mActionFilePrint.svg")))
+        # self.create_pdf_action.setIcon(QIcon(self._parent.get_plot_icon()))
+        self.create_pdf_action.setText("Export PDF")
 
         # center toolbar
         margin_px = 10
@@ -90,6 +95,10 @@ class Preview(UiModuleBase, FORM_CLASS, QMainWindow):
         # window Settings
         self.setWindowTitle("Preview")
 
+        # Adds Text under create_pdf_action
+        create_pdf_action_widgetForAction = self.toolBar.widgetForAction(self.create_pdf_action)
+        create_pdf_action_widgetForAction.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
+
         # mouse shortcut (zoom in/out)
         self.scrollArea.installEventFilter(self)
         self.scrollAreaWidgetContents.installEventFilter(self)
@@ -98,6 +107,7 @@ class Preview(UiModuleBase, FORM_CLASS, QMainWindow):
         """ Opens the Preview window and creates page images for preview """
         scroll_widget = self.scrollAreaWidgetContents
         scroll_layout = scroll_widget.layout()
+        self.layout = qgis_layout
 
         # Creates new layout, if layout exists (window not closed) clear existing one
         if scroll_layout is None:
@@ -174,6 +184,11 @@ class Preview(UiModuleBase, FORM_CLASS, QMainWindow):
         """ Triggers the pdf export """
         # """ Triggers the pdf export with the current layout """
         self._parent.start_pdf_export()
+        # if not self.layout:
+        #     return
+
+        # self.layout.create_pdf()
+
 
     # Shortcuts
     def eventFilter(self, source, event) -> bool:

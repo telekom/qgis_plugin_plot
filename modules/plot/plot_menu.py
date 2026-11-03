@@ -9,6 +9,7 @@ import traceback
 import importlib
 
 from pathlib import Path
+from xmlrpc.client import boolean
 
 from .preview import Preview
 
@@ -190,7 +191,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         # load company logo
         self.custom_company_icon_path = ""
         self.versioned_custom_company_icon_path = ""  # for Invalidate Image Cache fallback
-        self.__load_But_company_icon()
+        self.__load_But_Company_Icon()
 
         # setup company logo selection window
         self.company_icon_action_menu = QtWidgets.QMenu(self)
@@ -198,8 +199,8 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         change_icon_action.triggered.connect(lambda x: self.__update_company_icon())
         delete_icon_action = self.company_icon_action_menu.addAction("Delete Icon")
         delete_icon_action.triggered.connect(lambda x: self.__delete_company_icon())
-        self.But_company_icon.setMenu(self.company_icon_action_menu)
-        self.But_company_icon.setPopupMode(QtWidgets.QToolButton.ToolButtonPopupMode.InstantPopup)
+        self.But_Company_Icon.setMenu(self.company_icon_action_menu)
+        self.But_Company_Icon.setPopupMode(QtWidgets.QToolButton.ToolButtonPopupMode.InstantPopup)
 
     def __init_layouts(self):
         """Load layout templates once and report loading progress in the menu."""
@@ -774,6 +775,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         layer: QgsVectorLayer = QgsProject.instance().mapLayer(data)
 
         self.List_Pages.clear()
+        self.__reset_plot_page_selection(True)
         set_label_status(self.Label_Status, "")
 
         self.remove_actions()
@@ -1082,6 +1084,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                     range_start, range_end = map(int, block.split('-'))
 
                     if not (1 <= range_start <= max_pages) or not (1 <= range_end <= max_pages):
+                        self.__reset_plot_page_selection()
                         self.Lable_Error_Msg.setText(f"Must be a number between 1 and {max_pages}")
                         return
 
@@ -1089,19 +1092,28 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                     page_array.update(range_array)
 
                 except ValueError:
-                    print(f"Error: not a number '{block}'")
+                    self.log(f"Error: not a number '{block}'")
 
             elif block.isdigit():
                 single_page = int(block)
                 if not (1 <= single_page <= max_pages):
+                    self.__reset_plot_page_selection()
                     self.Lable_Error_Msg.setText(f"Must be a number between 1 and {max_pages}")
                     return
                 page_array.add(single_page)
             else:
-                print("Error: not a number '", block, "'")
+                self.log("Error: not a number '", block, "'")
 
         self.pages_to_plot_array = sorted(page_array)
-        print("->", self.pages_to_plot_array)
+        # print("->", self.pages_to_plot_array)
+        self.__update_list_pages_selection()
+
+    def __reset_plot_page_selection(self, with_input: bool = False):
+        """ Resets input field, error message and selected pages """
+        if with_input:
+            self.LineEdit_Plot_Page_Select.setText("")
+        self.Lable_Error_Msg.setText("")
+        self.pages_to_plot_array = []
         self.__update_list_pages_selection()
 
     def __update_list_pages_selection(self):
@@ -1134,11 +1146,11 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         """ Checks if a cutome company icon was set """
         return os.path.isfile(self.custom_company_icon_path)
 
-    def __load_But_company_icon(self):
+    def __load_But_Company_Icon(self):
         """" Loads the icon into the QToolButton """
         self.custom_company_icon_path = Path(os.path.join(self.plot_settings_path, 'custom_company_icon.png')).as_posix()
-        self.But_company_icon.setIcon(QIcon(self.__get_company_icon_path()))
-        self.But_company_icon.setIconSize(QSize(65, 65))
+        self.But_Company_Icon.setIcon(QIcon(self.__get_company_icon_path()))
+        self.But_Company_Icon.setIconSize(QSize(65, 65))
 
     def __update_company_icon(self):
         """" open file dialog and save selected image """
@@ -1166,12 +1178,12 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
                     # and __set_versioned_company_icon(self)
                     self.__set_versioned_company_icon()
 
-                    self.__load_But_company_icon()
+                    self.__load_But_Company_Icon()
                     self.__update_company_icon_in_layout()
 
                     return
 
-        self.__load_But_company_icon()
+        self.__load_But_Company_Icon()
         self.__update_company_icon_in_layout()
 
     def __set_versioned_company_icon(self):
@@ -1195,7 +1207,7 @@ class PlotMenu(UiModuleBase, FORM_CLASS, QMainWindow):
         if self.__has_custom_company_icon():
             os.remove(self.custom_company_icon_path)
 
-            self.__load_But_company_icon()
+            self.__load_But_Company_Icon()
             self.__update_company_icon_in_layout()
 
     def __update_company_icon_in_layout(self):
